@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="suite of tests" parallel="none">
+
+<listeners>
+</listeners>
+
+<groups>
+    <run>
+      <exclude name="in progress"  />
+    </run>
+  </groups>
+
+       <test name="FirefoxTest">
+              <parameter name="browser" value="firefox" />
+              <parameter name="url" value="base_url" />
+                            
+              <classes>    
+                <class name= "pageobject_test.BasePageTest"/>
+                <class name= "pageobject_test.LoginTest"/>
+                <class name= "pageobject_test.LoginTest"/>
+                <class name= "pageobject_test.LoginTest"/>
+                
+              </classes>
+      
+       </test>
+
+       <test name="ChromeTest">
+              <parameter name="browser" value="chrome" />
+              <parameter name="url" value="base_url" />
+              
+              <classes>
+                 <class name= "pageobject_test.BasePageTest"/>
+                <class name= "pageobject_test.LoginTest"/>
+                <class name= "pageobject_test.LoginTest"/>
+                <class name= "pageobject_test.LoginTest"/>
+                  
+               </classes>
+       </test>      
+  
+</suite>

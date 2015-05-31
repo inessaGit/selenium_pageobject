@@ -1,0 +1,20 @@
+****************** Info Regarding setup*************************************
+
+On Windows reading from properties file is diff: 
+silently drops '\' -> put double '\\' 
+
+=============================================
+1. Download Maven and set it up;
+2. Set up new Maven project in IDE
+
+3. IMPORTANT! -> For Firefox: set up FIREFOX PROFILE
+A. on windows: exit Firefox - Start - search - firefox.exe -p (to switch profiles)
+B. set Firefox 'Update' to 'Ask before updating' 
+C. see compatability notes for FF and Selenium: https://raw.githubusercontent.com/SeleniumHQ/selenium/master/java/CHANGELOG
+
+4. see info on Page Object pattern: https://code.google.com/p/selenium/wiki/PageObjects
+5. all PageObjects extend LoadableComponent class ;
+6. all PageObjectTests extend BaseSuite (to control tests with @AfterSuite, @BeforeSuite etc) 
+
+7. WebDriver v2.44 support Firefox 24, 31, 32 and 33
+8. If running on Mac please change line 22 in log4j (log file location) 

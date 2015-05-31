@@ -1,0 +1,231 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   
+      <!-- The Basics --> 
+    
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.wikia</groupId>
+  <artifactId>wikia</artifactId>
+  <version>0.0.1-SNAPSHOT</version>   
+   
+  <packaging>jar</packaging>
+   
+   <organization>
+    <name>wikia.com</name>
+  </organization>
+   
+  <description>Testing project using Maven, WebDriver, TestNG </description>
+    
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+   
+  <!-- DEPENDENCIES     --> 
+  <dependencies>
+    <dependency>
+	<groupId>org.testng</groupId>
+	<artifactId>testng</artifactId>
+            <version>6.8.1</version>
+</dependency>
+
+<!-- WebDriver v2.44 support Firefox 24, 31, 32 and 33 -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+           <version>2.44.0</version> 
+            <scope>test</scope>
+        </dependency>
+         
+        <dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-remote-driver</artifactId>
+    <version>2.44.0</version>
+</dependency>
+
+ <dependency>
+	<groupId>org.seleniumhq.selenium</groupId>
+	<artifactId>selenium-chrome-driver</artifactId>
+	<version>2.44.0</version>
+</dependency>
+        
+        <dependency>
+    <groupId>log4j</groupId>
+    <artifactId>log4j</artifactId>
+    <version>1.2.17</version>
+</dependency>
+ 
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi</artifactId>
+    <version>3.10-FINAL</version>
+</dependency>
+ 
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-ooxml</artifactId>
+    <version>3.10-FINAL</version>
+</dependency>
+ 
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-lang3</artifactId>
+    <version>3.3.2</version>
+</dependency>
+       
+        <dependency>
+    <groupId>xml-apis</groupId>
+    <artifactId>xml-apis</artifactId>
+    <version>1.4.01</version>
+</dependency>
+ 
+<!-- this is for reading properties files in Win/Mac and dealing with slash -->
+<dependency>
+    <groupId>commons-io</groupId>
+    <artifactId>commons-io</artifactId>
+    <version>2.4</version>
+</dependency>       
+  </dependencies>
+  
+  <!-- BUILD settings -->
+   
+   <build>
+   <directory>${project.basedir}/target</directory>
+    <finalName>${project.artifactId}-${project.version}</finalName>
+ 
+    <sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
+    <testSourceDirectory>${project.basedir}/src/test/java</testSourceDirectory>
+     
+     <outputDirectory>${project.basedir}/target/classes</outputDirectory>
+    <testOutputDirectory>${project.basedir}/target/test-classes</testOutputDirectory>
+     
+    <scriptSourceDirectory>${project.basedir}/src/test/scripts</scriptSourceDirectory>
+     
+ <!--  RESOURCES -->   
+ <resources>   
+            
+     <resource>
+        <directory>${project.basedir}/main/resources</directory>
+    </resource>    
+ </resources>   
+  
+ <!-- TEST RESOURCES OUTSIDE OF RESOURCES      -->
+  <testResources>
+      <testResource>
+        <directory>${project.basedir}/test/resources</directory>
+         <includes>
+          <include></include>
+        </includes>
+      </testResource>
+      <testResource>
+        <directory>${project.basedir}/test/xml</directory>
+         <includes>
+          <include></include>
+        </includes>
+      </testResource>
+    </testResources>
+     
+   <!-- PLUGINS -->
+   
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.0</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+             
+             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.16</version>
+                <configuration>
+                <parallel>true</parallel>
+                    <redirectTestOutputToFile>true</redirectTestOutputToFile>
+                    <testFailureIgnore>true</testFailureIgnore>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>${project.basedir}/suite.xml</suiteXmlFile>
+                         
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin> 
+             
+           <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>2.6</version>
+        <configuration>
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>            
+      
+           <!-- Plugin to produce jar -->
+           <plugin>
+  <artifactId>maven-assembly-plugin</artifactId>
+  <configuration>
+    <archive>
+      <manifest>
+        <mainClass>fully.qualified.MainClass</mainClass>
+      </manifest>
+    </archive>
+    <descriptorRefs>
+      <descriptorRef>jar</descriptorRef>
+    </descriptorRefs>
+  </configuration>
+  <executions>
+    <execution>
+      <phase>package</phase> <!-- bind to the packaging phase -->
+      <goals>
+        <goal>single</goal>
+      </goals>
+    </execution>
+  </executions>
+</plugin>
+  <!--  Plugin to excude non .java files from compiling -->
+  <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-eclipse-plugin</artifactId>
+        <version>2.9</version>
+        <configuration>
+          <sourceExcludes>
+            <sourceExclude>**/*.txt</sourceExclude>
+            <sourceExclude>**/*.exe</sourceExclude>
+            <sourceExclude>**/*.xls</sourceExclude>
+            <sourceExclude>**/*.xlsx</sourceExclude>
+                          
+          </sourceExcludes>
+          <sourceIncludes>
+            <sourceInclude>**/*.java</sourceInclude>
+          </sourceIncludes>
+        </configuration>
+      </plugin>
+       
+     </plugins>        
+ 
+  </build>   
+     
+ <!-- Environment Settings -->
+  <issueManagement></issueManagement>
+  <ciManagement></ciManagement>
+  <prerequisites></prerequisites>
+  
+ <!-- PROFILES -->
+   <profiles>
+  <profile>
+    <id>development</id>
+         <!--points to a DEV server database  and ioserverdb instance -->     
+    <properties>
+  </properties>
+  </profile>
+  
+       <!--points to a TEST server database  and ioserverdb instance --> 
+  <profile>
+    <id>test</id>
+    <properties>         
+      </properties>
+     
+   </profile>
+   
+</profiles>
+ </project>
+   
