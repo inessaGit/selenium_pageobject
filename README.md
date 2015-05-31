@@ -1,4 +1,4 @@
-# **Selenium_pageobject Info Regarding setup**
+# **Selenium_pageobject Setup**
   
 **Pre-requisite:**  
 1) Maven configured and installed: http://maven.apache.org/download.cgi  
