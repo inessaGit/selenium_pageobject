@@ -18,6 +18,7 @@ test-output/
 bin/
 *.classpath
 *.project
+*settings/org
 
 # OS generated files #
 ######################
