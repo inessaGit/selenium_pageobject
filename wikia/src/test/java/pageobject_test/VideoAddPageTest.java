@@ -10,7 +10,7 @@ import pageobject.Login;
 import pageobject.VideoAddPage;
 import util.Constants;
 
-public class VideoAddPageTest {
+public class VideoAddPageTest extends BaseSuite {
 	
 	HomePage homePage;
 	Login login;
@@ -20,22 +20,31 @@ public class VideoAddPageTest {
 	String pswd = Constants.getInstance().getRp().readConfigProperties("testuser.password");
     String username = Constants.getInstance().getRp().readConfigProperties("testuser.username");
     
+    String fileName ="The Best Classical Music In The World";
+    
     @Test(priority=1)
     public  void initTest(){
+    	
     	homePage = new HomePage(BaseSuite.getDriver());
     	homePage.get();
     	login = homePage.Login();
     	login.get();
     	contribute=homePage.Contribute();
     	contribute.get();
-    	videoAddPage =contribute.VideoAddPage();
-    	videoAddPage.get();
+    	
     }
     
-    
     @Test(priority=2)
+    public void testGetVideoPage(){
+    	videoAddPage =contribute.VideoAddPage();
+    	videoAddPage.get();
+    	//Assert.assertTrue("you must login message displayed");
+    }
+    @Test(priority=3)
     public void testAddVideoFlashMessage(){
     	
+		login.login(username, pswd);
+
     	contribute.clickContribute();
     	contribute.clickAddVideo(); 
     	
@@ -43,8 +52,8 @@ public class VideoAddPageTest {
     	videoAddPage.addVideo(testVideo);
     	
     	String actualFlashMessage =videoAddPage.getFlashMessage();
-    	String expectedFlashMessage ="Video page File:The Best Classical Music In The World was successfully added.";
-    	
+    	String expectedFlashMessage ="Video page File:"+fileName+" was successfully added.";
+    	System.out.println("Flash message expected: "+expectedFlashMessage);
     	Assert.assertTrue(actualFlashMessage.equalsIgnoreCase(expectedFlashMessage));
     }
     
@@ -52,9 +61,11 @@ public class VideoAddPageTest {
     public void testClickFlashMessage(){
     	
     	String actualUrl =videoAddPage.clickFlashMessage();
-    	String expectedUrl ="http://qm-homework.wikia.com/wiki/File:The_Best_Classical_Music_In_The_World";
+    	String expectedUrl ="http://qm-homework.wikia.com/wiki/File:"+fileName.replace(" ", "_");
+    	System.out.println("Expected url: "+expectedUrl);
     	Assert.assertTrue(actualUrl.equalsIgnoreCase(expectedUrl));
+    	Assert.assertTrue(actualUrl.contains(fileName.replace(" ", "_")));
 
     }
-
+    
 }

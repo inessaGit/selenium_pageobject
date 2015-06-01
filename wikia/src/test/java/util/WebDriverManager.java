@@ -69,8 +69,16 @@ public class WebDriverManager {
 	        capability.setBrowserName("Firefox");
 	        capability.setPlatform(org.openqa.selenium.Platform.ANY);
 	        webdriver = allProfiles.getProfile("WebDriver");
+	        
+
 		    webdriver.setPreference("browser.cache.disk.enable", false);
+		    webdriver.setPreference("browser.cache.memory.enable", false);
+		    webdriver.setPreference("browser.cache.offline.enable", false);
+		    webdriver.setPreference("network.http.use-cache", false);
+		    webdriver.setPreference("extensions.checkCompatibility", false);
+		    
 			webdriver.setEnableNativeEvents(true);
+			
 			driver=new FirefoxDriver(webdriver);
 	    }
 

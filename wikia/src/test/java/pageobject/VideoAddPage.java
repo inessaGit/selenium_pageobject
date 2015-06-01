@@ -23,12 +23,14 @@ public class VideoAddPage extends LoadableComponent<VideoAddPage>{
 	@FindBy(id="wpWikiaVideoAddUrl")
 	WebElement videoInputField;
 
-	@FindBy(css="=div.submits > input[type='submit']")
+	@FindBy(css="div.submits > input[type='submit']")
 	WebElement addVideoBtn;
 	
 	@FindBy(css="div.msg")
 	WebElement flashMsg;
 	
+	@FindBy(css="div.msg > a")
+	WebElement flashMsgLink;
 	//=========================================================
 	
 	public VideoAddPage(WebDriver driver){
@@ -46,7 +48,6 @@ public class VideoAddPage extends LoadableComponent<VideoAddPage>{
 
 	@Override
 	protected void isLoaded() throws Error {
-		Assert.assertTrue(this.driver.getTitle().equalsIgnoreCase(videoPageTitle));
 		Assert.assertTrue(this.driver.getCurrentUrl().equalsIgnoreCase(videoUrl));
 	}
 
@@ -66,6 +67,7 @@ public class VideoAddPage extends LoadableComponent<VideoAddPage>{
 		wait = new WebDriverWait(this.driver,15);
 		wait.until(ExpectedConditions.visibilityOf(flashMsg));
 		String actualFlashMsg=flashMsg.getText();
+		System.out.println("Flash message actual: "+actualFlashMsg);
 		return actualFlashMsg;
 	}
 	
@@ -73,10 +75,10 @@ public class VideoAddPage extends LoadableComponent<VideoAddPage>{
 		
 		wait = new WebDriverWait(this.driver,15);
 		wait.until(ExpectedConditions.visibilityOf(flashMsg));
-		flashMsg.click();
+		flashMsgLink.click();
 		
 		String actualUrl=this.driver.getCurrentUrl();
-		
+		System.out.println("After click on flash message actual URL:"+actualUrl);
 		return actualUrl;
 	}
 }

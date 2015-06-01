@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.LoadableComponent;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import util.CommonMethods;
 import util.Constants;
 
 public class Login extends LoadableComponent<Login> {
@@ -60,11 +61,10 @@ public class Login extends LoadableComponent<Login> {
 	public boolean isLoginDropDownDisplayed(){
 		Actions action = new Actions(this.driver);
 		wait = new WebDriverWait(this.driver,10);
-
 		wait.until(ExpectedConditions.visibilityOf(signInTopNav));
-
 		action.moveToElement(signInTopNav).build().perform();
 		
+		CommonMethods.changeElementDisplayStyle(this.driver,loginDropDown);
 		wait.until(ExpectedConditions.visibilityOf(loginDropDown));
 		return loginDropDown.isDisplayed();
 		
@@ -75,7 +75,8 @@ public class Login extends LoadableComponent<Login> {
 		wait.until(ExpectedConditions.visibilityOf(signInTopNav));
 
 		action.moveToElement(signInTopNav).build().perform();
-		
+		CommonMethods.changeElementDisplayStyle(this.driver,loginDropDown);
+
 		wait.until(ExpectedConditions.visibilityOf(loginDropDown));
 
 		usernameDropDown.clear();

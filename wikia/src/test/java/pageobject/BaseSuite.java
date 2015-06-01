@@ -3,10 +3,14 @@ package pageobject;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.SessionNotFoundException;
+import org.openqa.selenium.remote.UnreachableBrowserException;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
@@ -16,87 +20,119 @@ import util.WebDriverManager;
 
 public class BaseSuite  {
 
-	    private static Logger LOGGER=Logger.getLogger(BaseSuite.class);
-		public static final Constants CONSTANTS = Constants.getInstance();
-		
-		public static final   String base_url;
-		public static final String homepage_url;
-		
-	    private static   WebDriver driver; 
-		public  static final TakeScreenshot ts;
+	private static Logger LOGGER=Logger.getLogger(BaseSuite.class);
+	public static final Constants CONSTANTS = Constants.getInstance();
 
-		static{
-			   ts= new TakeScreenshot();
-			   base_url=CONSTANTS.getBase_url();
-			   homepage_url=CONSTANTS.getHomepage_url();
-		}
-		
-		public static WebDriver getDriver(){
-			return driver;
-		}
-		
-		@AfterClass(alwaysRun=true)
-		public void closeBasePage(){
-			if (driver!=null){
-			driver.close();
-			}
-		}
-		
-		@AfterSuite(alwaysRun=true)
-		public static void quitDriver(){
+	public static final   String base_url;
+	public static final String homepage_url;
+
+	private static   WebDriver driver; 
+	public  static final TakeScreenshot ts;
+
+	static{
+		ts= new TakeScreenshot();
+		base_url=CONSTANTS.getBase_url();
+		homepage_url=CONSTANTS.getHomepage_url();
+	}
+
+	public static WebDriver getDriver(){
+		return driver;
+	}
+
+	@AfterClass(alwaysRun=true)
+	public void closeBasePage(){
+		try{
 			if (driver!=null)
 			{
 				driver.quit();
 			}
 		}
-		
-		@Parameters("browser")
-		@BeforeClass
-		public void getDriverInstance(@Optional("firefox") String browser) {
 
-			if (browser.equalsIgnoreCase("firefox")) 
-
-			{       
-				driver=WebDriverManager.startDriver("firefox");
-			}
-
-			else if (browser.equalsIgnoreCase("chrome")) 
-
-			{
-				driver=WebDriverManager.startDriver("chrome");
-			} 
-
-			else if (browser.equalsIgnoreCase("safari")) 				
-			{
-				driver=WebDriverManager.startDriver("safari");
-			} 
-
-			else if (browser.equalsIgnoreCase("ie")) 				
-			{
-				driver=WebDriverManager.startDriver("ie");
-			} 
-			
+		//ChromeDriver:if test has failed session is  dead, so when you call a close it doesn't know where to send the command
+		catch (SessionNotFoundException ex){
+			LOGGER.debug("if test has failed session is  dead, so when you call a close it doesn't know where to send the comman");
+			LOGGER.debug(ex);
+			driver.close();
 		}
-		
-		@Parameters("url")
-		@BeforeClass//runs before first test method in the current test class run
-		public void getToHomePage(@Optional("homepage_url")String url)
+		catch(UnreachableBrowserException exeption){
+			LOGGER.debug(exeption);
+			driver.close();
+
+		}
+
+	}
+
+	@AfterSuite(alwaysRun=true)
+	public static void quitDriver(){
+
+		try{
+			if (driver!=null)
+			{
+				driver.quit();
+			}
+		}
+
+		//ChromeDriver:if test has failed session is  dead, so when you call a close it doesn't know where to send the command
+		catch (SessionNotFoundException ex){
+			LOGGER.debug("if test has failed session is  dead, so when you call a close it doesn't know where to send the comman");
+			LOGGER.debug(ex);
+			driver.quit();
+		}
+		catch(UnreachableBrowserException exeption){
+			LOGGER.debug(exeption);
+			driver.quit();
+
+		}
+
+	}
+
+	@Parameters("browser")
+	@BeforeClass
+	public void getDriverInstance(@Optional("chrome") String browser) {
+
+		if (browser.equalsIgnoreCase("firefox")) 
+
+		{       
+			driver=WebDriverManager.startDriver("firefox");
+		}
+
+		else if (browser.equalsIgnoreCase("chrome")) 
+
 		{
-			
-			  if (url.equalsIgnoreCase("base_url"))
-			{
-				driver.get(base_url);
-				LOGGER.info("Environment for test: "+base_url);
-				System.out.println("Environment for test: "+base_url);
+			driver=WebDriverManager.startDriver("chrome");
+		} 
 
-			}
-			else  if (url.equalsIgnoreCase("dev_homepage_env"))
-			{
-				//driver.get(dev_homepage_env);
-				LOGGER.info("Environment for test: DEV");
-				System.out.println("Environment for test: DEV");
+		else if (browser.equalsIgnoreCase("safari")) 				
+		{
+			driver=WebDriverManager.startDriver("safari");
+		} 
 
-			}
+		else if (browser.equalsIgnoreCase("ie")) 				
+		{
+			driver=WebDriverManager.startDriver("ie");
+		} 
+
+	}
+
+	@Parameters("url")
+	@BeforeClass//runs before first test method in the current test class run
+	public void getToHomePage(@Optional("homepage_url")String url)
+	{
+
+		if (url.equalsIgnoreCase("base_url"))
+		{
+			driver.get(base_url);
+			LOGGER.info("Environment for test: "+base_url);
+			System.out.println("Environment for test: "+base_url);
 
 		}
+		else  if (url.equalsIgnoreCase("dev_homepage_env"))
+		{
+			//driver.get(dev_homepage_env);
+			LOGGER.info("Environment for test: DEV");
+			System.out.println("Environment for test: DEV");
+
+		}
+
+	}
 }

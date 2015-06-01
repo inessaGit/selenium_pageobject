@@ -10,6 +10,8 @@ import org.openqa.selenium.support.ui.LoadableComponent;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import util.CommonMethods;
+
 public class Contribute extends LoadableComponent<Contribute> {
 
 	private static final Logger LOGGER = Logger.getLogger(Login.class);
@@ -22,7 +24,7 @@ public class Contribute extends LoadableComponent<Contribute> {
 	@FindBy(css="nav.wikia-menu-button.contribute.secondary.combined")
 	WebElement contribute;
 
-	@FindBy(css="WikiaMenuElement")
+	@FindBy(css="ul.WikiaMenuElement")
     WebElement contributeDropdown;
 	
 	@FindBy(partialLinkText="Edit this Page")
@@ -46,6 +48,7 @@ public class Contribute extends LoadableComponent<Contribute> {
 		
 		boolean isContributeDisplayed = false;
 		wait = new WebDriverWait(this.driver,10);
+		CommonMethods.changeElementDisplayStyle(this.driver,contributeDropdown);
 
 		wait.until(ExpectedConditions.visibilityOf(contributeDropdown));
 		isContributeDisplayed=contributeDropdown.isDisplayed();
@@ -54,7 +57,7 @@ public class Contribute extends LoadableComponent<Contribute> {
 	}
 	
 	public String clickAddVideo(){
-		wait = new WebDriverWait(this.driver,10);
+		wait = new WebDriverWait(this.driver,15);
 		wait.until(ExpectedConditions.elementToBeClickable(addVideo));
 		addVideo.click();
 		String actualUrl =this.driver.getCurrentUrl();

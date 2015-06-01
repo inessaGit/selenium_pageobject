@@ -21,7 +21,7 @@ public class ContributeTest extends BaseSuite{
     String username = Constants.getInstance().getRp().readConfigProperties("testuser.username");
     
     @Test(priority=1)
-    public  void getLoginPage(){
+    public  void initPages(){
     	homePage = new HomePage(BaseSuite.getDriver());
     	homePage.get();
     	login = homePage.Login();
@@ -32,6 +32,8 @@ public class ContributeTest extends BaseSuite{
     
     @Test(priority=2)
     public void testContributeDropdownDisplayed(){
+		login.login(username, pswd);
+
     	contribute.clickContribute();
     	boolean isContributeDropdownDispayed = contribute.isContributeDropdownDisplayed();
     	Assert.assertTrue(isContributeDropdownDispayed==true);

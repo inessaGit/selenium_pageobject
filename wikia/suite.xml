@@ -12,28 +12,28 @@
   </groups>
 
        <test name="FirefoxTest">
-              <parameter name="browser" value="firefox" />
-              <parameter name="url" value="base_url" />
-                            
+                 <parameter name="browser" value="firefox" />
+                 <parameter name="url" value="base_url" />
+           
               <classes>    
                 <class name= "pageobject_test.BasePageTest"/>
                 <class name= "pageobject_test.LoginTest"/>
-                <class name= "pageobject_test.LoginTest"/>
-                <class name= "pageobject_test.LoginTest"/>
+                <class name= "pageobject_test.ContributeTest"/>
+                <class name= "pageobject_test.VideoAddPageTest"/>
                 
               </classes>
       
        </test>
 
        <test name="ChromeTest">
-              <parameter name="browser" value="chrome" />
-              <parameter name="url" value="base_url" />
-              
+               <parameter name="url" value="base_url" />
+               <parameter name="browser" value="chrome" />
+               
               <classes>
                  <class name= "pageobject_test.BasePageTest"/>
                 <class name= "pageobject_test.LoginTest"/>
-                <class name= "pageobject_test.LoginTest"/>
-                <class name= "pageobject_test.LoginTest"/>
+                <class name= "pageobject_test.ContributeTest"/>
+                <class name= "pageobject_test.VideoAddPageTest"/>
                   
                </classes>
        </test>      

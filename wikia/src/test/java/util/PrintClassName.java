@@ -77,7 +77,6 @@ class TestPrintClassName{
 		PrintClassName print = new PrintClassName();
 		List<Class> list =print.getClassOfPackage("pageobject_test");
 
-		System.out.println("list.size()+"+list.size());
 		print.printClassNames(list);
 		
 		print.printClassNamesWithTestTag(list);

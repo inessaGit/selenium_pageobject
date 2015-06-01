@@ -26,7 +26,7 @@ public class LoginTest extends BaseSuite {
     	login = homePage.Login();
     	login.get();
     }
-    
+  
 	@Test (priority=2)
 	public void testLoginDispayed(){
 
