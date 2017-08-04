@@ -1,7 +1,7 @@
-package pageobject.util;
+package pageobject_common.util;
 
-import pageobject.util.CommonMethods;
-import pageobject.util.ReadingProperties;
+import pageobject_common.util.CommonMethods;
+import pageobject_common.util.ReadingProperties;
 
 import java.io.BufferedWriter;
 import java.io.PrintWriter;

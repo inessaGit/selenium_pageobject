@@ -1,16 +1,16 @@
-package pageobject_test;
+package pageobject_framework.test;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import pageobject_common.util.Constants;
+import pageobject_framework.pages.Contribute;
+import pageobject_framework.pages.HomePage;
+import pageobject_framework.pages.Login;
+import pageobject_framework.pages.VideoAddPage;
 import pageobject_framework.runner.BaseTestSuite;
-import pageobject.Contribute;
-import pageobject.HomePage;
-import pageobject.Login;
-import pageobject.VideoAddPage;
-import pageobject.util.Constants;
 
 public class VideoAddPageTest extends BaseTestSuite {
 	

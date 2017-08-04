@@ -1,7 +1,7 @@
-package pageobject;
+package pageobject_framework.pages;
 
-import pageobject.BasePage;
-import pageobject.util.Constants;
+import pageobject_common.util.Constants;
+import pageobject_framework.pages.BasePage;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;

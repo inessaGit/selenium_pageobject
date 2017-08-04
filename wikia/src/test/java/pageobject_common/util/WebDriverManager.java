@@ -1,4 +1,4 @@
-package pageobject.util;
+package pageobject_common.util;
 
 
 import pageobject_framework.runner.BaseTestSuite;

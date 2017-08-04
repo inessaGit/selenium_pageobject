@@ -1,4 +1,4 @@
-package pageobject;
+package pageobject_framework.pages;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.LoadableComponent;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import pageobject.util.CommonMethods;
+import pageobject_common.util.CommonMethods;
 
 public class Contribute extends LoadableComponent<Contribute> {
 

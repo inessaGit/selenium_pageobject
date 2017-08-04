@@ -1,4 +1,4 @@
-package pageobject.util;
+package pageobject_common.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

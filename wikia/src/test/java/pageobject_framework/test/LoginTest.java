@@ -1,14 +1,14 @@
-package pageobject_test;
+package pageobject_framework.test;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import pageobject_common.util.Constants;
+import pageobject_framework.pages.HomePage;
+import pageobject_framework.pages.Login;
 import pageobject_framework.runner.BaseTestSuite;
-import pageobject.HomePage;
-import pageobject.Login;
-import pageobject.util.Constants;
 
 /*
  * 1. WebDriver instance from BaseSuite created by TestNG @BeforeClass before any test methods in test class have been run

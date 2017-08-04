@@ -1,4 +1,4 @@
-package pageobject;
+package pageobject_framework.pages;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;

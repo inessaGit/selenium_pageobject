@@ -4,11 +4,6 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import pageobject.BasePage;
-import pageobject.util.Constants;
-import pageobject.util.TakeScreenshot;
-import pageobject.util.WebDriverManager;
-
 import org.apache.log4j.Logger;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.openqa.selenium.WebDriver;
@@ -22,8 +17,12 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
-import pageobject.util.Return2D;
-import pageobject.util.Database;
+import pageobject_common.util.Constants;
+import pageobject_common.util.Database;
+import pageobject_common.util.Return2D;
+import pageobject_common.util.TakeScreenshot;
+import pageobject_common.util.WebDriverManager;
+import pageobject_framework.pages.BasePage;
 
 /**
  * @author Inessa  2/13

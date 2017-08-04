@@ -1,13 +1,12 @@
-package pageobject_test;
-
-import pageobject.util.CommonMethods;
-import pageobject.util.Constants;
+package pageobject_framework.test;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import pageobject_common.util.CommonMethods;
+import pageobject_common.util.Constants;
 import pageobject_framework.runner.BaseTestSuite;
 
 public class BasePageTest extends BaseTestSuite{
