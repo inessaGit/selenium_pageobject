@@ -6,13 +6,13 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.LoadableComponent;
 import org.testng.Assert;
 
-import util.Constants;
+import pageobject.util.Constants;
 
 public class HomePage extends LoadableComponent<HomePage> {
 
 	private static final Logger LOGGER = Logger.getLogger(HomePage.class);
 	private final Constants CONSTANTS = Constants.getInstance();
-	private String homepage_url= CONSTANTS.getHomepage_url(); 
+	private String homepage_url= CONSTANTS.getTest_env(); 
 
 	private String title ="QM HomeWork Wikia";
 	private WebDriver driver;
@@ -38,12 +38,12 @@ public class HomePage extends LoadableComponent<HomePage> {
 
 	}
 	
-	public Login Login(){
+	public Login login(){
 		
 		return new Login(this.driver);
 	}
 	
-	public Contribute Contribute(){
+	public Contribute contribute(){
 		return new Contribute(this.driver);
 	}
 }

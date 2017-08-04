@@ -1,17 +1,14 @@
 package pageobject;
 
+import pageobject.BasePage;
+import pageobject.util.Constants;
+
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.LoadableComponent;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.Test;
-
-import util.Constants;
-import util.WebDriverManager;
 
 
 /*
@@ -20,32 +17,35 @@ import util.WebDriverManager;
 public class BasePage extends LoadableComponent<BasePage> {
 
 	private static final Logger LOGGER = Logger.getLogger(BasePage.class);
-	
-	private final Constants CONSTANTS = Constants.getInstance();
-	private String base_url= CONSTANTS.getBase_url(); 
-	private String homepage_url= CONSTANTS.getHomepage_url(); 
+	public  final  Constants CONSTANTS ;
+	public  final String  base_url_test; 
+	public  final String  base_url_dev; 
 
-	private String title ="QM HomeWork Wikia";
-	private WebDriver driver;
+	private final WebDriver driver;
 
-	
+	/*
+	 * 1) inherited by all PageObject classes that extend BasePage class
+	 * 
+	 */
 	public BasePage(WebDriver driver){
-		
         this.driver = driver;
-		 PageFactory.initElements(this.driver, this);
-
-		System.out.println ("Base page url:"+base_url);
-		LOGGER.info("Base page  url:"+base_url);
-	}
+        
+        CONSTANTS = Constants.getInstance();
+        base_url_test= CONSTANTS.getTest_env();
+        base_url_dev= CONSTANTS.getDev_env();
+        
+		PageFactory.initElements(this.driver, this);
+		LOGGER.info(this.getClass().getName()+" constructor");;
+	}	
 	
 	@Override
 	public void load(){
-		this.driver.get(base_url);
+	    driver.get(base_url_test);
 	}
 	
 	@Override
 	public void isLoaded(){
-		Assert.assertTrue(this.driver.getCurrentUrl().equalsIgnoreCase(homepage_url));
+		Assert.assertTrue(this.driver.getCurrentUrl().equalsIgnoreCase(base_url_test));
 	}
 	
 

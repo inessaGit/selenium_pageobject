@@ -1,5 +1,10 @@
-package util;
+package pageobject.util;
 
+import pageobject.util.CommonMethods;
+import pageobject.util.ReadingProperties;
+
+import java.io.BufferedWriter;
+import java.io.PrintWriter;
 import java.util.Date;
 
 import org.apache.log4j.Logger;
@@ -15,12 +20,19 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 
-import pageobject.BaseSuite;
 
 
 public class CommonMethods {
 
-	   private static final Logger LOGGER = Logger.getLogger(CommonMethods.class);
+	private static Logger LOGGER=Logger.getLogger(CommonMethods.class);
+	ReadingProperties rp =ReadingProperties.getInstance();
+
+	public static void loadUrl(WebDriver driver, String url){
+		driver.get(url);
+		System.out.println("Loading url: "+url);
+		Reporter.log("Loading url: "+url);
+
+	}
 
 	   public static WebDriverWait initWait(WebDriver driver, int sec){
 		   WebDriverWait wait = new WebDriverWait(driver ,sec);

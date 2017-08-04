@@ -11,8 +11,8 @@ import org.openqa.selenium.support.ui.LoadableComponent;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import util.CommonMethods;
-import util.Constants;
+import pageobject.util.CommonMethods;
+import pageobject.util.Constants;
 
 public class Login extends LoadableComponent<Login> {
 

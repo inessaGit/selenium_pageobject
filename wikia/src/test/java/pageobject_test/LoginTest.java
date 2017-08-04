@@ -1,18 +1,23 @@
 package pageobject_test;
 
+import org.apache.log4j.Logger;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import pageobject.BaseSuite;
+import pageobject_framework.runner.BaseTestSuite;
 import pageobject.HomePage;
 import pageobject.Login;
-import util.Constants;
+import pageobject.util.Constants;
 
 /*
  * 1. WebDriver instance from BaseSuite created by TestNG @BeforeClass before any test methods in test class have been run
  */
-public class LoginTest extends BaseSuite {
+public class LoginTest extends BaseTestSuite {
 
+	private static final Logger LOGGER = Logger.getLogger(LoginTest.class);
+	private WebDriver driver;
+	
 	HomePage homePage;
 	Login login;
 	
@@ -21,9 +26,11 @@ public class LoginTest extends BaseSuite {
     
     @Test(priority=1)
     public  void getLoginPage(){
-    	homePage = new HomePage(BaseSuite.getDriver());
+		this.driver = super.getFirefoxDriver();
+
+    	homePage = new HomePage(this.driver);
     	homePage.get();
-    	login = homePage.Login();
+    	login = homePage.login();
     	login.get();
     }
   

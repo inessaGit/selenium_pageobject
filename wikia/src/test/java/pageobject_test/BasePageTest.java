@@ -1,21 +1,24 @@
 package pageobject_test;
 
+import pageobject.util.CommonMethods;
+import pageobject.util.Constants;
+
 import org.apache.log4j.Logger;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import pageobject.BasePage;
-import pageobject.BaseSuite;
+import pageobject_framework.runner.BaseTestSuite;
 
-public class BasePageTest extends BaseSuite{
-
+public class BasePageTest extends BaseTestSuite{
+	
+	private WebDriver driver;
 	private static final Logger LOGGER = Logger.getLogger(BasePageTest.class);
-	BasePage basePage;
 	
 	@Test
 	public void openBasePage(){
-		basePage = new BasePage(BaseSuite.getDriver());
-		basePage.get(); //returns BasePage and ensures that redirect to home page happened
+		this.driver = super.getFirefoxDriver();
+	    CommonMethods.loadUrl(driver, Constants.getInstance().getTest_env());
 	}
 
 }

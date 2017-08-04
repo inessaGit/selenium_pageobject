@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+ 
+  <!-- The Basics --> 
+   <modelVersion>4.0.0</modelVersion>
    
-      <!-- The Basics --> 
-    
-  <modelVersion>4.0.0</modelVersion>
   <groupId>com.wikia</groupId>
   <artifactId>wikia</artifactId>
   <version>0.0.1-SNAPSHOT</version>   
@@ -13,40 +13,71 @@
     <name>wikia.com</name>
   </organization>
    
-  <description>Testing project using Maven, WebDriver, TestNG </description>
+  <description> Automation project using Maven, WebDriver, TestNG </description>
     
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
    
-  <!-- DEPENDENCIES     --> 
+  <!-- DEPENDENCIES       --> 
   <dependencies>
-    <dependency>
-	<groupId>org.testng</groupId>
-	<artifactId>testng</artifactId>
-            <version>6.8.1</version>
+      
+  <dependency>
+   <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+       <version>6.8</version>
+          <scope>test</scope>
 </dependency>
-
-<!-- WebDriver v2.44 support Firefox 24, 31, 32 and 33 -->
+ 
+        <dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>5.1.39</version>
+</dependency>
+         
+        <dependency>
+    <groupId>org.dbunit</groupId>
+    <artifactId>dbunit</artifactId>
+    <version>2.5.1</version>
+</dependency>
+    
+        <!-- Firefox version v53 supported via geckodriver.exe-->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-           <version>2.44.0</version> 
+           <version>3.4.0</version> 
             <scope>test</scope>
         </dependency>
-         
+
+    <!-- IEDriver for Internet Explorer-->
+        
         <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
-    <artifactId>selenium-remote-driver</artifactId>
-    <version>2.44.0</version>
+    <artifactId>selenium-ie-driver</artifactId>
+    <version>3.4.0</version>
 </dependency>
 
- <dependency>
-	<groupId>org.seleniumhq.selenium</groupId>
-	<artifactId>selenium-chrome-driver</artifactId>
-	<version>2.44.0</version>
+ <!-- ChromeDriver for Chrome browser https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-chrome-driver</artifactId>
+    <version>3.4.0</version>
 </dependency>
-        
+ 
+<!-- RemoteDriver for iosMobileDriver support https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-remote-driver -->
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-remote-driver</artifactId>
+    <version>3.4.0</version>
+</dependency>
+
+<!--Mobile testing  java client for appium The IOSDriver extends from AppiumDriver and AppiumDriver extends from RemoteWebDriver -->
+         <dependency>
+  <groupId>io.appium</groupId>
+  <artifactId>java-client</artifactId>
+  <version>4.1.2</version>
+</dependency>
+
         <dependency>
     <groupId>log4j</groupId>
     <artifactId>log4j</artifactId>
@@ -65,11 +96,64 @@
     <version>3.10-FINAL</version>
 </dependency>
  
+<!-- Apache Commons Lang, a package of Java utility classes for the classes that are in java.lang's hierarchy https://commons.apache.org/proper/commons-lang/javadocs/api-3.4/ -->
 <dependency>
     <groupId>org.apache.commons</groupId>
     <artifactId>commons-lang3</artifactId>
-    <version>3.3.2</version>
+    <version>3.6</version>
 </dependency>
+ 
+<!-- Apache Commons IO library contains utility classes, stream implementations, file filters, file comparators -->
+<dependency>
+    <groupId>commons-io</groupId>
+    <artifactId>commons-io</artifactId>
+    <version>2.5</version>
+</dependency>       
+
+<!-- Creating charts in test reports -->
+<dependency>
+	<groupId>org.jfree</groupId>
+	<artifactId>jfreechart</artifactId>
+	<version>1.0.15</version>
+</dependency>
+
+<!-- iText for creating pdf -->
+<dependency>
+    <groupId>com.itextpdf</groupId>
+    <artifactId>itextpdf</artifactId>
+    <version>5.5.8</version>
+</dependency>
+
+<!-- iText from original lowagie -->
+<dependency>
+	<groupId>com.lowagie</groupId>
+	<artifactId>itext</artifactId>
+	<version>4.2.1</version>
+</dependency>
+
+<!-- spring-context depends on spring-core which will be downloaded automatically -->
+ <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>4.2.2.RELEASE</version>
+      <scope>compile</scope>
+    </dependency>
+    
+<!-- Hibernate  ORM-->
+<dependency>
+     <groupId>org.hibernate</groupId>
+     <artifactId>hibernate-core</artifactId>
+     <version>4.3.8.Final</version>
+</dependency>
+
+
+<!-- gson google library: convert java objects into json -->
+         <dependency>
+    <groupId>com.google.code.gson</groupId>
+    <artifactId>gson</artifactId>
+    <version>2.3.1</version>
+</dependency>
+
        
         <dependency>
     <groupId>xml-apis</groupId>
@@ -77,75 +161,66 @@
     <version>1.4.01</version>
 </dependency>
  
-<!-- this is for reading properties files in Win/Mac and dealing with slash -->
-<dependency>
-    <groupId>commons-io</groupId>
-    <artifactId>commons-io</artifactId>
-    <version>2.4</version>
-</dependency>       
+
   </dependencies>
   
   <!-- BUILD settings -->
    
    <build>
-   <directory>${project.basedir}/target</directory>
+   <directory>${project.basedir}/bin</directory>
     <finalName>${project.artifactId}-${project.version}</finalName>
  
     <sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
     <testSourceDirectory>${project.basedir}/src/test/java</testSourceDirectory>
-     
-     <outputDirectory>${project.basedir}/target/classes</outputDirectory>
-    <testOutputDirectory>${project.basedir}/target/test-classes</testOutputDirectory>
-     
     <scriptSourceDirectory>${project.basedir}/src/test/scripts</scriptSourceDirectory>
+    
+     <outputDirectory>${project.basedir}/bin/classes</outputDirectory>
+    <testOutputDirectory>${project.basedir}/bin/test-classes</testOutputDirectory>
+
      
  <!--  RESOURCES -->   
  <resources>   
-            
      <resource>
-        <directory>${project.basedir}/main/resources</directory>
+        <directory>${project.basedir}/src/main/resources</directory>
     </resource>    
  </resources>   
   
  <!-- TEST RESOURCES OUTSIDE OF RESOURCES      -->
   <testResources>
       <testResource>
-        <directory>${project.basedir}/test/resources</directory>
+        <directory>${project.basedir}/src/test/resources</directory>
+                
          <includes>
           <include></include>
         </includes>
       </testResource>
-      <testResource>
-        <directory>${project.basedir}/test/xml</directory>
-         <includes>
-          <include></include>
-        </includes>
-      </testResource>
+      
     </testResources>
      
    <!-- PLUGINS -->
-   
         <plugins>
              <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.2</version>
+        <version>3.6.0</version>
         <configuration>
-            <source>1.7</source>
-            <target>1.7</target>
+            <source></source>
+            <target></target>
         </configuration>
     </plugin>
              
              <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.16</version>
+                <version>2.19.1</version>
                 <configuration>
+                    
                 <parallel>true</parallel>
                     <redirectTestOutputToFile>true</redirectTestOutputToFile>
+                        <reportsDirectory>${project.basedir}/report</reportsDirectory>
+                    
                     <testFailureIgnore>true</testFailureIgnore>
                     <suiteXmlFiles>
-                        <suiteXmlFile>${project.basedir}/suite.xml</suiteXmlFile>
-                         
+                       <suiteXmlFile>${project.basedir}/smoke.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin> 
@@ -181,6 +256,7 @@
     </execution>
   </executions>
 </plugin>
+
   <!--  Plugin to excude non .java files from compiling -->
   <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -201,7 +277,7 @@
       </plugin>
        
      </plugins>        
- 
+         
   </build>   
      
  <!-- Environment Settings -->
@@ -215,6 +291,10 @@
     <id>development</id>
          <!--points to a DEV server database  and ioserverdb instance -->     
     <properties>
+    <db.driverClass>com.mysql.jdbc.Driver</db.driverClass>
+    <db.connectionURL>jdbc:mysql://10.88.0.50:3306/ioserverdb?zeroDateTimeBehavior=convertToNull</db.connectionURL>
+    <db.username>root</db.username>
+    <db.password></db.password>
   </properties>
   </profile>
   
@@ -222,10 +302,14 @@
   <profile>
     <id>test</id>
     <properties>         
+    <db.driverClass>com.mysql.jdbc.Driver</db.driverClass>
+    <db.connectionURL>jdbc:mysql://10.88.0.54:3306/ioserverdb</db.connectionURL>
+    <db.username>root</db.username>
+    <db.password></db.password>
       </properties>
      
    </profile>
    
 </profiles>
- </project>
-   
+ 
+</project>

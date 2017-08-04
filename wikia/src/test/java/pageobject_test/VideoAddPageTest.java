@@ -1,16 +1,21 @@
 package pageobject_test;
 
+import org.apache.log4j.Logger;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import pageobject.BaseSuite;
+import pageobject_framework.runner.BaseTestSuite;
 import pageobject.Contribute;
 import pageobject.HomePage;
 import pageobject.Login;
 import pageobject.VideoAddPage;
-import util.Constants;
+import pageobject.util.Constants;
 
-public class VideoAddPageTest extends BaseSuite {
+public class VideoAddPageTest extends BaseTestSuite {
+	
+	private WebDriver driver;
+	private static final Logger LOGGER = Logger.getLogger(VideoAddPageTest.class);
 	
 	HomePage homePage;
 	Login login;
@@ -25,11 +30,12 @@ public class VideoAddPageTest extends BaseSuite {
     @Test(priority=1)
     public  void initTest(){
     	
-    	homePage = new HomePage(BaseSuite.getDriver());
+    	this.driver = super.getFirefoxDriver();
+		homePage = new HomePage(this.driver);
     	homePage.get();
-    	login = homePage.Login();
+    	login = homePage.login();
     	login.get();
-    	contribute=homePage.Contribute();
+    	contribute=homePage.contribute();
     	contribute.get();
     	
     }
