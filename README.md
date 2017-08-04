@@ -46,9 +46,9 @@ C. see compatability notes for FF and Selenium: https://raw.githubusercontent.co
 ----------------------------------geckodriver v3.4.1------------------------------ 
 
 BEFORE: 
-	* webdriver.chrome.driver for Chrome browser
-	* webdriver.ie.driver for IE browser
-	* Now we have to use webdriver.gecko.driver for Firefox as well
+	1. webdriver.chrome.driver for Chrome browser
+	2. webdriver.ie.driver for IE browser
+*Now we should use webdriver.gecko.driver for Firefox as well
 -----------------------------------
 
 Gecko Driver is the link between your tests in Selenium and the Firefox browser. 
