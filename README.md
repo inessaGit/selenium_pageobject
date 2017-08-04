@@ -49,6 +49,7 @@ BEFORE:
 	1. webdriver.chrome.driver for Chrome browser
 	2. webdriver.ie.driver for IE browser
 *Now we should use webdriver.gecko.driver for Firefox as well
+
 -----------------------------------
 
 Gecko Driver is the link between your tests in Selenium and the Firefox browser. 
