@@ -1,4 +1,5 @@
 ****************** ********************Framework setup*************************************
+
 Pre-requisites and setup: 
 1) Maven configured and installed: http://maven.apache.org/download.cgi
 2) JDK v 1.8 installed and JAVA_HOME setup
