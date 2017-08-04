@@ -43,21 +43,14 @@ C. see compatability notes for FF and Selenium: https://raw.githubusercontent.co
 - AppiumDriver extends from RemoteWebDriver
  This means if you want to use some specific function on IOS, it's better that select IOSDriver.
 
-------------------------------------------Running:-------------------------------------------------- 
-1)Separate test classes -> Eclipse right click class - Run as TestNG test
-OR
-2)Test suites via command Prompt -> Change to the directory where pom.xml is located after you cloned project
-mvn compile 
-mvn test 
-OR
-3) Test suites via testng.xml -> Eclipse -right click suite.xml file -> Run as TestNG suite. 
-
 ----------------------------------geckodriver v3.4.1------------------------------ 
+
 BEFORE: 
 	* webdriver.chrome.driver for Chrome browser
 	* webdriver.ie.driver for IE browser
 	* Now we have to use webdriver.gecko.driver for Firefox as well
-/*------------------
+-----------------------------------
+
 Gecko Driver is the link between your tests in Selenium and the Firefox browser. 
 GeckoDriver is a proxy for using W3C WebDriver-compatible clients to interact with Gecko-based browsers i.e. Mozilla Firefox . 
  As Selenium 3 will not have any native implementation of FF => need to direct all the driver commands through Gecko Driver. 
@@ -67,6 +60,16 @@ GeckoDriver is a proxy for using W3C WebDriver-compatible clients to interact wi
 Note:  On Windows reading from properties file is different: 
 silently drops backslash'\' -> put double backslash '\\' or replace backslash with forward slash in config.properties
 http://stackoverflow.com/questions/5784895/java-properties-backslash
+
+
+------------------------------------------Running:-------------------------------------------------- 
+1)Separate test classes -> Eclipse right click class - Run as TestNG test
+OR
+2)Test suites via command Prompt -> Change to the directory where pom.xml is located after you cloned project
+mvn compile 
+mvn test 
+OR
+3) Test suites via testng.xml -> Eclipse -right click suite.xml file -> Run as TestNG suite. 
 
 --------------------------------------------Classes structure:----------------------------------
                             
