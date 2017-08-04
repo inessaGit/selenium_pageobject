@@ -1,0 +1,34 @@
+
+http://testng.org/doc/documentation-main.html
+TestNG is a testing framework that allows:
+
+	* Run your tests in arbitrarily big thread pools with various policies available (all methods in their own thread, one thread per test class, etc...).
+	* Test that your code is multithread safe.
+	* Flexible test configuration.
+	* Support for data-driven testing (with @DataProvider).
+	* Support for parameters.
+	* Powerful execution model (no more TestSuite).
+	* Supported by a variety of tools and plug-ins (Eclipse, IDEA, Maven, etc...).
+	* Dependent methods for application server testing.
+	* TestNG is designed to cover all categories of tests:  unit, functional, end-to-end, integration, etc...
+
+Writing a test with TestNG is typically a three-step process:
+
+	* Write the business logic of your test and insert TestNG annotations in your code.
+	* Add the information about your test (e.g. the class name, the groups you wish to run, etc...) in a testng.xml file or in build.xml.
+	* Run TestNG.
+	* An annotation, in the Java computer programming language, is a form of  metadata that can be added to Java source code.[1] Classes, methods, variables, parameters and packages may be annotated. 
+	* Annotations can be interpreted at development-time by the IDE or the compiler; OR at run-time by a framework.
+	* Annotation Processing"done by the java compiler during compile time, to analyse the source code for user defined annotations and handle then (by producing compiler errors, compiler warning, emmiting source code, byte code ...)
+	*  Annotation type declarations are similar to normal interface declarations. An at-sign (@) precedes the interface keyword. Each method declaration defines an element of the annotation type. Method declarations must not have any parameters or a throws clause. Return types are restricted to primitives, String, Class, enums, annotations, and arrays of the preceding types. Methods can have default values.
+	* @Documented, @Inherited, @Retention and @Target are the four available meta annotations that are built-in with Java.
+	* We can create our own annotations and use it. We need to declare a annotation type and then use the respective annotation is java classes.
+	* Annotation is a very powerful mechanism and can be used in a lot of different ways:
+
+	* 
+		* to describe constraints or usage of an element: e.g. @Deprecated, @Override, or @NotNull
+		* to describe the "nature" of an element, e.g. @Entity, @TestCase, @WebService
+		* to describe the behavior of an element: @Statefull, @Transaction
+		* to describe how to process the element: @Column, @XmlElement
+
+
