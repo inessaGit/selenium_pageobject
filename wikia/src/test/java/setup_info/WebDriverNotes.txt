@@ -1,3 +1,11 @@
+
+
+/*
+ * WebDriver 3.4 requires JDK 8;
+ * supports geckodriver 017
+ * chromedriver 2.31
+ * 
+ */
 ---------------------------WebDriver native events vs synthetic events---------------------
 In WebDriver advanced user interactions are provided by either 
 - simulating the Javascript events directly (i.e. synthetic events) 

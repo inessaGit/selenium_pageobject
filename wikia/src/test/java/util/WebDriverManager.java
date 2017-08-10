@@ -29,6 +29,12 @@ import org.testng.Reporter;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.Point;
 
+/*
+ * WebDriver 3.4 requires JDK 8;
+ * supports geckodriver 017
+ * chromedriver 2.31
+ * 
+ */
 public class WebDriverManager {
 	private static  Logger LOGGER = Logger.getLogger(WebDriverManager.class);
 	private static  WebDriverManager DRIVER_MANAGER= null;
