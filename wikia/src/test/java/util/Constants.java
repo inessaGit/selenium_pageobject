@@ -17,7 +17,9 @@ public  class Constants {
 	private final  String failPath; 
 	private final  String passPath;
 	private final  String usergenPath;	
+	private final String logsPackagePath; 
 	
+
 	private final  String test_excelPath;
 
 	////environments path 
@@ -59,7 +61,10 @@ public  class Constants {
 		failPath=rp.readConfigProperties("fail.screenshot.path");
 		passPath=rp.readConfigProperties("pass.screenshot.path");
 		usergenPath=rp.readConfigProperties("usergen.screenshot.path");
+		logsPackagePath=rp.readConfigProperties("log.package.path");
+
 		test_excelPath = rp.readConfigProperties("test.excel.path");
+		
 		
 		test_env = rp.readConfigProperties("test.env");
 		dev_env = rp.readConfigProperties("dev.env");
@@ -75,7 +80,10 @@ public  class Constants {
 		geckoPathWin = rp.readConfigProperties("gecko.path.win");
 	}
 
-
+	public String getLogsPackagePath() {
+		return logsPackagePath;
+	}
+	
 	public  String getTest_excelPath() {
 		return test_excelPath;
 	}
