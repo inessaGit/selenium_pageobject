@@ -34,13 +34,23 @@ public class CrossBrowserSimpleTest {
 	private final String firefoxPath=System.getProperty("user.dir")+ "/src/test/java/config/geckodriver017.exe";
     private final String url = "https://www.ifonly.com/";
 	 
-	public void getBrowserInfo(WebDriver driver){
+	public static void getBrowserInfo(WebDriver driver){
 
 		String info = (String) ((JavascriptExecutor) driver).executeScript("return navigator.userAgent;");
 		System.out.println("Browser info: "+info);
 	}
 
+	@Test(invocationCount=1)
+	public void testGetFirefoxBrowserInfo(){
+		
+		System.setProperty("webdriver.gecko.driver", firefoxPath);	
+		WebDriver driver =new FirefoxDriver();
+		CrossBrowserSimpleTest.getBrowserInfo(driver);
+		driver.get(url);
+		driver.quit();//close all firefox windows and quits driver ; geckodriver.exe process gets killed
 
+	}
+	
 	@Test(invocationCount=1)
 	public void testGetFirefoxViaNativeApi(){	
 

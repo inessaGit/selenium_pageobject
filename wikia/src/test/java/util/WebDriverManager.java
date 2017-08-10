@@ -84,7 +84,6 @@ in the end, everything is converted down to a dictionary of DesiredCapabilities
 			switch(browser){			
 			case "firefox":
 				firefoxDriver=new FirefoxDriver(capabilityFirefox);
-				WebDriverManager.defaultWindowSize(firefoxDriver);
 				driver = firefoxDriver;
 				LOGGER.info (WebDriverManager.class.getName()+ " getting driver instance  "+browserInfo(firefoxDriver));
 				break;

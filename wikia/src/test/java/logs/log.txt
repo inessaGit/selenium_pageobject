@@ -247,3 +247,47 @@
 2017-08-09 23:31:05 INFO  WebDriverManager:68 - util.WebDriverManager WebDriverManager object does not exist. Creating object
 2017-08-09 23:31:05 INFO  Constants:46 - util.Constants constants object already exist
 2017-08-09 23:31:05 INFO  BaseTestSuite:62 - runner.BaseTestSuite attempting to load test data  spreadsheets
+2017-08-09 23:38:21 INFO  WebDriverManager:56 - util.WebDriverManager running constructor. Setting all drivers.
+2017-08-09 23:38:21 INFO  Constants:56 - util.Constants in constructor
+2017-08-09 23:38:21 INFO  ReadingProperties:43 - util.ReadingProperties in constructor.
+2017-08-09 23:38:21 INFO  ReadingProperties:57 - util.ReadingPropertiesin method loadConfigProperties
+2017-08-09 23:38:21 INFO  ReadingProperties:30 - util.ReadingProperties getInstance
+2017-08-09 23:38:21 INFO  ReadingProperties:88 - Successfully read from config.properties file <fail.screenshot.path> /report/screenshot/FAIL/
+2017-08-09 23:38:21 INFO  ReadingProperties:88 - Successfully read from config.properties file <pass.screenshot.path> /report/screenshot/PASS/
+2017-08-09 23:38:21 INFO  ReadingProperties:88 - Successfully read from config.properties file <usergen.screenshot.path> /report/screenshot/UserGen/
+2017-08-09 23:38:21 INFO  ReadingProperties:88 - Successfully read from config.properties file <dev.env> NA
+2017-08-09 23:38:21 INFO  ReadingProperties:88 - Successfully read from config.properties file <chrome.path.win> /src/test/java/config/chromedriver.exe
+2017-08-09 23:38:21 INFO  ReadingProperties:88 - Successfully read from config.properties file <chrome.path.mac> /src/test/java/config/chromedriver
+2017-08-09 23:38:21 INFO  ReadingProperties:88 - Successfully read from config.properties file <gecko.path.win> /src/test/java/config/geckodriver017.exe
+2017-08-09 23:38:21 INFO  Constants:42 - util.Constants Constants object does not exist. Creating object
+2017-08-09 23:38:21 INFO  Constants:46 - util.Constants constants object already exist
+2017-08-09 23:38:21 INFO  Constants:46 - util.Constants constants object already exist
+2017-08-09 23:38:21 INFO  Constants:46 - util.Constants constants object already exist
+2017-08-09 23:38:21 INFO  WebDriverManager:219 - util.WebDriverManager Setting up driver instance  safari
+2017-08-09 23:38:21 INFO  Constants:46 - util.Constants constants object already exist
+2017-08-09 23:38:21 INFO  WebDriverManager:233 - util.WebDriverManager setting up iosMobileDriver 
+2017-08-09 23:38:21 INFO  WebDriverManager:68 - util.WebDriverManager WebDriverManager object does not exist. Creating object
+2017-08-09 23:38:21 INFO  Constants:46 - util.Constants constants object already exist
+2017-08-09 23:38:21 INFO  BaseTestSuite:62 - runner.BaseTestSuite attempting to load test data  spreadsheets
+2017-08-09 23:38:45 INFO  WebDriverManager:56 - util.WebDriverManager running constructor. Setting all drivers.
+2017-08-09 23:38:45 INFO  Constants:56 - util.Constants in constructor
+2017-08-09 23:38:45 INFO  ReadingProperties:43 - util.ReadingProperties in constructor.
+2017-08-09 23:38:45 INFO  ReadingProperties:57 - util.ReadingPropertiesin method loadConfigProperties
+2017-08-09 23:38:45 INFO  ReadingProperties:30 - util.ReadingProperties getInstance
+2017-08-09 23:38:45 INFO  ReadingProperties:88 - Successfully read from config.properties file <fail.screenshot.path> /report/screenshot/FAIL/
+2017-08-09 23:38:45 INFO  ReadingProperties:88 - Successfully read from config.properties file <pass.screenshot.path> /report/screenshot/PASS/
+2017-08-09 23:38:45 INFO  ReadingProperties:88 - Successfully read from config.properties file <usergen.screenshot.path> /report/screenshot/UserGen/
+2017-08-09 23:38:45 INFO  ReadingProperties:88 - Successfully read from config.properties file <dev.env> NA
+2017-08-09 23:38:45 INFO  ReadingProperties:88 - Successfully read from config.properties file <chrome.path.win> /src/test/java/config/chromedriver.exe
+2017-08-09 23:38:45 INFO  ReadingProperties:88 - Successfully read from config.properties file <chrome.path.mac> /src/test/java/config/chromedriver
+2017-08-09 23:38:45 INFO  ReadingProperties:88 - Successfully read from config.properties file <gecko.path.win> /src/test/java/config/geckodriver017.exe
+2017-08-09 23:38:45 INFO  Constants:42 - util.Constants Constants object does not exist. Creating object
+2017-08-09 23:38:45 INFO  Constants:46 - util.Constants constants object already exist
+2017-08-09 23:38:45 INFO  Constants:46 - util.Constants constants object already exist
+2017-08-09 23:38:45 INFO  Constants:46 - util.Constants constants object already exist
+2017-08-09 23:38:45 INFO  WebDriverManager:219 - util.WebDriverManager Setting up driver instance  safari
+2017-08-09 23:38:45 INFO  Constants:46 - util.Constants constants object already exist
+2017-08-09 23:38:45 INFO  WebDriverManager:233 - util.WebDriverManager setting up iosMobileDriver 
+2017-08-09 23:38:45 INFO  WebDriverManager:68 - util.WebDriverManager WebDriverManager object does not exist. Creating object
+2017-08-09 23:38:45 INFO  Constants:46 - util.Constants constants object already exist
+2017-08-09 23:38:45 INFO  BaseTestSuite:62 - runner.BaseTestSuite attempting to load test data  spreadsheets
