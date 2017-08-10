@@ -141,58 +141,7 @@ public abstract class BaseTestSuite {
 
 	}
 
-	@BeforeSuite
-	public static void getDbConnection() throws SQLException
-	{
-		LOGGER.info(BaseTestSuite.class.getName()+ " Attempting to open dB connections.");
-		//on test server 
-		String test_iocontentdb=Database.getTestIocontentdb();
-		//on testdb server 	
-		String testdb_iocontentdb=Database.getTestdbIocontentdb();
-		String testdb_ioserverdb=Database.getTestdbIoserverdb();
-		String testdb_iosessiondb= Database.getTestdbIosessiondb();
-		String testdb_iologdb= Database.getTestdbIoLogdb();	  
-		String test_iologdb= Database.getTestIoLogdb();	    
-
-		String dev_iologdb = Database.getDevIologdb();//DEV
-
-		String dbUser = Database.getDbuser();
-		String dbPswd=Database.getDbpswd();
-
-		//on test server 
-		CONNECTION_test_iocontentdb=Database.connectToDB(test_iocontentdb,dbUser,dbPswd);
-		//on testdb server 
-		CONNECTION_testdb_iocontentdb=Database.connectToDB(testdb_iocontentdb,dbUser,dbPswd);//on test server 
-		CONNECTION_testdb_ioserverdb = Database.connectToDB(testdb_ioserverdb,dbUser,dbPswd);
-		CONNECTION_testdb_iosessiondb = Database.connectToDB(testdb_iosessiondb,dbUser,dbPswd);
-
-		//CONNECTION_testdb_iologdb = Database.connectToDB(testdb_iologdb,dbUser,dbPswd); not needed
-		CONNECTION_test_iologdb = Database.connectToDB(test_iologdb,dbUser,dbPswd);
-		//on DEV 
-		CONNECTION_dev_iologdb = Database.connectToDB(dev_iologdb,dbUser,dbPswd);
-		LOGGER.info(BaseTestSuite.class.getName()+ " Successfully opened dB connections.");
-
-	}
-
-	@AfterSuite(alwaysRun=true)
-	public static void releaseDbResourses()
-	{
-		LOGGER.info(BaseTestSuite.class.getName()+ " Attempting to close dB connections.");
-		//====================CLOSE dB CONNECTIONS=============================
-		Database.closeConnection(CONNECTION_test_iocontentdb);
-		Database.closeConnection(CONNECTION_testdb_iocontentdb);
-		Database.closeConnection(CONNECTION_testdb_ioserverdb);
-		Database.closeConnection(CONNECTION_testdb_iosessiondb);
-		//Database.closeConnection(CONNECTION_testdb_iologdb);
-		Database.closeConnection(CONNECTION_test_iologdb);
-		Database.closeConnection(CONNECTION_dev_iologdb);
-		LOGGER.info(BaseTestSuite.class.getName()+ " Successfully closed dB connections.");
-
-	}
-	
-	
-	
-    @AfterSuite(alwaysRun=true)
+   // @AfterSuite(alwaysRun=true)
 	public static void destroyWebDrivers()
 	{
 		LOGGER.info(BaseTestSuite.class.getName()+ " Attempting to  destroy WebDriver instances.");
@@ -207,13 +156,5 @@ public abstract class BaseTestSuite {
 
 		}
 
-    @AfterSuite(alwaysRun=true)
-	public static void copyScreenshotsToTestNg(){
-		LOGGER.info(BaseTestSuite.class.getName()+ " Attempting to copy screenshots into testNG test-output folder");
-
-		TakeScreenshot.copyScreenshotsToTestOutput();
-		LOGGER.info(BaseTestSuite.class.getName()+ " Successfully copied screenshots into testNG test-output folder");
-
-
-	}
+ 
 	}
