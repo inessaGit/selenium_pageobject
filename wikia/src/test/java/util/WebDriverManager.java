@@ -37,6 +37,14 @@ public class WebDriverManager {
 	private   WebDriver safariDriver =null;
 	private WebDriver iosMobileDriver = null;
 
+	/*
+	 * To set  preference in browser X, how to do the same in browser Y?This is usually done via setting/configuring:
+FirefoxProfile or FirefoxOptions for Firefox 
+ChromeOptions for Chrome
+DesiredCapabilities or InternetExplorerOptions for Internet Explorer
+Ultimately FirefoxProfile and ChromeOptions are just wrappers over DesiredCapabilities 
+in the end, everything is converted down to a dictionary of DesiredCapabilities
+	 */
 	private DesiredCapabilities capabilityFirefox=null;
 	private DesiredCapabilities capabilityChrome=null;
 	private DesiredCapabilities capabilityIE=null;
@@ -143,16 +151,6 @@ public class WebDriverManager {
 				String firefoxPath=System.getProperty("user.dir")+CONSTANTS.getFirefoxPath();//reading from config.properties file 
 				System.setProperty("webdriver.gecko.driver", firefoxPath);	
 
-				/*
-				 * 2/13 -> WebDriver v3.01 commented out because it  times out 
-				 * ProfilesIni allProfiles= new ProfilesIni();
-				FirefoxProfile firefoxProfile  = allProfiles.getProfile("webdriver");
-				firefoxProfile.setPreference("browser.cache.disk.enable", false);
-				firefoxProfile.setEnableNativeEvents(true);
-				
-				 * 	
-				 */
-				
 				capabilityFirefox = new DesiredCapabilities();
 				capabilityFirefox=DesiredCapabilities.firefox();
 				capabilityFirefox.setBrowserName("Firefox");
@@ -166,7 +164,6 @@ public class WebDriverManager {
 				capabilityFirefox.setCapability(FirefoxDriver.PROFILE, firefoxProfile);	
 
 			}
-
 		}
 
 		else if(browser.equalsIgnoreCase("ie")) {
@@ -201,7 +198,6 @@ public class WebDriverManager {
 				capabilityChrome.setPlatform(org.openqa.selenium.Platform.ANY);
 				chromeOptions.addArguments("test-type");
 				capabilityChrome.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
-
 			}    
 
 		}
