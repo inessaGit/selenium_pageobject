@@ -65,14 +65,7 @@ public class Contribute extends LoadableComponent<Contribute> {
 		//this.driver.getTitle(); optional WikiaVideoAdd - QM HomeWork Wikia
 		return actualUrl;
 	}
-	
-	public VideoAddPage VideoAddPage(){
-		return new VideoAddPage(this.driver);
-	}
-	//https://www.youtube.com/watch?v=h9tRIZyTXTI
-	public void addVideoUrl(){
-		
-	}
+
 	@Override
 	protected void load() {
 		// TODO Auto-generated method stub

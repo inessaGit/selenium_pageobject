@@ -8,7 +8,6 @@ import org.testng.annotations.Test;
 import pages.Contribute;
 import pages.HomePage;
 import pages.Login;
-import pages.VideoAddPage;
 import runner.BaseTestSuite;
 import util.CommonMethods;
 import util.Constants;
@@ -23,7 +22,6 @@ public class ContributeTest extends BaseTestSuite{
 	HomePage homePage;
 	Login login;
 	Contribute contribute;
-	VideoAddPage videoAddPage;
 	
 	String pswd = Constants.getInstance().getRp().readConfigProperties("testuser.password");
     String username = Constants.getInstance().getRp().readConfigProperties("testuser.username");
@@ -59,10 +57,6 @@ public class ContributeTest extends BaseTestSuite{
     	Assert.assertTrue(actualUrl.equalsIgnoreCase(contribute.videoUrl));
     }
     
-    @Test(priority=4)
-    public void testGetVideoAddPage(){
-    	videoAddPage =contribute.VideoAddPage();
-    	videoAddPage.get();
-    }
+  
    
 }
