@@ -14,6 +14,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.firefox.internal.ProfilesIni;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -32,6 +33,8 @@ import org.openqa.selenium.JavascriptExecutor;
 public class CrossBrowserSimpleTest {
 
 	private final String firefoxPath=System.getProperty("user.dir")+ "/src/test/java/config/geckodriver017.exe";
+	private final String iePath=System.getProperty("user.dir")+ "/src/test/java/ifonly_automation/config/IEDriverServer.exe";
+
     private final String url = "https://www.ifonly.com/";
 	 
 	public static void getBrowserInfo(WebDriver driver){
@@ -86,6 +89,15 @@ public class CrossBrowserSimpleTest {
 
 	}
 
+	@Test
+	public void testGetInternetExplorerViaNativeApi() {
+		
+		System.setProperty("webdriver.ie.driver", iePath);	
+		WebDriver ieDriver = new InternetExplorerDriver();
+		ieDriver.get(url);
+		ieDriver.quit();
+		
+	}
 	@Test
 	public void testWebDriverManagerGetFirefox(){
 
