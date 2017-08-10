@@ -1,4 +1,4 @@
-package pageobject_framework.pages;
+package pages;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -11,8 +11,8 @@ import org.openqa.selenium.support.ui.LoadableComponent;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import pageobject_common.util.CommonMethods;
-import pageobject_common.util.Constants;
+import util.CommonMethods;
+import util.Constants;
 
 public class Login extends LoadableComponent<Login> {
 

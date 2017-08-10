@@ -1,4 +1,4 @@
-package pageobject_framework.runner;
+package runner;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -17,12 +17,12 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
-import pageobject_common.util.Constants;
-import pageobject_common.util.Database;
-import pageobject_common.util.Return2D;
-import pageobject_common.util.TakeScreenshot;
-import pageobject_common.util.WebDriverManager;
-import pageobject_framework.pages.BasePage;
+import pages.BasePage;
+import util.Constants;
+import util.Database;
+import util.Return2D;
+import util.TakeScreenshot;
+import util.WebDriverManager;
 
 /**
  * @author Inessa  2/13

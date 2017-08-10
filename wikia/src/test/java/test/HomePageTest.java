@@ -1,12 +1,12 @@
-package pageobject_framework.test;
+package test;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
-import pageobject_framework.pages.BasePage;
-import pageobject_framework.pages.HomePage;
-import pageobject_framework.runner.BaseTestSuite;
+import pages.BasePage;
+import pages.HomePage;
+import runner.BaseTestSuite;
 
 public class HomePageTest extends BaseTestSuite{
 

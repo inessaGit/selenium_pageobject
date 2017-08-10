@@ -1,7 +1,7 @@
-package pageobject_common.util;
+package util;
 
 
-import pageobject_framework.runner.BaseTestSuite;
+import runner.BaseTestSuite;
 
 import java.io.File;
 import java.io.IOException;

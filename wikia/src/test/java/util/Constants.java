@@ -1,4 +1,4 @@
-package pageobject_common.util;
+package util;
 
 import org.apache.log4j.Logger;
 

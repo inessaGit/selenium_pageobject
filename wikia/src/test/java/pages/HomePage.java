@@ -1,4 +1,4 @@
-package pageobject_framework.pages;
+package pages;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -6,7 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.LoadableComponent;
 import org.testng.Assert;
 
-import pageobject_common.util.Constants;
+import util.Constants;
 
 public class HomePage extends LoadableComponent<HomePage> {
 

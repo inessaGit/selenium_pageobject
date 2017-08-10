@@ -1,4 +1,4 @@
-package pageobject_common.util;
+package util;
 
 import java.io.File;
 import java.io.FileInputStream;

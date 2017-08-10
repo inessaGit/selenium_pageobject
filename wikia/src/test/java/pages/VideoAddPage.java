@@ -1,4 +1,4 @@
-package pageobject_framework.pages;
+package pages;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -55,7 +55,8 @@ public class VideoAddPage extends LoadableComponent<VideoAddPage>{
 	public void addVideo(String videoUrl){
 		wait = new WebDriverWait(this.driver,10);
 
-		wait.until(ExpectedConditions.visibilityOf(videoInputField));
+		wait.until(ExpectedConditions.visibilityOf(videoInputField)) ;
+		//wait.until(ExpectedConditions.visibilityOf(videoInputField));
 		videoInputField.clear();
 		videoInputField.sendKeys(videoUrl);
 		
