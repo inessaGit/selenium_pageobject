@@ -43,15 +43,6 @@ public abstract class BaseTestSuite {
     private static final Logger LOGGER = Logger.getLogger(BaseTestSuite.class);
 	public static  Constants CONSTANTS=null;
 
-	public static  Connection CONNECTION_test_iocontentdb=null;  
-	//on test db server 
-	public static Connection CONNECTION_testdb_iocontentdb =null;	
-	public  static Connection CONNECTION_testdb_ioserverdb =null;
-	public  static Connection CONNECTION_testdb_iologdb =null;
-	public static  Connection CONNECTION_testdb_iosessiondb =null;
-	public static Connection CONNECTION_test_iologdb =null;
-	public static Connection CONNECTION_dev_iologdb=null; 
-
 	//spreadsheet for different environments
 	public static  Sheet SHEET_PRODUCTS;
 	public static   Sheet SHEET_REGISTRATION;
