@@ -147,20 +147,22 @@ in the end, everything is converted down to a dictionary of DesiredCapabilities
 		if(browser.equalsIgnoreCase("firefox")) 
 		{
 			if (firefoxDriver ==null){
-				//path to gecko driver -> needed for Webdriver 3.0.1 
+				//path to gecko driver -> needed for Webdriver 3.0.1 or higher
 				String firefoxPath=System.getProperty("user.dir")+CONSTANTS.getGeckoPathWin();//reading from config.properties file 
 				System.setProperty("webdriver.gecko.driver", firefoxPath);	
 
-				capabilityFirefox = new DesiredCapabilities();
 				capabilityFirefox=DesiredCapabilities.firefox();
+				FirefoxProfile firefoxProfile = new FirefoxProfile();
+
 				capabilityFirefox.setBrowserName("Firefox");
 				capabilityFirefox.setPlatform(org.openqa.selenium.Platform.ANY);
-				capabilityFirefox.setJavascriptEnabled(true);
+				//capabilityFirefox.setJavascriptEnabled(true);
 
-				FirefoxProfile firefoxProfile = new FirefoxProfile();
+				//Increasing the length of the network.http.phishy-userpass-length preference will cause Firefox to not prompt
+				//when navigating to a website with a username or password in the URL
 				firefoxProfile.setPreference("network.http.phishy-userpass-length", 255);
-                firefoxProfile.setAcceptUntrustedCertificates(true);
-                firefoxProfile.setEnableNativeEvents(true);
+				firefoxProfile.setAcceptUntrustedCertificates(true);
+				
 				capabilityFirefox.setCapability(FirefoxDriver.PROFILE, firefoxProfile);	
 
 			}

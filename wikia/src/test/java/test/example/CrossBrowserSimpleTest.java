@@ -24,12 +24,14 @@ import org.openqa.selenium.JavascriptExecutor;
 
 
 /*
- * WebDriver 3.4 requires JDK 8
+ * WebDriver 3.4 requires JDK 8;
+ * supports geckodriver 017
+ * chromedriver 2.31
  * 
  */
 public class CrossBrowserSimpleTest {
 
-	private final String firefoxPath=System.getProperty("user.dir")+ "/src/test/java/config/geckodriver.exe";
+	private final String firefoxPath=System.getProperty("user.dir")+ "/src/test/java/config/geckodriver017.exe";
     private final String url = "https://www.ifonly.com/";
 	 
 	public void getBrowserInfo(WebDriver driver){
@@ -57,6 +59,9 @@ public class CrossBrowserSimpleTest {
            in the end, everything is converted down to a dictionary of DesiredCapabilities
 		 */
 		FirefoxProfile firefoxProfile = new FirefoxProfile();
+		
+		//Increasing the length of the network.http.phishy-userpass-length preference will cause Firefox to not prompt
+		//when navigating to a website with a username or password in the URL
 		firefoxProfile.setPreference("network.http.phishy-userpass-length", 255);
 		firefoxProfile.setAcceptUntrustedCertificates(true);
 
@@ -66,7 +71,9 @@ public class CrossBrowserSimpleTest {
 
 		WebDriver driver =new FirefoxDriver(firefoxOptions);
 		driver.get(url);
-		driver.close();
+		//driver.close();//closing window quit only if it is last window open
+		driver.quit();//close all firefox windows and quits driver 
+
 	}
 
 	@Test
@@ -75,8 +82,7 @@ public class CrossBrowserSimpleTest {
 		WebDriverManager DRIVER_MANAGER =WebDriverManager.getInstance();
 		WebDriver firefoxDriver = DRIVER_MANAGER.getDriver("firefox");
 		firefoxDriver.get(url);
-		firefoxDriver.quit();//using native WebDriver API kills firefox.exe process 
-		//DRIVER_MANAGER.destroyWebDriverInstances("firefox"); //using wrapper method
+		DRIVER_MANAGER.destroyWebDriverInstances("firefox"); //using wrapper method
 	    //DRIVER_MANAGER.closeDriverWindows("firefox"); //using wrapper method leaves firefox.exe process running on windows
 	}	
 	
