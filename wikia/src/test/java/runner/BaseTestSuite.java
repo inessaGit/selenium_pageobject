@@ -19,7 +19,6 @@ import org.testng.annotations.Parameters;
 
 import pages.BasePage;
 import util.Constants;
-import util.Database;
 import util.Return2D;
 import util.TakeScreenshot;
 import util.WebDriverManager;

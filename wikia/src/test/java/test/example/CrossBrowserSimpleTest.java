@@ -75,19 +75,21 @@ public class CrossBrowserSimpleTest {
 		WebDriverManager DRIVER_MANAGER =WebDriverManager.getInstance();
 		WebDriver firefoxDriver = DRIVER_MANAGER.getDriver("firefox");
 		firefoxDriver.get(url);
-		DRIVER_MANAGER.destroyWebDriverInstances("firefox"); //using wrapper method
+		DRIVER_MANAGER.closeDriverWindows("firefox"); //using wrapper method
 	}	
 	
 	@Test
-	//need to have Chrome v56 
+	//need to have Chrome v56 or higher 
 	public void testWebDriverManagerGetChrome(){
 
 		WebDriverManager DRIVER_MANAGER =WebDriverManager.getInstance();
 		WebDriver chromeDriver = DRIVER_MANAGER.getDriver("chrome");
 		chromeDriver.get(url);
 		CommonMethods.pause(1500);
-		//firefoxDriver.quit();//using native WebDriver API
-		DRIVER_MANAGER.destroyWebDriverInstances("chrome"); //using wrapper method
+		chromeDriver.quit();//using native WebDriver API
+	//	DRIVER_MANAGER.closeDriverWindows("chrome"); //using wrapper method leaves chromedriver.exe process running on windows
+		//DRIVER_MANAGER.destroyWebDriverInstances("chrome"); //using wrapper method leaves chromedriver.exe process running on windows
+
 	}
 
 	@Test
@@ -97,7 +99,7 @@ public class CrossBrowserSimpleTest {
 		WebDriver ieDriver = DRIVER_MANAGER.getDriver("ie");
 		ieDriver.get(url);
 		CommonMethods.pause(1500);
-		DRIVER_MANAGER.destroyWebDriverInstances("ie"); //using wrapper method
+		DRIVER_MANAGER.closeDriverWindows("ie"); //using wrapper method
 	}
 
 
@@ -105,15 +107,15 @@ public class CrossBrowserSimpleTest {
 	public void testBaseTestSuiteFirefox(){
 		WebDriver firefoxDriver = BaseTestSuite.getFirefoxDriver();
 		firefoxDriver.get(url);
-		BaseTestSuite.destroyWebDrivers();
+		BaseTestSuite.closeDrivers();
 
 	}
 
 	@Test
 	public void testBaseTestSuiteChrome(){
-		WebDriver firefoxDriver = BaseTestSuite.getChromeDriver();
-		firefoxDriver.get(url);
-		BaseTestSuite.destroyWebDrivers();
+		WebDriver chromeDriver = BaseTestSuite.getChromeDriver();
+		chromeDriver.get(url);
+		BaseTestSuite.closeDrivers();
 
 
 	}
@@ -124,7 +126,7 @@ public class CrossBrowserSimpleTest {
 		WebDriverManager DRIVER_MANAGER =WebDriverManager.getInstance();
 		WebDriver iosMobileDriver = DRIVER_MANAGER.getDriver("iosMobileDriver");
 		iosMobileDriver.get(url);
-		DRIVER_MANAGER.destroyWebDriverInstances("iosMobileDriver"); //using wrapper method
+		DRIVER_MANAGER.closeDriverWindows("iosMobileDriver"); //using wrapper method
 	}
 
 	
