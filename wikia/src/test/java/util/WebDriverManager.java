@@ -391,7 +391,7 @@ in the end, everything is converted down to a dictionary of DesiredCapabilities
 		else {
 			isSafariSupported =false; 
 		}
-		System.out.println("Safari browser: is supported platform "+ isSafariSupported );
+		LOGGER.info("Safari browser: is supported platform "+ isSafariSupported );
 		return isSafariSupported;
 
 	}
