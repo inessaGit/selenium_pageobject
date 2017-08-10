@@ -64,7 +64,6 @@ public abstract class BaseTestSuite {
 			SHEET_PRODUCTS=RETURN2D.getSheet(filePath, "TEST");
 			SHEET_REGISTRATION=RETURN2D.getSheet(filePath, "TEST_Registration");
 			SHEET_PROMO=RETURN2D.getSheet(filePath, "TEST_Promo");
-			SHEET_VENDOR_SIGNUP= RETURN2D.getSheet(filePath, "Vendor_Signup");
 			LOGGER.info(BaseTestSuite.class.getName()+" Test data  spreadsheets successfully loaded");	 
 
 		} catch (IOException e) {

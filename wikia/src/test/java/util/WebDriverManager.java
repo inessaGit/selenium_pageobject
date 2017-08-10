@@ -18,6 +18,7 @@ import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
@@ -151,18 +152,24 @@ in the end, everything is converted down to a dictionary of DesiredCapabilities
 				System.setProperty("webdriver.gecko.driver", firefoxPath);	
 
 				capabilityFirefox=DesiredCapabilities.firefox();
-				FirefoxProfile firefoxProfile = new FirefoxProfile();
+			    FirefoxOptions firefoxOptions = new FirefoxOptions();
 
-				capabilityFirefox.setBrowserName("Firefox");
-				capabilityFirefox.setPlatform(org.openqa.selenium.Platform.ANY);
-				//capabilityFirefox.setJavascriptEnabled(true);
-
+			    FirefoxProfile firefoxProfile = new FirefoxProfile();
 				//Increasing the length of the network.http.phishy-userpass-length preference will cause Firefox to not prompt
 				//when navigating to a website with a username or password in the URL
 				firefoxProfile.setPreference("network.http.phishy-userpass-length", 255);
 				firefoxProfile.setAcceptUntrustedCertificates(true);
-				
-				capabilityFirefox.setCapability(FirefoxDriver.PROFILE, firefoxProfile);	
+			    
+
+                /*throws org.openqa.selenium.SessionNotCreatedException: Unable to find a matching set of capabilities
+				capabilityFirefox.setBrowserName("Firefox");
+				*/
+				capabilityFirefox.setPlatform(org.openqa.selenium.Platform.ANY);
+				capabilityFirefox.setJavascriptEnabled(true);
+
+			firefoxOptions.setProfile(firefoxProfile);
+			capabilityFirefox.setCapability(FirefoxDriver.PROFILE, firefoxProfile);	
+			capabilityFirefox.setCapability(FirefoxOptions.FIREFOX_OPTIONS, firefoxOptions);	
 
 			}
 		}
@@ -174,7 +181,6 @@ in the end, everything is converted down to a dictionary of DesiredCapabilities
 				iePath=System.getProperty("user.dir")+CONSTANTS.getIePathWin();//reading from config.properties file 
 				System.setProperty("webdriver.ie.driver", iePath);	
 
-				capabilityIE= new DesiredCapabilities();
 				capabilityIE = DesiredCapabilities.internetExplorer();
 				capabilityIE.setBrowserName("Internet Explorer");
 				capabilityIE.setPlatform(org.openqa.selenium.Platform.WINDOWS);
