@@ -127,7 +127,7 @@ public class CrossBrowserSimpleTest {
 	public void testBaseTestSuiteFirefox(){
 		WebDriver firefoxDriver = BaseTestSuite.getFirefoxDriver();
 		firefoxDriver.get(url);
-		BaseTestSuite.closeDrivers();
+		BaseTestSuite.destroyWebDrivers();
 
 	}
 
@@ -135,7 +135,7 @@ public class CrossBrowserSimpleTest {
 	public void testBaseTestSuiteChrome(){
 		WebDriver chromeDriver = BaseTestSuite.getChromeDriver();
 		chromeDriver.get(url);
-		BaseTestSuite.closeDrivers();
+		BaseTestSuite.destroyWebDrivers();
 
 
 	}
@@ -146,7 +146,7 @@ public class CrossBrowserSimpleTest {
 		WebDriverManager DRIVER_MANAGER =WebDriverManager.getInstance();
 		WebDriver iosMobileDriver = DRIVER_MANAGER.getDriver("iosMobileDriver");
 		iosMobileDriver.get(url);
-		DRIVER_MANAGER.closeDriverWindows("iosMobileDriver"); //using wrapper method
+		DRIVER_MANAGER.destroyWebDriverInstances("iosMobileDriver"); //using wrapper method
 	}
 
 	

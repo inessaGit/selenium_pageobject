@@ -59,7 +59,7 @@ public  class Constants {
 		failPath=rp.readConfigProperties("fail.screenshot.path");
 		passPath=rp.readConfigProperties("pass.screenshot.path");
 		usergenPath=rp.readConfigProperties("usergen.screenshot.path");
-		test_excelPath = rp.readConfigProperties("excel.path");
+		test_excelPath = rp.readConfigProperties("test.excel.path");
 		
 		test_env = rp.readConfigProperties("test.env");
 		dev_env = rp.readConfigProperties("dev.env");
