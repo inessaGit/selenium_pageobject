@@ -75,7 +75,9 @@ public class CrossBrowserSimpleTest {
 		WebDriverManager DRIVER_MANAGER =WebDriverManager.getInstance();
 		WebDriver firefoxDriver = DRIVER_MANAGER.getDriver("firefox");
 		firefoxDriver.get(url);
-		DRIVER_MANAGER.closeDriverWindows("firefox"); //using wrapper method
+		firefoxDriver.quit();//using native WebDriver API kills firefox.exe process 
+		//DRIVER_MANAGER.destroyWebDriverInstances("firefox"); //using wrapper method
+	    //DRIVER_MANAGER.closeDriverWindows("firefox"); //using wrapper method leaves firefox.exe process running on windows
 	}	
 	
 	@Test
@@ -99,7 +101,9 @@ public class CrossBrowserSimpleTest {
 		WebDriver ieDriver = DRIVER_MANAGER.getDriver("ie");
 		ieDriver.get(url);
 		CommonMethods.pause(1500);
-		DRIVER_MANAGER.closeDriverWindows("ie"); //using wrapper method
+		ieDriver.quit();//using native WebDriver API kills iedriver.exe process 
+	    //DRIVER_MANAGER.closeDriverWindows("chrome"); //using wrapper method leaves iedriver.exe process running on windows
+		//DRIVER_MANAGER.destroyWebDriverInstances("chrome"); //using wrapper method leaves kills iedriver.exe process 
 	}
 
 
