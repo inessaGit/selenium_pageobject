@@ -86,9 +86,9 @@ public class CrossBrowserSimpleTest {
 		WebDriver chromeDriver = DRIVER_MANAGER.getDriver("chrome");
 		chromeDriver.get(url);
 		CommonMethods.pause(1500);
-		chromeDriver.quit();//using native WebDriver API
-	//	DRIVER_MANAGER.closeDriverWindows("chrome"); //using wrapper method leaves chromedriver.exe process running on windows
-		//DRIVER_MANAGER.destroyWebDriverInstances("chrome"); //using wrapper method leaves chromedriver.exe process running on windows
+		//chromeDriver.quit();//using native WebDriver API kills chromedriver.exe process 
+	    //DRIVER_MANAGER.closeDriverWindows("chrome"); //using wrapper method leaves chromedriver.exe process running on windows
+		DRIVER_MANAGER.destroyWebDriverInstances("chrome"); //using wrapper method leaves kills chromedriver.exe process 
 
 	}
 
