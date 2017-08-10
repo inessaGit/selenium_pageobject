@@ -148,7 +148,7 @@ in the end, everything is converted down to a dictionary of DesiredCapabilities
 		{
 			if (firefoxDriver ==null){
 				//path to gecko driver -> needed for Webdriver 3.0.1 
-				String firefoxPath=System.getProperty("user.dir")+CONSTANTS.getFirefoxPath();//reading from config.properties file 
+				String firefoxPath=System.getProperty("user.dir")+CONSTANTS.getGeckoPathWin();//reading from config.properties file 
 				System.setProperty("webdriver.gecko.driver", firefoxPath);	
 
 				capabilityFirefox = new DesiredCapabilities();
@@ -170,7 +170,7 @@ in the end, everything is converted down to a dictionary of DesiredCapabilities
 
 			if (ieDriver ==null){
 				String iePath="";
-				iePath=System.getProperty("user.dir")+CONSTANTS.getIePath();//reading from config.properties file 
+				iePath=System.getProperty("user.dir")+CONSTANTS.getIePathWin();//reading from config.properties file 
 				System.setProperty("webdriver.ie.driver", iePath);	
 
 				capabilityIE= new DesiredCapabilities();

@@ -16,7 +16,8 @@ public class ReadingProperties {
 	private static final Logger LOGGER = Logger.getLogger(ReadingProperties.class);
 	private static ReadingProperties readProperties=null;
 	private static Properties propertyCONFIG = null;
-	
+	private String pathToConfig="/src/test/java/config/config.properties";
+
 	private String value;
 	private String key;
 	
@@ -28,6 +29,10 @@ public class ReadingProperties {
 			readProperties=new ReadingProperties();
 			LOGGER.info(ReadingProperties.class.getName()+ " getInstance");
 		}
+		else {
+			LOGGER.info(ReadingProperties.class.getName()+ " ReadingProperties object already exist");
+
+		}
 		return readProperties;
 		
 	}
@@ -35,14 +40,12 @@ public class ReadingProperties {
 	//private constructor 
 	private ReadingProperties()
 	{
-
 		LOGGER.info(ReadingProperties.class.getName()+ " in constructor.");
 		loadConfigProperties();
 	}
 	
-	private static final boolean loadConfigProperties()
+	private final boolean loadConfigProperties()
 	{
-		String pathToConfig="/src/test/java/ifonly_automation/config/config.properties";
 		propertyCONFIG = new Properties(); 
 		boolean success=false;
 		FileInputStream fis = null ;
@@ -107,7 +110,7 @@ public static void main(String args[]) {
 	String keyDoesNotExistValue = rp.readConfigProperties("key does not exist");
 	System.out.println("case key NULL "  + keyDoesNotExistValue);
 
-	String keyExistValue = rp.readConfigProperties("verified_visa");
+	String keyExistValue = rp.readConfigProperties("config.properties.path");
 	System.out.println("case key NOT NULL "+ keyExistValue);
 
 

@@ -27,10 +27,10 @@ public  class Constants {
 	private  final  String production_env; 
 	
 	//browsers path 
-	private final String iePath;
+	private final String iePathWin;
 	private final String chromePathWin;
 	private final String chromePathMac;
-	private final String firefoxPath ;
+	private final String geckoPathWin ;
 	
 	private  final String submittedOrdersPath;
 	private  final String createdAccountsPath;
@@ -69,22 +69,23 @@ public  class Constants {
 		submittedOrdersPath=rp.readConfigProperties("submittedorders.path");
 		createdAccountsPath = rp.readConfigProperties("createdaccounts.path");
 		
-		iePath = rp.readConfigProperties("ie.path");
+		iePathWin = rp.readConfigProperties("ie.path");
 		chromePathWin = rp.readConfigProperties("chrome.path.win");
 		chromePathMac = rp.readConfigProperties("chrome.path.mac");
-		firefoxPath = rp.readConfigProperties("firefox.path.win");
+		geckoPathWin = rp.readConfigProperties("gecko.path.win");
 	}
+
 
 	public  String getTest_excelPath() {
 		return test_excelPath;
 	}
 
-	public String getIePath() {
-		return iePath;
+	public String getIePathWin() {
+		return iePathWin;
 	}
 
-	public String getFirefoxPath() {
-		return firefoxPath;
+	public String getGeckoPathWin() {
+		return geckoPathWin;
 	}
 	
 	public String getChromePathWin() {
@@ -136,7 +137,7 @@ public  class Constants {
 	
 }
 
-class TestConstants1
+class TestConstants
 
 {
 	
