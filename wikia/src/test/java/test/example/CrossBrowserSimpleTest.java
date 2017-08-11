@@ -1,6 +1,7 @@
 package test.example;
 
 import java.io.File;
+import java.io.IOException;
 
 import runner.BaseTestSuite;
 import util.CommonMethods;
@@ -16,6 +17,9 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.firefox.internal.ProfilesIni;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.Test;
+
+import junit.framework.Assert;
+
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.security.UserAndPassword;
@@ -33,7 +37,8 @@ import org.openqa.selenium.JavascriptExecutor;
 public class CrossBrowserSimpleTest {
 
 	private final String firefoxPath=System.getProperty("user.dir")+ "/src/test/java/config/geckodriver017.exe";
-	private final String iePath=System.getProperty("user.dir")+ "/src/test/java/ifonly_automation/config/IEDriverServer.exe";
+	private final String iePath64=System.getProperty("user.dir")+ "/src/test/java/ifonly_automation/config/IEDriverServer.exe";
+	private final String iePath32=System.getProperty("user.dir")+ "/src/test/java/ifonly_automation/config/IEDriverServer_Win32_3.4.exe";
 
     private final String url = "https://www.ifonly.com/";
 	 
@@ -89,13 +94,27 @@ public class CrossBrowserSimpleTest {
 
 	}
 
-	@Test
+	@Test(invocationCount=1)
 	public void testGetInternetExplorerViaNativeApi() {
 		
-		System.setProperty("webdriver.ie.driver", iePath);	
+		System.setProperty("webdriver.ie.driver", iePath64);	
+		//System.setProperty("webdriver.ie.driver", iePath32);	
+
 		WebDriver ieDriver = new InternetExplorerDriver();
+		ieDriver.manage().window().maximize(); //this would work only for Firefox and IE
+
 		ieDriver.get(url);
-		ieDriver.quit();
+
+		Assert.assertTrue(url.contains("ifonly"));
+		//ieDriver.close();
+		//ieDriver.quit();
+		try {
+		   Runtime.getRuntime().exec("taskkill /F /IM IEDriverServer.exe");
+		    Runtime.getRuntime().exec("taskkill /F /IM iexplore.exe");
+
+		} catch (IOException e) {
+		    e.printStackTrace();
+		}
 		
 	}
 	@Test
