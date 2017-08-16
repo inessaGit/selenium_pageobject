@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TEST server smoke tests" parallel="false">
+
+<listeners>
+<listener class-name="util.TestListenerFailPass"/> 
+
+</listeners>
+
+      <test name="BasePageTest">
+              <classes>    
+                   <class name= "test.BasePageTest"/>
+              </classes>
+       </test>
+       
+       <test name="ContributePageTest">
+              <classes>    
+                   <class name= "test.ContributeTest"/>
+              </classes>
+       </test>
+       
+        <test name="HomePageTest">
+              <classes>    
+                   <class name= "test.HomePageTest"/>
+              </classes>
+       </test>
+       
+        
+</suite>

@@ -2,7 +2,9 @@
 
 Pre-requisites and setup: 
 1) Maven configured and installed: http://maven.apache.org/download.cgi
-2) JDK v 1.8 installed and JAVA_HOME setup
+2) JDK v 1.8 installed
+- Windows - set up JAVA_HOME environment variable
+- Windows - add path to java\bin to environment path
 3) Eclipse - GIT plugin (EGIT) installed 
 4) Eclipse - Maven plugin (M2Eclipse)  installed 
 5) Git configured and installed

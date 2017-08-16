@@ -211,8 +211,8 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.6.0</version>
         <configuration>
-            <source></source>
-            <target></target>
+            <source>1.8</source>
+            <target>1.8</target>
         </configuration>
     </plugin>
              
@@ -228,7 +228,7 @@
                     
                     <testFailureIgnore>true</testFailureIgnore>
                     <suiteXmlFiles>
-                       <suiteXmlFile>${project.basedir}/smoke.xml</suiteXmlFile>
+                       <suiteXmlFile>${project.basedir}/smokeTest.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin> 
