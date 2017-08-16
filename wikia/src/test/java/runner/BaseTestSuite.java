@@ -24,7 +24,7 @@ import util.TakeScreenshot;
 import util.WebDriverManager;
 
 /**
- * @author Inessa  2/13
+ * @author Inessa 
  * 1)Every PageTest class should extend this class
  * 2) This class contains common logic for all test classes; driven by TestNG
  *

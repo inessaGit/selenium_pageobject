@@ -11,10 +11,9 @@ import util.Constants;
 public class HomePage extends LoadableComponent<HomePage> {
 
 	private static final Logger LOGGER = Logger.getLogger(HomePage.class);
-	private final Constants CONSTANTS = Constants.getInstance();
-	private String homepage_url= CONSTANTS.getTest_env(); 
+	private String homepage_url= "http://qm-homework.wikia.com/wiki/QM_HomeWork_Wikia";
 
-	private String title ="QM HomeWork Wikia";
+	private String title ="QM HomeWork Wikia | FANDOM powered by Wikia";
 	private WebDriver driver;
 
 	public HomePage(WebDriver driver){

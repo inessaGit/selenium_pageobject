@@ -37,6 +37,9 @@ public  class Constants {
 	private  final String submittedOrdersPath;
 	private  final String createdAccountsPath;
 	
+	private final String testUser;
+	private  final String testUserPassword;
+	
 	
 	public  static Constants getInstance() {
 	      if(CONSTANTS == null) {
@@ -70,7 +73,10 @@ public  class Constants {
 		dev_env = rp.readConfigProperties("dev.env");
 		content_env = rp.readConfigProperties("content.env");
 		production_env = rp.readConfigProperties("production.env"); 
-
+		
+		testUser=rp.readConfigProperties("testuser.username");
+	    testUserPassword = rp.readConfigProperties("testuser.password");
+	    
 		submittedOrdersPath=rp.readConfigProperties("submittedorders.path");
 		createdAccountsPath = rp.readConfigProperties("createdaccounts.path");
 		
@@ -116,7 +122,16 @@ public  class Constants {
 	}
 
 	public String getUsergenPath() {
+		//TODOCommonMethods
 		return usergenPath;
+	}
+
+	public String getTestUser() {
+		return testUser;
+	}
+
+	public String getTestUserPassword() {
+		return testUserPassword;
 	}
 
 	public String getTest_env() {

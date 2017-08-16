@@ -18,19 +18,19 @@ public class ContributeTest extends BaseTestSuite{
 	
 	private WebDriver driver;
 	private static final Logger LOGGER = Logger.getLogger(ContributeTest.class);
-	
 	HomePage homePage;
 	Login login;
 	Contribute contribute;
 	
-	String pswd = Constants.getInstance().getRp().readConfigProperties("testuser.password");
-    String username = Constants.getInstance().getRp().readConfigProperties("testuser.username");
+    String username = Constants.getInstance().getTestUser();
+	String pswd = Constants.getInstance().getTestUserPassword();
     
     @Test(priority=1)
     public  void initPages(){
     	
     	this.driver = super.getFirefoxDriver();
     	homePage = new HomePage(this.driver);
+    	
     	//	    CommonMethods.loadUrl(driver, Constants.getInstance().getTest_env());
 
     	homePage.get();
