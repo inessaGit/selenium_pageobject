@@ -42,9 +42,8 @@ public abstract class BaseTestSuite {
     private static final Logger LOGGER = Logger.getLogger(BaseTestSuite.class);
 	public static  Constants CONSTANTS=null;
 
-	//spreadsheet for different environments
+	//spreadsheet for with test data
 	public static   Sheet SHEET_REGISTRATION;
-
 	public static final Return2D RETURN2D;
 
 	//static block should be executed only once when the class loaded; a good place to put initialization of static variables.
@@ -57,7 +56,6 @@ public abstract class BaseTestSuite {
 		String filePath =System.getProperty("user.dir")+CONSTANTS.getTest_excelPath();
 		try {
 			LOGGER.info(BaseTestSuite.class.getName()+" attempting to load test data  spreadsheets");	 
-
 			SHEET_REGISTRATION=RETURN2D.getSheet(filePath, "TEST_Registration");
 			LOGGER.info(BaseTestSuite.class.getName()+" Test data  spreadsheets successfully loaded");	 
 
