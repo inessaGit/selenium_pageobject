@@ -1,0 +1,142 @@
+2017-08-16 22:26:31 INFO  WebDriverManager:63 - util.WebDriverManager running constructor. Setting all drivers.
+2017-08-16 22:26:31 INFO  Constants:61 - util.Constants in constructor
+2017-08-16 22:26:31 INFO  ReadingProperties:43 - util.ReadingProperties in constructor.
+2017-08-16 22:26:31 INFO  ReadingProperties:57 - util.ReadingPropertiesin method loadConfigProperties
+2017-08-16 22:26:31 INFO  ReadingProperties:30 - util.ReadingProperties getInstance
+2017-08-16 22:26:31 INFO  ReadingProperties:88 - Successfully read from config.properties file <fail.screenshot.path> /report/screenshot/FAIL/
+2017-08-16 22:26:31 INFO  ReadingProperties:88 - Successfully read from config.properties file <pass.screenshot.path> /report/screenshot/PASS/
+2017-08-16 22:26:31 INFO  ReadingProperties:88 - Successfully read from config.properties file <usergen.screenshot.path> /report/screenshot/UserGen/
+2017-08-16 22:26:31 INFO  ReadingProperties:88 - Successfully read from config.properties file <log.package.path> /src/test/java/logs/
+2017-08-16 22:26:31 INFO  ReadingProperties:88 - Successfully read from config.properties file <test.excel.path> /src/test/java/config/TestData.xlsx
+2017-08-16 22:26:31 INFO  ReadingProperties:88 - Successfully read from config.properties file <test.env> http://qm-homework.wikia.com
+2017-08-16 22:26:31 INFO  ReadingProperties:88 - Successfully read from config.properties file <dev.env> NA
+2017-08-16 22:26:31 INFO  ReadingProperties:88 - Successfully read from config.properties file <testuser.username> inessa_test
+2017-08-16 22:26:31 INFO  ReadingProperties:88 - Successfully read from config.properties file <testuser.password> selenium
+2017-08-16 22:26:31 INFO  ReadingProperties:88 - Successfully read from config.properties file <chrome.path.win> /src/test/java/config/chromedriver.exe
+2017-08-16 22:26:31 INFO  ReadingProperties:88 - Successfully read from config.properties file <chrome.path.mac> /src/test/java/config/chromedriver
+2017-08-16 22:26:31 INFO  ReadingProperties:88 - Successfully read from config.properties file <gecko.path.win> /src/test/java/config/geckodriver017.exe
+2017-08-16 22:26:31 INFO  Constants:47 - util.Constants Constants object does not exist. Creating object
+2017-08-16 22:26:31 INFO  Constants:51 - util.Constants constants object already exist
+2017-08-16 22:26:31 INFO  Constants:51 - util.Constants constants object already exist
+2017-08-16 22:26:31 INFO  Constants:51 - util.Constants constants object already exist
+2017-08-16 22:26:31 INFO  WebDriverManager:394 - Safari browser: is supported platform false
+2017-08-16 22:26:31 INFO  WebDriverManager:231 - util.WebDriverManager Setting up driver instance  safari
+2017-08-16 22:26:31 INFO  Constants:51 - util.Constants constants object already exist
+2017-08-16 22:26:31 INFO  WebDriverManager:245 - util.WebDriverManager setting up iosMobileDriver 
+2017-08-16 22:26:31 INFO  WebDriverManager:75 - util.WebDriverManager WebDriverManager object does not exist. Creating object
+2017-08-16 22:26:31 INFO  Constants:51 - util.Constants constants object already exist
+2017-08-16 22:26:31 INFO  BaseTestSuite:62 - runner.BaseTestSuite attempting to load test data  spreadsheets
+2017-08-16 22:26:34 INFO  BaseTestSuite:67 - runner.BaseTestSuite Test data  spreadsheets successfully loaded
+2017-08-16 22:26:44 INFO  WebDriverManager:378 - util.WebDriverManager browser info: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:53.0) Gecko/20100101 Firefox/53.0
+2017-08-16 22:26:44 INFO  WebDriverManager:95 - util.WebDriverManager getting driver instance  Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:53.0) Gecko/20100101 Firefox/53.0
+2017-08-16 22:26:44 INFO  Constants:51 - util.Constants constants object already exist
+2017-08-16 22:27:03 INFO  BaseTestSuite:122 - runner.BaseTestSuite Attempting to  close  WebDriver browser windows.
+2017-08-16 22:27:04 INFO  WebDriverManager:323 - util.WebDriverManager Successfully closed  Firefox.
+2017-08-16 22:27:04 INFO  BaseTestSuite:129 - runner.BaseTestSuite Successfully closed  WebDriver browser windows.
+2017-08-16 22:27:15 INFO  WebDriverManager:63 - util.WebDriverManager running constructor. Setting all drivers.
+2017-08-16 22:27:15 INFO  Constants:61 - util.Constants in constructor
+2017-08-16 22:27:15 INFO  ReadingProperties:43 - util.ReadingProperties in constructor.
+2017-08-16 22:27:15 INFO  ReadingProperties:57 - util.ReadingPropertiesin method loadConfigProperties
+2017-08-16 22:27:15 INFO  ReadingProperties:30 - util.ReadingProperties getInstance
+2017-08-16 22:27:15 INFO  ReadingProperties:88 - Successfully read from config.properties file <fail.screenshot.path> /report/screenshot/FAIL/
+2017-08-16 22:27:15 INFO  ReadingProperties:88 - Successfully read from config.properties file <pass.screenshot.path> /report/screenshot/PASS/
+2017-08-16 22:27:15 INFO  ReadingProperties:88 - Successfully read from config.properties file <usergen.screenshot.path> /report/screenshot/UserGen/
+2017-08-16 22:27:15 INFO  ReadingProperties:88 - Successfully read from config.properties file <log.package.path> /src/test/java/logs/
+2017-08-16 22:27:15 INFO  ReadingProperties:88 - Successfully read from config.properties file <test.excel.path> /src/test/java/config/TestData.xlsx
+2017-08-16 22:27:15 INFO  ReadingProperties:88 - Successfully read from config.properties file <test.env> http://qm-homework.wikia.com
+2017-08-16 22:27:15 INFO  ReadingProperties:88 - Successfully read from config.properties file <dev.env> NA
+2017-08-16 22:27:15 INFO  ReadingProperties:88 - Successfully read from config.properties file <testuser.username> inessa_test
+2017-08-16 22:27:15 INFO  ReadingProperties:88 - Successfully read from config.properties file <testuser.password> selenium
+2017-08-16 22:27:15 INFO  ReadingProperties:88 - Successfully read from config.properties file <chrome.path.win> /src/test/java/config/chromedriver.exe
+2017-08-16 22:27:15 INFO  ReadingProperties:88 - Successfully read from config.properties file <chrome.path.mac> /src/test/java/config/chromedriver
+2017-08-16 22:27:15 INFO  ReadingProperties:88 - Successfully read from config.properties file <gecko.path.win> /src/test/java/config/geckodriver017.exe
+2017-08-16 22:27:15 INFO  Constants:47 - util.Constants Constants object does not exist. Creating object
+2017-08-16 22:27:15 INFO  Constants:51 - util.Constants constants object already exist
+2017-08-16 22:27:15 INFO  Constants:51 - util.Constants constants object already exist
+2017-08-16 22:27:15 INFO  Constants:51 - util.Constants constants object already exist
+2017-08-16 22:27:15 INFO  WebDriverManager:394 - Safari browser: is supported platform false
+2017-08-16 22:27:15 INFO  WebDriverManager:231 - util.WebDriverManager Setting up driver instance  safari
+2017-08-16 22:27:15 INFO  Constants:51 - util.Constants constants object already exist
+2017-08-16 22:27:15 INFO  WebDriverManager:245 - util.WebDriverManager setting up iosMobileDriver 
+2017-08-16 22:27:15 INFO  WebDriverManager:75 - util.WebDriverManager WebDriverManager object does not exist. Creating object
+2017-08-16 22:27:15 INFO  Constants:51 - util.Constants constants object already exist
+2017-08-16 22:27:15 INFO  BaseTestSuite:62 - runner.BaseTestSuite attempting to load test data  spreadsheets
+2017-08-16 22:27:17 INFO  BaseTestSuite:67 - runner.BaseTestSuite Test data  spreadsheets successfully loaded
+2017-08-16 22:27:17 INFO  Constants:51 - util.Constants constants object already exist
+2017-08-16 22:27:17 INFO  Constants:51 - util.Constants constants object already exist
+2017-08-16 22:27:24 INFO  WebDriverManager:378 - util.WebDriverManager browser info: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:53.0) Gecko/20100101 Firefox/53.0
+2017-08-16 22:27:24 INFO  WebDriverManager:95 - util.WebDriverManager getting driver instance  Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:53.0) Gecko/20100101 Firefox/53.0
+2017-08-16 22:27:24 INFO  HomePage:25 - Home page url: http://qm-homework.wikia.com/wiki/QM_HomeWork_Wikia
+2017-08-16 22:27:43 INFO  BaseTestSuite:122 - runner.BaseTestSuite Attempting to  close  WebDriver browser windows.
+2017-08-16 22:27:48 INFO  WebDriverManager:323 - util.WebDriverManager Successfully closed  Firefox.
+2017-08-16 22:27:48 INFO  BaseTestSuite:129 - runner.BaseTestSuite Successfully closed  WebDriver browser windows.
+2017-08-16 22:55:00 INFO  WebDriverManager:63 - util.WebDriverManager running constructor. Setting all drivers.
+2017-08-16 22:55:00 INFO  Constants:61 - util.Constants in constructor
+2017-08-16 22:55:00 INFO  ReadingProperties:43 - util.ReadingProperties in constructor.
+2017-08-16 22:55:00 INFO  ReadingProperties:57 - util.ReadingPropertiesin method loadConfigProperties
+2017-08-16 22:55:00 INFO  ReadingProperties:30 - util.ReadingProperties getInstance
+2017-08-16 22:55:00 INFO  ReadingProperties:88 - Successfully read from config.properties file <fail.screenshot.path> /report/screenshot/FAIL/
+2017-08-16 22:55:00 INFO  ReadingProperties:88 - Successfully read from config.properties file <pass.screenshot.path> /report/screenshot/PASS/
+2017-08-16 22:55:00 INFO  ReadingProperties:88 - Successfully read from config.properties file <usergen.screenshot.path> /report/screenshot/UserGen/
+2017-08-16 22:55:00 INFO  ReadingProperties:88 - Successfully read from config.properties file <log.package.path> /src/test/java/logs/
+2017-08-16 22:55:00 INFO  ReadingProperties:88 - Successfully read from config.properties file <test.excel.path> /src/test/java/config/TestData.xlsx
+2017-08-16 22:55:00 INFO  ReadingProperties:88 - Successfully read from config.properties file <test.env> https://mail.google.com/
+2017-08-16 22:55:00 INFO  ReadingProperties:88 - Successfully read from config.properties file <dev.env> NA
+2017-08-16 22:55:00 INFO  ReadingProperties:88 - Successfully read from config.properties file <testuser.username> inessa.webdriver@gmail.com
+2017-08-16 22:55:00 INFO  ReadingProperties:88 - Successfully read from config.properties file <testuser.password> selenium123
+2017-08-16 22:55:00 INFO  ReadingProperties:88 - Successfully read from config.properties file <chrome.path.win> /src/test/java/config/chromedriver.exe
+2017-08-16 22:55:00 INFO  ReadingProperties:88 - Successfully read from config.properties file <chrome.path.mac> /src/test/java/config/chromedriver
+2017-08-16 22:55:00 INFO  ReadingProperties:88 - Successfully read from config.properties file <gecko.path.win> /src/test/java/config/geckodriver017.exe
+2017-08-16 22:55:00 INFO  Constants:47 - util.Constants Constants object does not exist. Creating object
+2017-08-16 22:55:00 INFO  Constants:51 - util.Constants constants object already exist
+2017-08-16 22:55:00 INFO  Constants:51 - util.Constants constants object already exist
+2017-08-16 22:55:00 INFO  Constants:51 - util.Constants constants object already exist
+2017-08-16 22:55:00 INFO  WebDriverManager:394 - Safari browser: is supported platform false
+2017-08-16 22:55:00 INFO  WebDriverManager:231 - util.WebDriverManager Setting up driver instance  safari
+2017-08-16 22:55:00 INFO  Constants:51 - util.Constants constants object already exist
+2017-08-16 22:55:00 INFO  WebDriverManager:245 - util.WebDriverManager setting up iosMobileDriver 
+2017-08-16 22:55:00 INFO  WebDriverManager:75 - util.WebDriverManager WebDriverManager object does not exist. Creating object
+2017-08-16 22:55:00 INFO  Constants:51 - util.Constants constants object already exist
+2017-08-16 22:55:00 INFO  BaseTestSuite:62 - runner.BaseTestSuite attempting to load test data  spreadsheets
+2017-08-16 22:55:02 INFO  BaseTestSuite:67 - runner.BaseTestSuite Test data  spreadsheets successfully loaded
+2017-08-16 22:55:09 INFO  WebDriverManager:378 - util.WebDriverManager browser info: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:53.0) Gecko/20100101 Firefox/53.0
+2017-08-16 22:55:09 INFO  WebDriverManager:95 - util.WebDriverManager getting driver instance  Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:53.0) Gecko/20100101 Firefox/53.0
+2017-08-16 22:55:09 INFO  Constants:51 - util.Constants constants object already exist
+2017-08-16 22:55:11 INFO  BaseTestSuite:122 - runner.BaseTestSuite Attempting to  close  WebDriver browser windows.
+2017-08-16 22:55:12 INFO  WebDriverManager:323 - util.WebDriverManager Successfully closed  Firefox.
+2017-08-16 22:55:12 INFO  BaseTestSuite:129 - runner.BaseTestSuite Successfully closed  WebDriver browser windows.
+2017-08-16 22:56:21 INFO  WebDriverManager:63 - util.WebDriverManager running constructor. Setting all drivers.
+2017-08-16 22:56:21 INFO  Constants:61 - util.Constants in constructor
+2017-08-16 22:56:21 INFO  ReadingProperties:43 - util.ReadingProperties in constructor.
+2017-08-16 22:56:21 INFO  ReadingProperties:57 - util.ReadingPropertiesin method loadConfigProperties
+2017-08-16 22:56:21 INFO  ReadingProperties:30 - util.ReadingProperties getInstance
+2017-08-16 22:56:21 INFO  ReadingProperties:88 - Successfully read from config.properties file <fail.screenshot.path> /report/screenshot/FAIL/
+2017-08-16 22:56:21 INFO  ReadingProperties:88 - Successfully read from config.properties file <pass.screenshot.path> /report/screenshot/PASS/
+2017-08-16 22:56:21 INFO  ReadingProperties:88 - Successfully read from config.properties file <usergen.screenshot.path> /report/screenshot/UserGen/
+2017-08-16 22:56:21 INFO  ReadingProperties:88 - Successfully read from config.properties file <log.package.path> /src/test/java/logs/
+2017-08-16 22:56:21 INFO  ReadingProperties:88 - Successfully read from config.properties file <test.excel.path> /src/test/java/config/TestData.xlsx
+2017-08-16 22:56:21 INFO  ReadingProperties:88 - Successfully read from config.properties file <test.env> https://mail.google.com/
+2017-08-16 22:56:21 INFO  ReadingProperties:88 - Successfully read from config.properties file <dev.env> NA
+2017-08-16 22:56:21 INFO  ReadingProperties:88 - Successfully read from config.properties file <testuser.username> inessa.webdriver@gmail.com
+2017-08-16 22:56:21 INFO  ReadingProperties:88 - Successfully read from config.properties file <testuser.password> selenium123
+2017-08-16 22:56:21 INFO  ReadingProperties:88 - Successfully read from config.properties file <chrome.path.win> /src/test/java/config/chromedriver.exe
+2017-08-16 22:56:21 INFO  ReadingProperties:88 - Successfully read from config.properties file <chrome.path.mac> /src/test/java/config/chromedriver
+2017-08-16 22:56:21 INFO  ReadingProperties:88 - Successfully read from config.properties file <gecko.path.win> /src/test/java/config/geckodriver017.exe
+2017-08-16 22:56:21 INFO  Constants:47 - util.Constants Constants object does not exist. Creating object
+2017-08-16 22:56:22 INFO  Constants:51 - util.Constants constants object already exist
+2017-08-16 22:56:22 INFO  Constants:51 - util.Constants constants object already exist
+2017-08-16 22:56:22 INFO  Constants:51 - util.Constants constants object already exist
+2017-08-16 22:56:22 INFO  WebDriverManager:394 - Safari browser: is supported platform false
+2017-08-16 22:56:22 INFO  WebDriverManager:231 - util.WebDriverManager Setting up driver instance  safari
+2017-08-16 22:56:22 INFO  Constants:51 - util.Constants constants object already exist
+2017-08-16 22:56:22 INFO  WebDriverManager:245 - util.WebDriverManager setting up iosMobileDriver 
+2017-08-16 22:56:22 INFO  WebDriverManager:75 - util.WebDriverManager WebDriverManager object does not exist. Creating object
+2017-08-16 22:56:22 INFO  Constants:51 - util.Constants constants object already exist
+2017-08-16 22:56:22 INFO  BaseTestSuite:62 - runner.BaseTestSuite attempting to load test data  spreadsheets
+2017-08-16 22:56:24 INFO  BaseTestSuite:67 - runner.BaseTestSuite Test data  spreadsheets successfully loaded
+2017-08-16 22:56:29 INFO  WebDriverManager:378 - util.WebDriverManager browser info: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:53.0) Gecko/20100101 Firefox/53.0
+2017-08-16 22:56:29 INFO  WebDriverManager:95 - util.WebDriverManager getting driver instance  Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:53.0) Gecko/20100101 Firefox/53.0
+2017-08-16 22:56:29 INFO  Constants:51 - util.Constants constants object already exist
+2017-08-16 22:56:31 INFO  BaseTestSuite:122 - runner.BaseTestSuite Attempting to  close  WebDriver browser windows.
+2017-08-16 22:56:31 INFO  WebDriverManager:323 - util.WebDriverManager Successfully closed  Firefox.
+2017-08-16 22:56:31 INFO  BaseTestSuite:129 - runner.BaseTestSuite Successfully closed  WebDriver browser windows.

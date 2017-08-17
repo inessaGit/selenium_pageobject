@@ -13,15 +13,9 @@
               </classes>
        </test>
        
-       <test name="ContributePageTest">
+       <test name="AboutPageTest">
               <classes>    
-                   <class name= "test.ContributeTest"/>
-              </classes>
-       </test>
-       
-        <test name="HomePageTest">
-              <classes>    
-                   <class name= "test.HomePageTest"/>
+                   <class name= "test.AboutPageTest"/>
               </classes>
        </test>
        

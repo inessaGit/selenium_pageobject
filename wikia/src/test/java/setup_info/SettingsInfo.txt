@@ -73,10 +73,11 @@ http://stackoverflow.com/questions/5784895/java-properties-backslash
 --------------------------------------------Classes structure:----------------------------------
                             
 1)Each page of AUT (Application Under Test) is mapped to a class file in your code 
-and each method within the class file can be treated as a service offered by the PageObject. 
+and each method within the class file can be treated as as service offered by the PageObject. 
  see more info on Page Object pattern: https://code.google.com/p/selenium/wiki/PageObjects
 2) All PageObjectTest classes should extend BaseTestSuite class (to control tests flow with @AfterSuite, @BeforeSuite etc) 
-3) All  PageObject classes should extend BasePage class. 
+3) All  PageObject classes should extend BasePage class
+- BasePage class extends  LoadableComponent<T> class
 4) Each PageObject class and PageObjectTest class should have Logger instance (using Log4j) 
 5) WebDriverManager class acts as a utility class with methods to setup driver instances 
 

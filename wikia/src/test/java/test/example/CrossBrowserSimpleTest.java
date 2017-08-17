@@ -60,6 +60,31 @@ public class CrossBrowserSimpleTest {
 	}
 	
 	@Test(invocationCount=1)
+	public void testGetFirefoxViaNativeApiForGmail(){	
+
+		String url="https://mail.google.com"  ;
+				
+		System.setProperty("webdriver.gecko.driver", firefoxPath);	
+		Capabilities capabilities  = DesiredCapabilities.firefox();
+
+		System.out.println(capabilities.getBrowserName());
+		System.out.println(capabilities.getPlatform());
+		System.out.println(capabilities.getVersion());
+		System.out.println (capabilities.asMap());
+
+	
+		//Manage firefox specific settings in a way that geckodriver can understand
+		FirefoxOptions firefoxOptions = new FirefoxOptions();
+		firefoxOptions.addPreference("browser.startup.page", 1);
+
+		WebDriver driver =new FirefoxDriver(firefoxOptions);
+		driver.get(url);
+		//driver.close();//closing window quit only if it is last window open
+	//	driver.quit();//close all firefox windows and quits driver 
+
+	}
+	
+	@Test(invocationCount=1)
 	public void testGetFirefoxViaNativeApi(){	
 
 		System.setProperty("webdriver.gecko.driver", firefoxPath);	

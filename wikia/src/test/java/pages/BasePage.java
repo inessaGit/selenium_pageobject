@@ -27,6 +27,8 @@ public class BasePage extends LoadableComponent<BasePage> {
 	 * 1) inherited by all PageObject classes that extend BasePage class
 	 * 
 	 */
+	
+
 	public BasePage(WebDriver driver){
         this.driver = driver;
         
