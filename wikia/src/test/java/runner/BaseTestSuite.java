@@ -123,7 +123,7 @@ public abstract class BaseTestSuite {
 
 	}
 
-   // @AfterSuite(alwaysRun=true)
+   @AfterSuite(alwaysRun=true)
 	public static void destroyWebDrivers()
 	{
 		LOGGER.info(BaseTestSuite.class.getName()+ " Attempting to  destroy WebDriver instances.");
