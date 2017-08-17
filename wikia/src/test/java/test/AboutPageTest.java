@@ -6,7 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import pages.AboutPage;
-
+import pages.BasePage;
 import runner.BaseTestSuite;
 import util.CommonMethods;
 import util.Constants;
@@ -27,10 +27,9 @@ public class AboutPageTest extends BaseTestSuite{
     	
     	this.driver = super.getFirefoxDriver();
     	 aboutPage = new AboutPage(this.driver);
-    	
-    	//	    CommonMethods.loadUrl(driver, Constants.getInstance().getTest_env());
+    	 aboutPage.load();
 
-    	aboutPage.get();
+    	//BasePage basePage =aboutPage.get();
     	
     }
     

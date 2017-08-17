@@ -85,7 +85,7 @@ public class AboutPage extends BasePage {
 	}
 	@Override
 	public void load() {
-		// TODO Auto-generated method stub
+		driver.get(url);
 	}
 
 	@Override
