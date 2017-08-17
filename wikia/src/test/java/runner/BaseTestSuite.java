@@ -43,10 +43,7 @@ public abstract class BaseTestSuite {
 	public static  Constants CONSTANTS=null;
 
 	//spreadsheet for different environments
-	public static  Sheet SHEET_PRODUCTS;
 	public static   Sheet SHEET_REGISTRATION;
-	public static   Sheet SHEET_PROMO;
-	public static   Sheet SHEET_VENDOR_SIGNUP;
 
 	public static final Return2D RETURN2D;
 
@@ -61,9 +58,7 @@ public abstract class BaseTestSuite {
 		try {
 			LOGGER.info(BaseTestSuite.class.getName()+" attempting to load test data  spreadsheets");	 
 
-			SHEET_PRODUCTS=RETURN2D.getSheet(filePath, "TEST");
 			SHEET_REGISTRATION=RETURN2D.getSheet(filePath, "TEST_Registration");
-			SHEET_PROMO=RETURN2D.getSheet(filePath, "TEST_Promo");
 			LOGGER.info(BaseTestSuite.class.getName()+" Test data  spreadsheets successfully loaded");	 
 
 		} catch (IOException e) {
