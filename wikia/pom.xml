@@ -3,14 +3,14 @@
   <!-- The Basics --> 
    <modelVersion>4.0.0</modelVersion>
    
-  <groupId>com.wikia</groupId>
-  <artifactId>wikia</artifactId>
+  <groupId>com.gmailtest</groupId>
+  <artifactId>gmail</artifactId>
   <version>0.0.1-SNAPSHOT</version>   
    
   <packaging>jar</packaging>
    
    <organization>
-    <name>wikia.com</name>
+    <name>gmailtest.com</name>
   </organization>
    
   <description> Automation project using Maven, WebDriver, TestNG </description>
