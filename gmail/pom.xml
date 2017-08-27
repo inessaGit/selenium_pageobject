@@ -42,34 +42,37 @@
 </dependency>
     
         <!-- Firefox version v53 supported via geckodriver.exe-->
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-           <version>3.4.0</version> 
-            <scope>test</scope>
-        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+  <dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>3.5.2</version>
+</dependency>
+
 
     <!-- IEDriver for Internet Explorer-->
         
         <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-ie-driver</artifactId>
-    <version>3.4.0</version>
+    <version>3.5.2</version>
 </dependency>
 
  <!-- ChromeDriver for Chrome browser https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
 <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-chrome-driver</artifactId>
-    <version>3.4.0</version>
+    <version>3.5.2</version>
 </dependency>
  
 <!-- RemoteDriver for iosMobileDriver support https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-remote-driver -->
+<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-remote-driver -->
 <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-remote-driver</artifactId>
-    <version>3.4.0</version>
+    <version>3.5.2</version>
 </dependency>
+
 
 <!--Mobile testing  java client for appium The IOSDriver extends from AppiumDriver and AppiumDriver extends from RemoteWebDriver -->
          <dependency>
@@ -83,7 +86,7 @@
          <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
-      <version>22.0</version>
+      <version>23.0</version>
 </dependency>
 
         <dependency>
@@ -215,11 +218,13 @@
             <target>1.8</target>
         </configuration>
     </plugin>
+    
+             <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
              
              <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.19.1</version>
+                <version>2.20</version>
                 <configuration>
                     
                 <parallel>true</parallel>
@@ -232,38 +237,18 @@
                     </suiteXmlFiles>
                 </configuration>
             </plugin> 
+          
+             <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-resources-plugin -->
              
            <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
-        <version>2.6</version>
+    <version>3.0.2</version>
         <configuration>
           <encoding>UTF-8</encoding>
         </configuration>
       </plugin>            
       
-           <!-- Plugin to produce jar -->
-           <plugin>
-  <artifactId>maven-assembly-plugin</artifactId>
-  <configuration>
-    <archive>
-      <manifest>
-        <mainClass>fully.qualified.MainClass</mainClass>
-      </manifest>
-    </archive>
-    <descriptorRefs>
-      <descriptorRef>jar</descriptorRef>
-    </descriptorRefs>
-  </configuration>
-  <executions>
-    <execution>
-      <phase>package</phase> <!-- bind to the packaging phase -->
-      <goals>
-        <goal>single</goal>
-      </goals>
-    </execution>
-  </executions>
-</plugin>
 
   <!--  Plugin to excude non .java files from compiling -->
   <plugin>
@@ -306,17 +291,6 @@
   </properties>
   </profile>
   
-       <!--points to a TEST server database  and ioserverdb instance --> 
-  <profile>
-    <id>test</id>
-    <properties>         
-    <db.driverClass>com.mysql.jdbc.Driver</db.driverClass>
-    <db.connectionURL>jdbc:mysql://10.88.0.54:3306/ioserverdb</db.connectionURL>
-    <db.username>root</db.username>
-    <db.password></db.password>
-      </properties>
-     
-   </profile>
    
 </profiles>
  

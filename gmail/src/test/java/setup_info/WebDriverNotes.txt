@@ -1,7 +1,7 @@
 
 
 /*
- * WebDriver 3.4 requires JDK 8;
+ * WebDriver 3.5.2 requires JDK 8;
  * supports geckodriver 017
  * chromedriver 2.31
  * 

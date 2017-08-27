@@ -79,8 +79,8 @@ public class CrossBrowserSimpleTest {
 
 		WebDriver driver =new FirefoxDriver(firefoxOptions);
 		driver.get(url);
-		//driver.close();//closing window quit only if it is last window open
-	//	driver.quit();//close all firefox windows and quits driver 
+		driver.close();//closing window quit only if it is last window open
+	 	driver.quit();//close all firefox windows and quits driver 
 
 	}
 	
@@ -91,7 +91,6 @@ public class CrossBrowserSimpleTest {
 		Capabilities capabilities  = DesiredCapabilities.firefox();
 
 		System.out.println(capabilities.getBrowserName());
-		System.out.println(capabilities.getPlatform());
 		System.out.println(capabilities.getVersion());
 		System.out.println (capabilities.asMap());
 
@@ -114,6 +113,8 @@ public class CrossBrowserSimpleTest {
 
 		WebDriver driver =new FirefoxDriver(firefoxOptions);
 		driver.get(url);
+		Assert.assertTrue(url.contains("ifonly"));
+
 		//driver.close();//closing window quit only if it is last window open
 		driver.quit();//close all firefox windows and quits driver 
 
@@ -131,15 +132,7 @@ public class CrossBrowserSimpleTest {
 		ieDriver.get(url);
 
 		Assert.assertTrue(url.contains("ifonly"));
-		//ieDriver.close();
-		//ieDriver.quit();
-		try {
-		   Runtime.getRuntime().exec("taskkill /F /IM IEDriverServer.exe");
-		    Runtime.getRuntime().exec("taskkill /F /IM iexplore.exe");
-
-		} catch (IOException e) {
-		    e.printStackTrace();
-		}
+		ieDriver.quit();
 		
 	}
 	@Test

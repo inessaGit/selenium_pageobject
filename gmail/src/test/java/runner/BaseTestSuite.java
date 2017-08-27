@@ -109,7 +109,7 @@ public abstract class BaseTestSuite {
 	
 	//@BeforeTest - For suite test, run before any test method belonging to the classes inside the <test> tag is run. 
 	//@AfterTest - For suite test, run after all the test methods belonging to the classes inside the <test> tag have run.  
-	@AfterTest(alwaysRun=true)
+	//@AfterClass(alwaysRun=true)
 	public static void closeDrivers(){
 
 		LOGGER.info(BaseTestSuite.class.getName()+ " Attempting to  close  WebDriver browser windows.");

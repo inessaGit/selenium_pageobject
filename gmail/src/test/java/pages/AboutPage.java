@@ -42,10 +42,12 @@ public class AboutPage extends BasePage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void clickForWorkLink(){
+	public String  clickForWorkLink(){
 		wait = new WebDriverWait(this.driver,10);
 		wait.until(ExpectedConditions.elementToBeClickable(top_nav_for_work_link));
 		top_nav_for_work_link.click();
+		String actualUrl =this.driver.getCurrentUrl();
+		return actualUrl;
 	}
 	
 	public boolean isTopNavLogoDisplayed(){
@@ -68,7 +70,7 @@ public class AboutPage extends BasePage {
 	}
 	
 	public String clickTopNavSignIn(){
-		wait = new WebDriverWait(this.driver,15);
+		wait = new WebDriverWait(this.driver,10);
 		wait.until(ExpectedConditions.elementToBeClickable(top_nav_sign_in));
 		top_nav_sign_in.click();
 		String actualUrl =this.driver.getCurrentUrl();
