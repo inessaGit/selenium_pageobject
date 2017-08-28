@@ -69,7 +69,6 @@ public class AboutPage extends BasePage {
 	public String clickTopNavCreateAccount(){
 		
 		baseWindowHandle = driver.getWindowHandle();
-
 		wait = new WebDriverWait(this.driver,10);
 		wait.until(ExpectedConditions.elementToBeClickable(top_nav_create_account));
 		top_nav_create_account.click();

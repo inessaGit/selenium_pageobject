@@ -1,7 +1,9 @@
 package test.example;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.logging.Level;
 
 import runner.BaseTestSuite;
 import util.CommonMethods;
@@ -14,11 +16,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.firefox.GeckoDriverService;
 import org.openqa.selenium.firefox.internal.ProfilesIni;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import junit.framework.Assert;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -26,6 +29,9 @@ import org.openqa.selenium.security.UserAndPassword;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.JavascriptExecutor;
+
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 
 
 /*
@@ -120,6 +126,7 @@ public class CrossBrowserSimpleTest {
 
 	}
 
+	
 	@Test(invocationCount=1)
 	public void testGetInternetExplorerViaNativeApi() {
 		
@@ -198,6 +205,13 @@ public class CrossBrowserSimpleTest {
 		DRIVER_MANAGER.destroyWebDriverInstances("iosMobileDriver"); //using wrapper method
 	}
 
-	
+	@Test
+	public void testGetGeckoDriverService(){
+		
+		GeckoDriverService.Builder gecko = new GeckoDriverService.Builder();
+		String LOG_PATH =System.getProperty("user.dir")+"/logs/gecko.log";
+		gecko.withLogFile(new File(LOG_PATH));
+		
+	}
 
 }
