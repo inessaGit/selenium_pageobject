@@ -1,3 +1,27 @@
+annotation hierarchy & execution order
+
+1        org.testng.annotations.Parameters
+2        org.testng.annotations.Listeners
+3        org.testng.annotations.Test
+4        org.testng.annotations.AfterMethod
+          org.testng.annotations.BeforeTest
+6        org.testng.annotations.BeforeMethod
+          org.testng.annotations.Optional
+         org.testng.annotations.AfterTest
+         org.testng.annotations.Guice
+1       org.testng.annotations.BeforeGroups
+o       org.testng.annotations.ExpectedExceptions
+1.      org.testng.annotations.TestInstance
+1       org.testng.annotations.NoInjection
+1       org.testng.annotations.AfterSuite
+         org.testng.annotations.AfterClass
+         org.testng.annotations.AfterGroups
+.        org.testng.annotations.DataProvider
+         org.testng.annotations.BeforeSuite
+.        org.testng.annotations.BeforeClass
+.        org.testng.annotations.Factory
+.        org.testng.annotations.Configuration
+       . org.testng.annotations.ObjectFactory 
 
 
 A suite is represented by one XML file. 

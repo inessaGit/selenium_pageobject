@@ -17,6 +17,8 @@
     
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+   <maven.compiler.source>1.8</maven.compiler.source>
+   <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
    
   <!-- DEPENDENCIES       --> 
@@ -40,18 +42,23 @@
     <artifactId>dbunit</artifactId>
     <version>2.5.1</version>
 </dependency>
-    
-        <!-- Firefox version v53 supported via geckodriver.exe-->
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+        
+        <!-- WebDriver Java binding https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
   <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-java</artifactId>
     <version>3.5.2</version>
 </dependency>
 
+    <!-- Firefox version v53 supported via geckodriver.exe-->
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-firefox-driver -->
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-firefox-driver</artifactId>
+    <version>3.5.2</version>
+</dependency>
 
     <!-- IEDriver for Internet Explorer-->
-        
         <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-ie-driver</artifactId>
@@ -73,6 +80,14 @@
     <version>3.5.2</version>
 </dependency>
 
+<!-- Selenium server needed for Selenium Grid, HTMLUnitDriver -->
+<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server -->
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-server</artifactId>
+    <version>3.5.2</version>
+</dependency>
+
 
 <!--Mobile testing  java client for appium The IOSDriver extends from AppiumDriver and AppiumDriver extends from RemoteWebDriver -->
          <dependency>
@@ -82,7 +97,6 @@
 </dependency>
 
  <!--to keep support for fluent wait -->
-         
          <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
@@ -165,18 +179,16 @@
     <version>2.3.1</version>
 </dependency>
 
-       
-        <dependency>
+   <!-- https://mvnrepository.com/artifact/xml-apis/xml-apis -->
+<dependency>
     <groupId>xml-apis</groupId>
     <artifactId>xml-apis</artifactId>
-    <version>1.4.01</version>
+    <version>2.0.2</version>
 </dependency>
- 
 
   </dependencies>
   
   <!-- BUILD settings -->
-   
    <build>
    <directory>${project.basedir}/bin</directory>
     <finalName>${project.artifactId}-${project.version}</finalName>
@@ -188,7 +200,6 @@
      <outputDirectory>${project.basedir}/bin/classes</outputDirectory>
     <testOutputDirectory>${project.basedir}/bin/test-classes</testOutputDirectory>
 
-     
  <!--  RESOURCES -->   
  <resources>   
      <resource>
@@ -268,8 +279,13 @@
           </sourceIncludes>
         </configuration>
       </plugin>
-       
-     </plugins>        
+
+  <plugin>
+  	<groupId>org.apache.maven.plugins</groupId>
+  	<artifactId>maven-compiler-plugin</artifactId>
+  	<version>3.6.2</version>
+  </plugin>
+        </plugins>        
          
   </build>   
      

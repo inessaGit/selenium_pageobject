@@ -1,5 +1,7 @@
 package pages;
 
+import java.util.Set;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,7 +19,8 @@ public class AboutPage extends BasePage {
 	private static final Logger LOGGER = Logger.getLogger(AboutPage.class);
 	private WebDriver driver;
 	private WebDriverWait wait;
-	
+	//handle windows change
+   String baseWindowHandle ;
 	private final String url ="https://www.google.com/gmail/about/";
 	
 	//================Locators=======================
@@ -27,7 +30,9 @@ public class AboutPage extends BasePage {
 	@FindBy(css="a.gmail-nav__nav-link.gmail-nav__nav-link__sign-in")
     WebElement top_nav_sign_in;
 	
-	@FindBy(css="gmail-nav__nav-link gmail-nav__nav-link__create-account")
+	//@FindBy(css="gmail-nav__nav-link.gmail-nav__nav-link__create-account")
+	
+	@FindBy(xpath="//a[contains(text(), 'Create an account')]")
 	WebElement top_nav_create_account;
 
 	@FindBy(css ="div.gmail-nav__logo.gmail-logo")
@@ -62,11 +67,31 @@ public class AboutPage extends BasePage {
 	}
 	
 	public String clickTopNavCreateAccount(){
+		
+		baseWindowHandle = driver.getWindowHandle();
+
 		wait = new WebDriverWait(this.driver,10);
 		wait.until(ExpectedConditions.elementToBeClickable(top_nav_create_account));
 		top_nav_create_account.click();
-		String actualUrl =this.driver.getCurrentUrl();
+		
+		wait.until(ExpectedConditions.numberOfwindowsToBe(2));
+		Set<String> set = driver.getWindowHandles();
+		
+		System.out.println(set.size());
+		set.remove(baseWindowHandle);
+		System.out.println(set.size());
+
+		String windowHandle2 = set.iterator().next();
+		System.out.println("BASE Window handle:"+baseWindowHandle);
+		System.out.println("Window handle 2:"+windowHandle2);
+		
+		driver.switchTo().window(windowHandle2);
+		
+		String  actualUrl =driver.getCurrentUrl();
+		driver.close();
+		driver.switchTo().window(baseWindowHandle);
 		return actualUrl;
+		
 	}
 	
 	public String clickTopNavSignIn(){
