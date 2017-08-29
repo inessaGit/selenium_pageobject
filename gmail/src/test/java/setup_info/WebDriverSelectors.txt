@@ -1,0 +1,27 @@
+XPATH:XPath is a way to navigate in xml document and this can be used to identify elements in a web page. 
+
+Difference between Absolute path & Relative path.
+Forward slash [ / ] represent immediate child -> Direct child is denoted with - /
+double forward slash [ // ] represent any child or desendants -> Relative child is denoted with - //
+
+Id, class, names can also be used with XPath –
+·         //input[@name=’q’]
+·         //input[@id=’lst-ib’]
+·         //input[@class=’ lst’]
+If only part of id/name/class is constant than “contains” can be used as –
+·         //input[contains(@id,'lst-ib')]
+
+Syntax
+//htmltag[@attname='attvalue']
+//html[text()='textvalue'] 
+//htmltag[contains(text(),'textvalue')] 
+ //htmltag[contains(@attname,'attvalue')]
+
+
+<div>
+<Button>a</button>
+<Button>b</button>
+<Button>c</button>
+</div>
+ driver.findElement(By.xpath("//*[contains(text(),'b')]")).click(); 
+ //div/button[contains(text(),'b']

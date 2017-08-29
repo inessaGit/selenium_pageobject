@@ -1,0 +1,36 @@
+http://seleniumhq.github.io/selenium/docs/api/java/index.html
+
+/*
+ * WebDriver 3.5.2 requires JDK 8;
+ * supports geckodriver 017
+ * chromedriver 2.31
+ * 
+ */
+---------------------------WebDriver native events vs synthetic events---------------------
+In WebDriver advanced user interactions are provided by either 
+- simulating the Javascript events directly (i.e. synthetic events) 
+- letting the browser generate the Javascript events (i.e. native events). 
+- Native events simulate the user interactions better. 
+- Native events should be used whenever it is possible. 
+- Synthetic events are platform independent, which can be important in Linux
+
+------------------------------WebDRiver Element Not Visible Exception--------------------
+Selenium determines an element is visible or not by the following criteria (use a DOM inspector to determine what css applies to your element, make sure you look at computed style):
+
+1) visibility != hidden
+2) display != none (is also checked against every parent element)
+3) opacity != 0 (this is not checked for clicking an element)
+4)height and width are both > 0
+5) for an input, the attribute type != hidden
+6) due to timing when the element is supposed to slowly appear. Using wait function might help 
+7) element is not visible in viewport -> use window maximize function 
+
+There is also another case when visible element will be recognized as not visible:
+When the Element is CSS transformed
+When Parent Element of the Element is CSS transformed
+In order to check if element you wan't to interact with is CSS transformed, on CHROME do this:
+
+open inspector
+Find interesting element (or more likely its parent element, supposedly div element)
+Select 'Computed' tab
+if there is a parameter: webkit-transform: matrix( ... ) it means that the element is CSS transformed, and may not be recognized by selenium 2 as a visible element
