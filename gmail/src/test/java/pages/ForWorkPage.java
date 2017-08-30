@@ -12,7 +12,7 @@ public class ForWorkPage extends BasePage{
 	private WebDriver driver;
 	private WebDriverWait wait;
 	
-	private final String url ="";
+	private final String url ="https://www.google.com/gmail/about/for-work/";
 	public ForWorkPage(WebDriver driver) {
 		super(driver);
         this.driver = driver;

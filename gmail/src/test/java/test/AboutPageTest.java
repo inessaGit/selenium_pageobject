@@ -17,9 +17,7 @@ public class AboutPageTest extends BaseTestSuite{
 	private WebDriver driver;
 	private static final Logger LOGGER = Logger.getLogger(AboutPageTest.class);
 	private AboutPage aboutPage ;
-    String username = Constants.getInstance().getTestUser();
-	String pswd = Constants.getInstance().getTestUserPassword();
-    
+   
 	
     @BeforeClass
     public  void initPages(){

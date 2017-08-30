@@ -14,8 +14,7 @@
     </run>
   </groups>
 
-       <test name="FirefoxTest">
-              
+       <test name="UI Tests">
               <classes>    
                 <class name= "test.BasePageTest"/>
                 <class name= "test.AboutPageTest"/>
@@ -24,14 +23,11 @@
       
        </test>
 
-       <test name="ChromeTest">
-               
-              <classes>
-                  
-                <class name= "test.BasePageTest"/>
-                <class name= "test.AboutPageTest"/>
-                                  
-               </classes>
+       <test name="Functional Tests">
+              <packages>
+                  <package name="test.functional" />
+              </packages>
+
        </test>      
   
 </suite>
