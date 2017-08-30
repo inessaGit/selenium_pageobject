@@ -27,11 +27,10 @@ public class AboutPage extends BasePage {
 	@FindBy(css="a.gmail-nav__nav-link.gmail-nav__nav-link__for-work")
 	WebElement top_nav_for_work_link;
 
-	@FindBy(css="a.gmail-nav__nav-link.gmail-nav__nav-link__sign-in")
-    WebElement top_nav_sign_in;
+    @FindBy(xpath="//a[contains(@class, 'sign-in')]")
+	WebElement top_nav_sign_in;
 	
 	//@FindBy(css="gmail-nav__nav-link.gmail-nav__nav-link__create-account")
-	
 	@FindBy(xpath="//a[contains(text(), 'Create an account')]")
 	WebElement top_nav_create_account;
 

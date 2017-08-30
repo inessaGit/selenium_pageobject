@@ -63,6 +63,8 @@ public class TestListenerFailPass extends TestListenerAdapter {
 	private static final Logger LOGGER = Logger.getLogger(TestListenerFailPass.class);
 	private static final Constants CONSTANTS =Constants.getInstance();
 
+	
+	
 	@Override
 	public void onTestFailure(ITestResult tr) {
 		System.out.println("TestListener test failed "+tr.getInstanceName());

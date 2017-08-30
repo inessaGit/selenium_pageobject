@@ -14,6 +14,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
@@ -29,14 +30,16 @@ import util.WebDriverManager;
  * 2) This class contains common logic for all test classes; driven by TestNG
  *
  */
+
+@Listeners({util.SuiteListener.class})
 public abstract class BaseTestSuite {
 
 	private static WebDriverManager DRIVER_MANAGER = null;
-	private static   WebDriver firefoxDriver = null;
-	private static  WebDriver chromeDriver = null;
-	private static WebDriver ieDriver = null;
-	private static  WebDriver safariDriver = null;
-	private static WebDriver iosMobileDriver = null;
+	private static   WebDriver FIREFOX_DRIVER = null;
+	private static  WebDriver CHROME_DRIVER = null;
+	private static WebDriver IE_DRIVER = null;
+	private static  WebDriver SAFARI_DRIVER = null;
+	private static WebDriver IOS_MOBILE_DRIVER = null;
 
 
     private static final Logger LOGGER = Logger.getLogger(BaseTestSuite.class);
@@ -64,45 +67,46 @@ public abstract class BaseTestSuite {
 			LOGGER.debug(e);
 		}
 	}
+	
+	public static WebDriverManager getWebDriverManager(){
+		return DRIVER_MANAGER;
+	}
 	// DRIVER getters 
 	public static  WebDriver getFirefoxDriver() {
-		firefoxDriver = DRIVER_MANAGER.getDriver("firefox");
-		return firefoxDriver;
+		FIREFOX_DRIVER = DRIVER_MANAGER.getDriver("firefox");
+		return FIREFOX_DRIVER;
 	}
 
 	public static  WebDriver getIOSMobileDriver() {
-		firefoxDriver = DRIVER_MANAGER.getDriver("iosMobileDriver");
-		return iosMobileDriver;
+		IOS_MOBILE_DRIVER=DRIVER_MANAGER.getDriver("iosMobileDriver");
+		return IOS_MOBILE_DRIVER;
 	}
 
 	
 	public static WebDriver getChromeDriver() {
-		chromeDriver = DRIVER_MANAGER.getDriver("chrome");
-		return chromeDriver;
+		CHROME_DRIVER = DRIVER_MANAGER.getDriver("chrome");
+		return CHROME_DRIVER;
 	}
 
 	public static WebDriver getIeDriver() {
-		ieDriver = DRIVER_MANAGER.getDriver("ie");
-		return ieDriver;
+		IE_DRIVER = DRIVER_MANAGER.getDriver("ie");
+		return IE_DRIVER;
 	}
 
 	public static WebDriver getSafariDriver() {
-		safariDriver = DRIVER_MANAGER.getDriver("safari");
-		return safariDriver;
+		SAFARI_DRIVER = DRIVER_MANAGER.getDriver("safari");
+		return SAFARI_DRIVER;
 	}
 
 	
 	//@BeforeTest() or @BeforeSuite 
 	public static void startDrivers(){
 		LOGGER.info(BaseTestSuite.class.getName()+" running @BeforeTest - startDrivers()");	 
-		 
-		firefoxDriver = DRIVER_MANAGER.getDriver("firefox");
-		chromeDriver = DRIVER_MANAGER.getDriver("chrome");
-		ieDriver = DRIVER_MANAGER.getDriver("ie");
-		safariDriver = DRIVER_MANAGER.getDriver("safari");
-		iosMobileDriver = DRIVER_MANAGER.getDriver("iosMobileDriver");
-
-		
+		FIREFOX_DRIVER = DRIVER_MANAGER.getDriver("firefox");
+		CHROME_DRIVER = DRIVER_MANAGER.getDriver("chrome");
+		IE_DRIVER = DRIVER_MANAGER.getDriver("ie");
+		SAFARI_DRIVER = DRIVER_MANAGER.getDriver("safari");
+		IOS_MOBILE_DRIVER = DRIVER_MANAGER.getDriver("iosMobileDriver");
 		LOGGER.info(BaseTestSuite.class.getName()+" running @BeforeTest - all drivers started");	 
 	}
 
@@ -118,7 +122,6 @@ public abstract class BaseTestSuite {
 		DRIVER_MANAGER.closeDriverWindows("ie");
 		DRIVER_MANAGER.closeDriverWindows("safari");
 		DRIVER_MANAGER.closeDriverWindows("iosMobileDriver");
-
 		LOGGER.info(BaseTestSuite.class.getName()+ " Successfully closed  WebDriver browser windows.");
 
 	}

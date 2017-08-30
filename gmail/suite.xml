@@ -4,6 +4,7 @@
 
 <listeners>
     <listener class-name="util.TestListenerFailPass"/> 
+    <listener class-name="util.SuiteListener"/> 
     
 </listeners>
 

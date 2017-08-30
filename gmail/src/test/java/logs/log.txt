@@ -1,0 +1,210 @@
+2017-08-29 22:19:20 INFO  WebDriverManager:75 - util.WebDriverManager WebDriverManager object does not exist. Creating object
+2017-08-29 22:19:20 INFO  Constants:46 - util.Constants Constants object does not exist. Creating object
+2017-08-29 22:19:20 INFO  Constants:60 - util.Constants in constructor
+2017-08-29 22:19:20 INFO  ReadingProperties:29 - util.ReadingProperties object does not exist. Creating object
+2017-08-29 22:19:20 INFO  ReadingProperties:44 - util.ReadingProperties in constructor.
+2017-08-29 22:19:20 INFO  ReadingProperties:58 - util.ReadingProperties in method loadConfigProperties
+2017-08-29 22:19:20 INFO  ReadingProperties:89 - Successfully read from config.properties file <fail.screenshot.path> /report/screenshot/FAIL/
+2017-08-29 22:19:20 INFO  ReadingProperties:89 - Successfully read from config.properties file <pass.screenshot.path> /report/screenshot/PASS/
+2017-08-29 22:19:20 INFO  ReadingProperties:89 - Successfully read from config.properties file <usergen.screenshot.path> /report/screenshot/UserGen/
+2017-08-29 22:19:20 INFO  ReadingProperties:89 - Successfully read from config.properties file <log.package.path> /src/test/java/logs/
+2017-08-29 22:19:20 INFO  ReadingProperties:89 - Successfully read from config.properties file <test.excel.path> /src/test/java/config/TestData.xlsx
+2017-08-29 22:19:20 INFO  ReadingProperties:89 - Successfully read from config.properties file <test.env> https://mail.google.com/
+2017-08-29 22:19:20 INFO  ReadingProperties:89 - Successfully read from config.properties file <dev.env> NA
+2017-08-29 22:19:20 INFO  ReadingProperties:89 - Successfully read from config.properties file <testuser.username> inessa.webdriver@gmail.com
+2017-08-29 22:19:20 INFO  ReadingProperties:89 - Successfully read from config.properties file <testuser.password> selenium123
+2017-08-29 22:19:20 INFO  ReadingProperties:89 - Successfully read from config.properties file <ie.path.win> /src/test/java/config/IEDriverServer.exe
+2017-08-29 22:19:20 INFO  ReadingProperties:89 - Successfully read from config.properties file <chrome.path.win> /src/test/java/config/chromedriver.exe
+2017-08-29 22:19:20 INFO  ReadingProperties:89 - Successfully read from config.properties file <chrome.path.mac> /src/test/java/config/chromedriver
+2017-08-29 22:19:20 INFO  ReadingProperties:89 - Successfully read from config.properties file <gecko.path.win> /src/test/java/config/geckodriver017.exe
+2017-08-29 22:19:20 INFO  WebDriverManager:65 - util.WebDriverManager running constructor. Setting all drivers.
+2017-08-29 22:19:20 INFO  WebDriverManager:239 - util.WebDriverManager Setting up driver instance  firefox
+2017-08-29 22:19:20 INFO  WebDriverManager:239 - util.WebDriverManager Setting up driver instance  chrome
+2017-08-29 22:19:20 INFO  WebDriverManager:239 - util.WebDriverManager Setting up driver instance  ie
+2017-08-29 22:19:20 INFO  WebDriverManager:378 - Safari browser: is supported platform false
+2017-08-29 22:19:20 INFO  WebDriverManager:239 - util.WebDriverManager Setting up driver instance  safari
+2017-08-29 22:19:20 INFO  WebDriverManager:239 - util.WebDriverManager Setting up driver instance  iosMobileDriver
+2017-08-29 22:19:20 INFO  Constants:51 - util.Constants Constants object already exist
+2017-08-29 22:19:20 INFO  BaseTestSuite:58 - runner.BaseTestSuite attempting to load test data  spreadsheets
+2017-08-29 22:19:21 INFO  BaseTestSuite:60 - runner.BaseTestSuite Test data  spreadsheets successfully loaded
+2017-08-29 22:19:21 INFO  BaseTestSuite:96 - runner.BaseTestSuite running @BeforeTest - startDrivers()
+2017-08-29 22:19:26 INFO  WebDriverManager:362 - util.WebDriverManager browser info: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0
+2017-08-29 22:19:26 INFO  WebDriverManager:95 - util.WebDriverManager getting driver instance  Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0
+2017-08-29 22:19:27 INFO  WebDriverManager:362 - util.WebDriverManager browser info: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36
+2017-08-29 22:19:27 INFO  WebDriverManager:103 - util.WebDriverManager getting driver instance  Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36
+2017-08-29 22:19:28 INFO  WebDriverManager:362 - util.WebDriverManager browser info: Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; rv:11.0) like Gecko
+2017-08-29 22:19:28 INFO  WebDriverManager:135 - util.WebDriverManager getting driver instance  Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; rv:11.0) like Gecko
+2017-08-29 22:19:29 INFO  BaseTestSuite:128 - runner.BaseTestSuite Attempting to  destroy WebDriver instances.
+2017-08-29 22:19:29 INFO  WebDriverManager:245 - util.WebDriverManager Attempting to  destroy WebDriver instances.
+2017-08-29 22:19:35 INFO  WebDriverManager:252 - util.WebDriverManager Successfully destroyed Firefox instances.
+2017-08-29 22:19:35 INFO  WebDriverManager:245 - util.WebDriverManager Attempting to  destroy WebDriver instances.
+2017-08-29 22:19:36 INFO  WebDriverManager:262 - util.WebDriverManager Successfully destroyed Chrome instances.
+2017-08-29 22:19:36 INFO  WebDriverManager:245 - util.WebDriverManager Attempting to  destroy WebDriver instances.
+2017-08-29 22:19:36 INFO  WebDriverManager:245 - util.WebDriverManager Attempting to  destroy WebDriver instances.
+2017-08-29 22:19:36 INFO  WebDriverManager:271 - util.WebDriverManager Successfully destroyed IE instances.
+2017-08-29 22:19:36 INFO  WebDriverManager:245 - util.WebDriverManager Attempting to  destroy WebDriver instances.
+2017-08-29 22:19:36 INFO  BaseTestSuite:136 - runner.BaseTestSuite Successfully destroyed  webdriver instances.
+2017-08-29 22:25:53 INFO  WebDriverManager:75 - util.WebDriverManager WebDriverManager object does not exist. Creating object
+2017-08-29 22:25:53 INFO  Constants:46 - util.Constants Constants object does not exist. Creating object
+2017-08-29 22:25:53 INFO  Constants:60 - util.Constants in constructor
+2017-08-29 22:25:53 INFO  ReadingProperties:29 - util.ReadingProperties object does not exist. Creating object
+2017-08-29 22:25:53 INFO  ReadingProperties:44 - util.ReadingProperties in constructor.
+2017-08-29 22:25:53 INFO  ReadingProperties:58 - util.ReadingProperties in method loadConfigProperties
+2017-08-29 22:25:53 INFO  ReadingProperties:89 - Successfully read from config.properties file <fail.screenshot.path> /report/screenshot/FAIL/
+2017-08-29 22:25:53 INFO  ReadingProperties:89 - Successfully read from config.properties file <pass.screenshot.path> /report/screenshot/PASS/
+2017-08-29 22:25:53 INFO  ReadingProperties:89 - Successfully read from config.properties file <usergen.screenshot.path> /report/screenshot/UserGen/
+2017-08-29 22:25:53 INFO  ReadingProperties:89 - Successfully read from config.properties file <log.package.path> /src/test/java/logs/
+2017-08-29 22:25:53 INFO  ReadingProperties:89 - Successfully read from config.properties file <test.excel.path> /src/test/java/config/TestData.xlsx
+2017-08-29 22:25:53 INFO  ReadingProperties:89 - Successfully read from config.properties file <test.env> https://mail.google.com/
+2017-08-29 22:25:53 INFO  ReadingProperties:89 - Successfully read from config.properties file <dev.env> NA
+2017-08-29 22:25:53 INFO  ReadingProperties:89 - Successfully read from config.properties file <testuser.username> inessa.webdriver@gmail.com
+2017-08-29 22:25:53 INFO  ReadingProperties:89 - Successfully read from config.properties file <testuser.password> selenium123
+2017-08-29 22:25:53 INFO  ReadingProperties:89 - Successfully read from config.properties file <ie.path.win> /src/test/java/config/IEDriverServer.exe
+2017-08-29 22:25:53 INFO  ReadingProperties:89 - Successfully read from config.properties file <chrome.path.win> /src/test/java/config/chromedriver.exe
+2017-08-29 22:25:53 INFO  ReadingProperties:89 - Successfully read from config.properties file <chrome.path.mac> /src/test/java/config/chromedriver
+2017-08-29 22:25:53 INFO  ReadingProperties:89 - Successfully read from config.properties file <gecko.path.win> /src/test/java/config/geckodriver017.exe
+2017-08-29 22:25:53 INFO  WebDriverManager:65 - util.WebDriverManager running constructor. Setting all drivers.
+2017-08-29 22:25:53 INFO  WebDriverManager:239 - util.WebDriverManager Setting up driver instance  firefox
+2017-08-29 22:25:53 INFO  WebDriverManager:239 - util.WebDriverManager Setting up driver instance  chrome
+2017-08-29 22:25:53 INFO  WebDriverManager:239 - util.WebDriverManager Setting up driver instance  ie
+2017-08-29 22:25:53 INFO  WebDriverManager:378 - Safari browser: is supported platform false
+2017-08-29 22:25:53 INFO  WebDriverManager:239 - util.WebDriverManager Setting up driver instance  safari
+2017-08-29 22:25:53 INFO  WebDriverManager:239 - util.WebDriverManager Setting up driver instance  iosMobileDriver
+2017-08-29 22:25:53 INFO  Constants:51 - util.Constants Constants object already exist
+2017-08-29 22:25:53 INFO  BaseTestSuite:58 - runner.BaseTestSuite attempting to load test data  spreadsheets
+2017-08-29 22:25:54 INFO  BaseTestSuite:60 - runner.BaseTestSuite Test data  spreadsheets successfully loaded
+2017-08-29 22:25:59 INFO  WebDriverManager:362 - util.WebDriverManager browser info: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0
+2017-08-29 22:25:59 INFO  WebDriverManager:95 - util.WebDriverManager getting driver instance  Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0
+2017-08-29 22:25:59 INFO  Constants:51 - util.Constants Constants object already exist
+2017-08-29 22:26:00 INFO  BaseTestSuite:129 - runner.BaseTestSuite Attempting to  destroy WebDriver instances.
+2017-08-29 22:26:00 INFO  WebDriverManager:245 - util.WebDriverManager Attempting to  destroy WebDriver instances.
+2017-08-29 22:26:09 INFO  WebDriverManager:252 - util.WebDriverManager Successfully destroyed Firefox instances.
+2017-08-29 22:26:09 INFO  WebDriverManager:245 - util.WebDriverManager Attempting to  destroy WebDriver instances.
+2017-08-29 22:26:09 INFO  WebDriverManager:245 - util.WebDriverManager Attempting to  destroy WebDriver instances.
+2017-08-29 22:26:09 INFO  WebDriverManager:245 - util.WebDriverManager Attempting to  destroy WebDriver instances.
+2017-08-29 22:26:09 INFO  WebDriverManager:245 - util.WebDriverManager Attempting to  destroy WebDriver instances.
+2017-08-29 22:26:09 INFO  BaseTestSuite:137 - runner.BaseTestSuite Successfully destroyed  webdriver instances.
+2017-08-29 22:26:49 INFO  Constants:46 - util.Constants Constants object does not exist. Creating object
+2017-08-29 22:26:49 INFO  Constants:60 - util.Constants in constructor
+2017-08-29 22:26:49 INFO  ReadingProperties:29 - util.ReadingProperties object does not exist. Creating object
+2017-08-29 22:26:49 INFO  ReadingProperties:44 - util.ReadingProperties in constructor.
+2017-08-29 22:26:49 INFO  ReadingProperties:58 - util.ReadingProperties in method loadConfigProperties
+2017-08-29 22:26:49 INFO  ReadingProperties:89 - Successfully read from config.properties file <fail.screenshot.path> /report/screenshot/FAIL/
+2017-08-29 22:26:49 INFO  ReadingProperties:89 - Successfully read from config.properties file <pass.screenshot.path> /report/screenshot/PASS/
+2017-08-29 22:26:49 INFO  ReadingProperties:89 - Successfully read from config.properties file <usergen.screenshot.path> /report/screenshot/UserGen/
+2017-08-29 22:26:49 INFO  ReadingProperties:89 - Successfully read from config.properties file <log.package.path> /src/test/java/logs/
+2017-08-29 22:26:49 INFO  ReadingProperties:89 - Successfully read from config.properties file <test.excel.path> /src/test/java/config/TestData.xlsx
+2017-08-29 22:26:49 INFO  ReadingProperties:89 - Successfully read from config.properties file <test.env> https://mail.google.com/
+2017-08-29 22:26:49 INFO  ReadingProperties:89 - Successfully read from config.properties file <dev.env> NA
+2017-08-29 22:26:49 INFO  ReadingProperties:89 - Successfully read from config.properties file <testuser.username> inessa.webdriver@gmail.com
+2017-08-29 22:26:49 INFO  ReadingProperties:89 - Successfully read from config.properties file <testuser.password> selenium123
+2017-08-29 22:26:49 INFO  ReadingProperties:89 - Successfully read from config.properties file <ie.path.win> /src/test/java/config/IEDriverServer.exe
+2017-08-29 22:26:49 INFO  ReadingProperties:89 - Successfully read from config.properties file <chrome.path.win> /src/test/java/config/chromedriver.exe
+2017-08-29 22:26:49 INFO  ReadingProperties:89 - Successfully read from config.properties file <chrome.path.mac> /src/test/java/config/chromedriver
+2017-08-29 22:26:49 INFO  ReadingProperties:89 - Successfully read from config.properties file <gecko.path.win> /src/test/java/config/geckodriver017.exe
+2017-08-29 22:26:49 INFO  WebDriverManager:75 - util.WebDriverManager WebDriverManager object does not exist. Creating object
+2017-08-29 22:26:49 INFO  Constants:51 - util.Constants Constants object already exist
+2017-08-29 22:26:49 INFO  WebDriverManager:65 - util.WebDriverManager running constructor. Setting all drivers.
+2017-08-29 22:26:49 INFO  WebDriverManager:239 - util.WebDriverManager Setting up driver instance  firefox
+2017-08-29 22:26:49 INFO  WebDriverManager:239 - util.WebDriverManager Setting up driver instance  chrome
+2017-08-29 22:26:49 INFO  WebDriverManager:239 - util.WebDriverManager Setting up driver instance  ie
+2017-08-29 22:26:49 INFO  WebDriverManager:378 - Safari browser: is supported platform false
+2017-08-29 22:26:49 INFO  WebDriverManager:239 - util.WebDriverManager Setting up driver instance  safari
+2017-08-29 22:26:49 INFO  WebDriverManager:239 - util.WebDriverManager Setting up driver instance  iosMobileDriver
+2017-08-29 22:26:49 INFO  Constants:51 - util.Constants Constants object already exist
+2017-08-29 22:26:49 INFO  BaseTestSuite:58 - runner.BaseTestSuite attempting to load test data  spreadsheets
+2017-08-29 22:26:50 INFO  BaseTestSuite:60 - runner.BaseTestSuite Test data  spreadsheets successfully loaded
+2017-08-29 22:26:50 INFO  Constants:51 - util.Constants Constants object already exist
+2017-08-29 22:26:50 INFO  Constants:51 - util.Constants Constants object already exist
+2017-08-29 22:26:55 INFO  WebDriverManager:362 - util.WebDriverManager browser info: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0
+2017-08-29 22:26:55 INFO  WebDriverManager:95 - util.WebDriverManager getting driver instance  Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0
+2017-08-29 22:26:55 INFO  Constants:51 - util.Constants Constants object already exist
+2017-08-29 22:27:00 INFO  WebDriverManager:362 - util.WebDriverManager browser info: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0
+2017-08-29 22:27:00 INFO  WebDriverManager:95 - util.WebDriverManager getting driver instance  Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0
+2017-08-29 22:27:00 INFO  TimeUtil:21 - util.TimeUtil
+2017-08-29 22:27:04 INFO  WebDriverManager:362 - util.WebDriverManager browser info: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0
+2017-08-29 22:27:04 INFO  WebDriverManager:95 - util.WebDriverManager getting driver instance  Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0
+2017-08-29 22:27:04 INFO  Constants:51 - util.Constants Constants object already exist
+2017-08-29 22:27:04 INFO  BasePage:40 - pages.AboutPage constructor
+2017-08-29 22:27:14 INFO  WebDriverManager:362 - util.WebDriverManager browser info: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0
+2017-08-29 22:27:14 INFO  WebDriverManager:95 - util.WebDriverManager getting driver instance  Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0
+2017-08-29 22:27:25 INFO  WebDriverManager:362 - util.WebDriverManager browser info: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0
+2017-08-29 22:27:25 INFO  WebDriverManager:95 - util.WebDriverManager getting driver instance  Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0
+2017-08-29 22:27:37 INFO  WebDriverManager:362 - util.WebDriverManager browser info: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0
+2017-08-29 22:27:37 INFO  WebDriverManager:95 - util.WebDriverManager getting driver instance  Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0
+2017-08-29 22:27:48 INFO  WebDriverManager:362 - util.WebDriverManager browser info: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0
+2017-08-29 22:27:48 INFO  WebDriverManager:95 - util.WebDriverManager getting driver instance  Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0
+2017-08-29 22:27:48 INFO  BaseTestSuite:129 - runner.BaseTestSuite Attempting to  destroy WebDriver instances.
+2017-08-29 22:27:48 INFO  WebDriverManager:245 - util.WebDriverManager Attempting to  destroy WebDriver instances.
+2017-08-29 22:27:55 INFO  WebDriverManager:252 - util.WebDriverManager Successfully destroyed Firefox instances.
+2017-08-29 22:27:55 INFO  WebDriverManager:245 - util.WebDriverManager Attempting to  destroy WebDriver instances.
+2017-08-29 22:27:55 INFO  WebDriverManager:245 - util.WebDriverManager Attempting to  destroy WebDriver instances.
+2017-08-29 22:27:55 INFO  WebDriverManager:245 - util.WebDriverManager Attempting to  destroy WebDriver instances.
+2017-08-29 22:27:55 INFO  WebDriverManager:245 - util.WebDriverManager Attempting to  destroy WebDriver instances.
+2017-08-29 22:27:55 INFO  BaseTestSuite:137 - runner.BaseTestSuite Successfully destroyed  webdriver instances.
+2017-08-29 22:35:26 INFO  Constants:46 - util.Constants Constants object does not exist. Creating object
+2017-08-29 22:35:26 INFO  Constants:60 - util.Constants in constructor
+2017-08-29 22:35:26 INFO  ReadingProperties:29 - util.ReadingProperties object does not exist. Creating object
+2017-08-29 22:35:26 INFO  ReadingProperties:44 - util.ReadingProperties in constructor.
+2017-08-29 22:35:26 INFO  ReadingProperties:58 - util.ReadingProperties in method loadConfigProperties
+2017-08-29 22:35:26 INFO  ReadingProperties:89 - Successfully read from config.properties file <fail.screenshot.path> /report/screenshot/FAIL/
+2017-08-29 22:35:26 INFO  ReadingProperties:89 - Successfully read from config.properties file <pass.screenshot.path> /report/screenshot/PASS/
+2017-08-29 22:35:26 INFO  ReadingProperties:89 - Successfully read from config.properties file <usergen.screenshot.path> /report/screenshot/UserGen/
+2017-08-29 22:35:26 INFO  ReadingProperties:89 - Successfully read from config.properties file <log.package.path> /src/test/java/logs/
+2017-08-29 22:35:26 INFO  ReadingProperties:89 - Successfully read from config.properties file <test.excel.path> /src/test/java/config/TestData.xlsx
+2017-08-29 22:35:26 INFO  ReadingProperties:89 - Successfully read from config.properties file <test.env> https://mail.google.com/
+2017-08-29 22:35:26 INFO  ReadingProperties:89 - Successfully read from config.properties file <dev.env> NA
+2017-08-29 22:35:26 INFO  ReadingProperties:89 - Successfully read from config.properties file <testuser.username> inessa.webdriver@gmail.com
+2017-08-29 22:35:26 INFO  ReadingProperties:89 - Successfully read from config.properties file <testuser.password> selenium123
+2017-08-29 22:35:26 INFO  ReadingProperties:89 - Successfully read from config.properties file <ie.path.win> /src/test/java/config/IEDriverServer.exe
+2017-08-29 22:35:26 INFO  ReadingProperties:89 - Successfully read from config.properties file <chrome.path.win> /src/test/java/config/chromedriver.exe
+2017-08-29 22:35:26 INFO  ReadingProperties:89 - Successfully read from config.properties file <chrome.path.mac> /src/test/java/config/chromedriver
+2017-08-29 22:35:26 INFO  ReadingProperties:89 - Successfully read from config.properties file <gecko.path.win> /src/test/java/config/geckodriver017.exe
+2017-08-29 22:35:26 INFO  WebDriverManager:75 - util.WebDriverManager WebDriverManager object does not exist. Creating object
+2017-08-29 22:35:26 INFO  Constants:51 - util.Constants Constants object already exist
+2017-08-29 22:35:26 INFO  WebDriverManager:65 - util.WebDriverManager running constructor. Setting all drivers.
+2017-08-29 22:35:26 INFO  WebDriverManager:239 - util.WebDriverManager Setting up driver instance  firefox
+2017-08-29 22:35:26 INFO  WebDriverManager:239 - util.WebDriverManager Setting up driver instance  chrome
+2017-08-29 22:35:26 INFO  WebDriverManager:239 - util.WebDriverManager Setting up driver instance  ie
+2017-08-29 22:35:26 INFO  WebDriverManager:378 - Safari browser: is supported platform false
+2017-08-29 22:35:26 INFO  WebDriverManager:239 - util.WebDriverManager Setting up driver instance  safari
+2017-08-29 22:35:26 INFO  WebDriverManager:239 - util.WebDriverManager Setting up driver instance  iosMobileDriver
+2017-08-29 22:35:26 INFO  Constants:51 - util.Constants Constants object already exist
+2017-08-29 22:35:26 INFO  BaseTestSuite:61 - runner.BaseTestSuite attempting to load test data  spreadsheets
+2017-08-29 22:35:27 INFO  BaseTestSuite:63 - runner.BaseTestSuite Test data  spreadsheets successfully loaded
+2017-08-29 22:35:27 INFO  Constants:51 - util.Constants Constants object already exist
+2017-08-29 22:35:27 INFO  Constants:51 - util.Constants Constants object already exist
+2017-08-29 22:35:34 INFO  WebDriverManager:362 - util.WebDriverManager browser info: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0
+2017-08-29 22:35:34 INFO  WebDriverManager:95 - util.WebDriverManager getting driver instance  Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0
+2017-08-29 22:35:34 INFO  Constants:51 - util.Constants Constants object already exist
+2017-08-29 22:35:39 INFO  WebDriverManager:362 - util.WebDriverManager browser info: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0
+2017-08-29 22:35:39 INFO  WebDriverManager:95 - util.WebDriverManager getting driver instance  Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0
+2017-08-29 22:35:39 INFO  TimeUtil:21 - util.TimeUtil
+2017-08-29 22:35:42 INFO  WebDriverManager:362 - util.WebDriverManager browser info: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0
+2017-08-29 22:35:42 INFO  WebDriverManager:95 - util.WebDriverManager getting driver instance  Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0
+2017-08-29 22:35:42 INFO  Constants:51 - util.Constants Constants object already exist
+2017-08-29 22:35:42 INFO  BasePage:40 - pages.AboutPage constructor
+2017-08-29 22:35:48 INFO  WebDriverManager:362 - util.WebDriverManager browser info: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0
+2017-08-29 22:35:48 INFO  WebDriverManager:95 - util.WebDriverManager getting driver instance  Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0
+2017-08-29 22:35:55 INFO  WebDriverManager:362 - util.WebDriverManager browser info: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0
+2017-08-29 22:35:55 INFO  WebDriverManager:95 - util.WebDriverManager getting driver instance  Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0
+2017-08-29 22:36:04 INFO  WebDriverManager:362 - util.WebDriverManager browser info: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0
+2017-08-29 22:36:04 INFO  WebDriverManager:95 - util.WebDriverManager getting driver instance  Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0
+2017-08-29 22:36:15 INFO  WebDriverManager:362 - util.WebDriverManager browser info: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0
+2017-08-29 22:36:15 INFO  WebDriverManager:95 - util.WebDriverManager getting driver instance  Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0
+2017-08-29 22:36:15 INFO  BaseTestSuite:132 - runner.BaseTestSuite Attempting to  destroy WebDriver instances.
+2017-08-29 22:36:15 INFO  WebDriverManager:245 - util.WebDriverManager Attempting to  destroy WebDriver instances.
+2017-08-29 22:36:28 INFO  WebDriverManager:252 - util.WebDriverManager Successfully destroyed Firefox instances.
+2017-08-29 22:36:28 INFO  WebDriverManager:245 - util.WebDriverManager Attempting to  destroy WebDriver instances.
+2017-08-29 22:36:28 INFO  WebDriverManager:245 - util.WebDriverManager Attempting to  destroy WebDriver instances.
+2017-08-29 22:36:28 INFO  WebDriverManager:245 - util.WebDriverManager Attempting to  destroy WebDriver instances.
+2017-08-29 22:36:28 INFO  WebDriverManager:245 - util.WebDriverManager Attempting to  destroy WebDriver instances.
+2017-08-29 22:36:28 INFO  BaseTestSuite:140 - runner.BaseTestSuite Successfully destroyed  webdriver instances.
+2017-08-29 22:36:28 INFO  BaseTestSuite:132 - runner.BaseTestSuite Attempting to  destroy WebDriver instances.
+2017-08-29 22:36:28 INFO  WebDriverManager:245 - util.WebDriverManager Attempting to  destroy WebDriver instances.
+2017-08-29 22:36:28 INFO  WebDriverManager:252 - util.WebDriverManager Successfully destroyed Firefox instances.
+2017-08-29 22:36:28 INFO  WebDriverManager:245 - util.WebDriverManager Attempting to  destroy WebDriver instances.
+2017-08-29 22:36:28 INFO  WebDriverManager:245 - util.WebDriverManager Attempting to  destroy WebDriver instances.
+2017-08-29 22:36:28 INFO  WebDriverManager:245 - util.WebDriverManager Attempting to  destroy WebDriver instances.
+2017-08-29 22:36:28 INFO  WebDriverManager:245 - util.WebDriverManager Attempting to  destroy WebDriver instances.
+2017-08-29 22:36:28 INFO  BaseTestSuite:140 - runner.BaseTestSuite Successfully destroyed  webdriver instances.

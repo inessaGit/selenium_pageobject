@@ -26,8 +26,9 @@ public class ReadingProperties {
 	public static ReadingProperties getInstance(){
 
 		if (readProperties==null){
+			LOGGER.info(ReadingProperties.class.getName()+ " object does not exist. Creating object");
 			readProperties=new ReadingProperties();
-			LOGGER.info(ReadingProperties.class.getName()+ " getInstance");
+
 		}
 		else {
 			LOGGER.info(ReadingProperties.class.getName()+ " ReadingProperties object already exist");
@@ -54,7 +55,7 @@ public class ReadingProperties {
 			fis= new FileInputStream(System.getProperty("user.dir") +pathToConfig );
 			propertyCONFIG.load(fis);
 			success=true;			
-			LOGGER.info(ReadingProperties.class.getName()+ "in method loadConfigProperties");
+			LOGGER.info(ReadingProperties.class.getName()+ " in method loadConfigProperties");
 
 		}
 		

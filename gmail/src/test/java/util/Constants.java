@@ -43,13 +43,12 @@ public  class Constants {
 	
 	public  static Constants getInstance() {
 	      if(CONSTANTS == null) {
-	         CONSTANTS = new Constants();
 	 		LOGGER.info(Constants.class.getName()+ " Constants object does not exist. Creating object");
+	        CONSTANTS = new Constants();
 
 	      }
 	      else {
-	  		LOGGER.info(Constants.class.getName()+ " constants object already exist");
-
+	  		LOGGER.info(Constants.class.getName()+ " Constants object already exist");
 	      }
 	      return CONSTANTS;
 	   }
@@ -80,7 +79,7 @@ public  class Constants {
 		submittedOrdersPath=rp.readConfigProperties("submittedorders.path");
 		createdAccountsPath = rp.readConfigProperties("createdaccounts.path");
 		
-		iePathWin = rp.readConfigProperties("ie.path");
+		iePathWin = rp.readConfigProperties("ie.path.win");
 		chromePathWin = rp.readConfigProperties("chrome.path.win");
 		chromePathMac = rp.readConfigProperties("chrome.path.mac");
 		geckoPathWin = rp.readConfigProperties("gecko.path.win");

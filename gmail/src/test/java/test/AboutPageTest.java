@@ -38,7 +38,8 @@ public class AboutPageTest extends BaseTestSuite{
     
     @Test
     public void testclickTopNavCreateAccount(){
-		
+   	    aboutPage.load();
+
     	String url = aboutPage.clickTopNavCreateAccount();
     	System.out.println(url);
     	String expectedURL = "https://accounts.google.com/SignUp?service=mail";
@@ -46,17 +47,21 @@ public class AboutPageTest extends BaseTestSuite{
     }
     
     //clickTopNavSignIn
-  
-    //@Test
+    @Test
     public void testclickTopNavSignIn(){
+   	    aboutPage.load();
+
     	String url = aboutPage.clickTopNavSignIn();
     	String expectedURL = "https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&service=mail&sacu=1&rip=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin";
     	Assert.assertTrue(url.contains(expectedURL));
     }
     
     //clickForWorkLink
-   // @Test
+   @Test
     public void testclickForWorkLink(){
+	   
+  	    aboutPage.load();
+
     	String url = aboutPage.clickForWorkLink();
     	String expectedURL = "https://www.google.com/gmail/about/for-work/";
     	Assert.assertTrue(url.contains(expectedURL));

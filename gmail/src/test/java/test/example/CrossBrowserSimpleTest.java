@@ -43,8 +43,8 @@ import com.google.common.collect.ImmutableMap;
 public class CrossBrowserSimpleTest {
 
 	private final String firefoxPath=System.getProperty("user.dir")+ "/src/test/java/config/geckodriver017.exe";
-	private final String iePath64=System.getProperty("user.dir")+ "/src/test/java/ifonly_automation/config/IEDriverServer.exe";
-	private final String iePath32=System.getProperty("user.dir")+ "/src/test/java/ifonly_automation/config/IEDriverServer_Win32_3.4.exe";
+	private final String iePath64=System.getProperty("user.dir")+ "/src/test/java/config/IEDriverServer.exe";
+	private final String iePath32=System.getProperty("user.dir")+ "/src/test/java/config/IEDriverServer_Win32_3.4.exe";
 
     private final String url = "https://www.ifonly.com/";
 	 
@@ -56,7 +56,6 @@ public class CrossBrowserSimpleTest {
 
 	@Test(invocationCount=1)
 	public void testGetFirefoxBrowserInfo(){
-		
 		System.setProperty("webdriver.gecko.driver", firefoxPath);	
 		WebDriver driver =new FirefoxDriver();
 		CrossBrowserSimpleTest.getBrowserInfo(driver);
@@ -78,7 +77,6 @@ public class CrossBrowserSimpleTest {
 		System.out.println(capabilities.getVersion());
 		System.out.println (capabilities.asMap());
 
-	
 		//Manage firefox specific settings in a way that geckodriver can understand
 		FirefoxOptions firefoxOptions = new FirefoxOptions();
 		firefoxOptions.addPreference("browser.startup.page", 1);
@@ -126,21 +124,27 @@ public class CrossBrowserSimpleTest {
 
 	}
 
-	
 	@Test(invocationCount=1)
 	public void testGetInternetExplorerViaNativeApi() {
 		
 		System.setProperty("webdriver.ie.driver", iePath64);	
-		//System.setProperty("webdriver.ie.driver", iePath32);	
-
 		WebDriver ieDriver = new InternetExplorerDriver();
-		ieDriver.manage().window().maximize(); //this would work only for Firefox and IE
-
+		ieDriver.manage().window().maximize();
 		ieDriver.get(url);
-
 		Assert.assertTrue(url.contains("ifonly"));
 		ieDriver.quit();
+	}
+	
+	@Test
+	public void testWebDriverManagerGetInternetExplorer(){
+
+		WebDriverManager DRIVER_MANAGER =WebDriverManager.getInstance();
+		WebDriver ieDriver = DRIVER_MANAGER.getDriver("ie");
 		
+		//ieDriver.get(url);
+		//ieDriver.quit();//using native WebDriver API kills iedriver.exe process 
+	    //DRIVER_MANAGER.closeDriverWindows("ie"); //using wrapper method leaves iedriver.exe process running on windows
+		//DRIVER_MANAGER.destroyWebDriverInstances("ie"); //using wrapper method leaves kills iedriver.exe process 
 	}
 	@Test
 	public void testWebDriverManagerGetFirefox(){
@@ -166,35 +170,14 @@ public class CrossBrowserSimpleTest {
 
 	}
 
-	@Test
-	public void testWebDriverManagerGetInternetExplorer(){
-
-		WebDriverManager DRIVER_MANAGER =WebDriverManager.getInstance();
-		WebDriver ieDriver = DRIVER_MANAGER.getDriver("ie");
-		ieDriver.get(url);
-		CommonMethods.pause(1500);
-		ieDriver.quit();//using native WebDriver API kills iedriver.exe process 
-	    //DRIVER_MANAGER.closeDriverWindows("chrome"); //using wrapper method leaves iedriver.exe process running on windows
-		//DRIVER_MANAGER.destroyWebDriverInstances("chrome"); //using wrapper method leaves kills iedriver.exe process 
-	}
-
 
 	@Test
-	public void testBaseTestSuiteFirefox(){
-		WebDriver firefoxDriver = BaseTestSuite.getFirefoxDriver();
-		firefoxDriver.get(url);
+	public void testBaseTestSuiteGetWebDriverManager(){
+		WebDriverManager webdriverManager = BaseTestSuite.getWebDriverManager();
+		webdriverManager.getDriver("firefox").get(url);
 		BaseTestSuite.destroyWebDrivers();
-
 	}
 
-	@Test
-	public void testBaseTestSuiteChrome(){
-		WebDriver chromeDriver = BaseTestSuite.getChromeDriver();
-		chromeDriver.get(url);
-		BaseTestSuite.destroyWebDrivers();
-
-
-	}
 	
 	@Test
 	public void testWebDriverManagerGetIosMobileDriver(){

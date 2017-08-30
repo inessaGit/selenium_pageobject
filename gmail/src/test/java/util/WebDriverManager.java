@@ -57,27 +57,27 @@ in the end, everything is converted down to a dictionary of DesiredCapabilities
 	private DesiredCapabilities capabilityIE=null;
 	private DesiredCapabilities capabilitySafari=null;
 	private DesiredCapabilities capabilityiosMobile=null;
+	Constants CONSTANTS  =  Constants.getInstance();		
 
 	//singleton private constructor doing initialization 
 	private  WebDriverManager(){
+		
 		LOGGER.info (WebDriverManager.class.getName()+ " running constructor. Setting all drivers.");
 		setDriver("firefox");
 		setDriver("chrome");
 		setDriver("ie");
 		setDriver("safari"); 
 		setDriver("iosMobileDriver"); 
-
 	}
 
 	public static WebDriverManager getInstance(){
 		if(DRIVER_MANAGER == null) {
-			DRIVER_MANAGER = new WebDriverManager();
 			LOGGER.info(WebDriverManager.class.getName()+ " WebDriverManager object does not exist. Creating object");
+			DRIVER_MANAGER = new WebDriverManager();
 
 		}
 		else {
 			LOGGER.info(WebDriverManager.class.getName()+ " WebDriverManager object already exist");
-
 		}
 		return DRIVER_MANAGER;
 	}
@@ -99,7 +99,6 @@ in the end, everything is converted down to a dictionary of DesiredCapabilities
 				//start Chrome instance 
 				chromeDriver =new ChromeDriver(capabilityChrome);
 				WebDriverManager.defaultWindowSize(chromeDriver);
-
 				driver = chromeDriver;
 				LOGGER.info (WebDriverManager.class.getName()+ " getting driver instance  "+browserInfo(chromeDriver));
 				break;
@@ -131,8 +130,7 @@ in the end, everything is converted down to a dictionary of DesiredCapabilities
 				break;
 				
 			case "ie":
-				driver = ieDriver;
-				//start IE instance 
+				driver = ieDriver; //start IE instance 
 				ieDriver=new InternetExplorerDriver(capabilityIE);
 				LOGGER.info (WebDriverManager.class.getName()+ " getting driver instance  "+browserInfo(ieDriver));
 				break;
@@ -149,14 +147,12 @@ in the end, everything is converted down to a dictionary of DesiredCapabilities
 
 	private  void setDriver(String browser)
 	{
-		Constants CONSTANTS  =  Constants.getInstance();		
 		if(browser.equalsIgnoreCase("firefox")) 
 		{
 			if (firefoxDriver ==null){
 				//path to gecko driver -> needed for Webdriver 3.0.1 or higher
 				String firefoxPath=System.getProperty("user.dir")+CONSTANTS.getGeckoPathWin();//reading from config.properties file 
 				System.setProperty("webdriver.gecko.driver", firefoxPath);	
-
 				capabilityFirefox=DesiredCapabilities.firefox();
 			    FirefoxOptions firefoxOptions = new FirefoxOptions();
 
@@ -166,7 +162,6 @@ in the end, everything is converted down to a dictionary of DesiredCapabilities
 				firefoxProfile.setPreference("network.http.phishy-userpass-length", 255);
 				firefoxProfile.setAcceptUntrustedCertificates(true);
 			    
-
                 /*throws org.openqa.selenium.SessionNotCreatedException: Unable to find a matching set of capabilities
 				capabilityFirefox.setBrowserName("Firefox");
 				*/
@@ -176,24 +171,21 @@ in the end, everything is converted down to a dictionary of DesiredCapabilities
 			firefoxOptions.setProfile(firefoxProfile);
 			capabilityFirefox.setCapability(FirefoxDriver.PROFILE, firefoxProfile);	
 			capabilityFirefox.setCapability(FirefoxOptions.FIREFOX_OPTIONS, firefoxOptions);	
-
 			}
 		}
 
 		else if(browser.equalsIgnoreCase("ie")) {
-
 			if (ieDriver ==null){
-				String iePath="";
-				iePath=System.getProperty("user.dir")+CONSTANTS.getIePathWin();//reading from config.properties file 
+				String iePath=System.getProperty("user.dir")+CONSTANTS.getIePathWin();//reading from config.properties file 
 				System.setProperty("webdriver.ie.driver", iePath);	
 
 				capabilityIE = DesiredCapabilities.internetExplorer();
-				capabilityIE.setBrowserName("Internet Explorer");
+				capabilityIE.setBrowserName("internet explorer");
 				capabilityIE.setPlatform(org.openqa.selenium.Platform.WINDOWS);
 				capabilityIE.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
 			}
-
 		}
+		
 		else  if(browser.equalsIgnoreCase("chrome")) {
 
 			if (chromeDriver == null){
@@ -211,12 +203,11 @@ in the end, everything is converted down to a dictionary of DesiredCapabilities
 				capabilityChrome.setPlatform(org.openqa.selenium.Platform.ANY);
 				chromeOptions.addArguments("test-type");
 				capabilityChrome.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
-			}    
 
+			}    
 		}
 		else if(browser.equalsIgnoreCase("safari")) {
 			if (safariDriver ==null){
-
 				if(WebDriverManager.isSupportedPlatform()==true) {
 					capabilitySafari = DesiredCapabilities.safari();
 					SafariOptions safariOptions = new SafariOptions();
@@ -224,34 +215,28 @@ in the end, everything is converted down to a dictionary of DesiredCapabilities
 					capabilitySafari.setBrowserName("Safari");
 					capabilitySafari.setPlatform(org.openqa.selenium.Platform.ANY);
 					capabilityChrome.setCapability(SafariOptions.CAPABILITY, safariOptions);
-
 				}				
 			}
-
-			LOGGER.info (WebDriverManager.class.getName()+ " Setting up driver instance  "+browser);
 		}
 
 		else  if(browser.equalsIgnoreCase("iosMobileDriver")) {
-
 			if (iosMobileDriver == null){
-				
 				capabilityiosMobile =new DesiredCapabilities();
 				capabilityiosMobile = DesiredCapabilities.iphone();
-
 				//TODO replace app key 
 				capabilityiosMobile.setCapability("app", "Microsoft.WindowsCalculator_8wekyb3d8bbwe!App");
 				capabilityiosMobile.setCapability("platformName", "Windows");
 				capabilityiosMobile.setCapability("deviceName", "WindowsPC");
-				LOGGER.info(WebDriverManager.class.getName()+ " setting up iosMobileDriver ");
-				
-			}    
 
+			}    
 		}
+
 		else {
 			LOGGER.debug("Browser type unsupported");
 			System.out.println("Browser type unsupported");
 			throw new IllegalArgumentException("Browser type unsupported");//super for IllegalArgumentException
 		}
+		LOGGER.info (WebDriverManager.class.getName()+ " Setting up driver instance  "+browser);
 	}
 
 	public void destroyWebDriverInstances(String browser)
@@ -356,7 +341,6 @@ in the end, everything is converted down to a dictionary of DesiredCapabilities
 			break;
 		}
 
-
 	}
 
 	public static void capabilitiesInfo(WebDriver driver){
@@ -407,20 +391,6 @@ in the end, everything is converted down to a dictionary of DesiredCapabilities
 		driver.manage().window().maximize(); //this would work only for Firefox and IE
 
 	}
-
-	/*
-	public static  void offScreenWindowSize(WebDriver driver)
-
-	{
-		//diver.manage().window().maximize(); //this would work only for Firefox and IE
-		//driver.manage().window().setPosition(new Point(-7000, 0));
-		//java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-		Dimension dim = new Dimension(-5000,0);
-		driver.manage().window().setSize(dim);
-		Reporter.log("Currently testing URL: " +driver.getCurrentUrl());
-	}
-
-	 */
 
 }
 
