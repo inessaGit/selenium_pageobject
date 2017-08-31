@@ -18,7 +18,6 @@ public class AboutPageTest extends BaseTestSuite{
 	private static final Logger LOGGER = Logger.getLogger(AboutPageTest.class);
 	private AboutPage aboutPage ;
 
-
 	@Test
 	public void testTopNavLogoDisplayed(){
 		this.driver = super.getFirefoxDriver();

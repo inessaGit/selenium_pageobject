@@ -1,5 +1,6 @@
 package pages;
 
+import java.util.Iterator;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
@@ -68,21 +69,24 @@ public class AboutPage extends BasePage {
 	public String clickTopNavCreateAccount(){
 		
 		baseWindowHandle = driver.getWindowHandle();
+		System.out.println("BASE Window handle:"+baseWindowHandle);
+
 		wait = new WebDriverWait(this.driver,10);
 		wait.until(ExpectedConditions.elementToBeClickable(top_nav_create_account));
 		top_nav_create_account.click();
 		
 		wait.until(ExpectedConditions.numberOfwindowsToBe(2));
 		Set<String> set = driver.getWindowHandles();
-		
-		System.out.println(set.size());
-		set.remove(baseWindowHandle);
-		System.out.println(set.size());
+		System.out.println("Number of windows:"+set.size());
 
-		String windowHandle2 = set.iterator().next();
-		System.out.println("BASE Window handle:"+baseWindowHandle);
-		System.out.println("Window handle 2:"+windowHandle2);
+		Iterator<String>it = set.iterator();
+		while(it.hasNext()){
+			System.out.println("Window handle:"+set.iterator().next());
+		}
+		set.remove(baseWindowHandle);
+		System.out.println("Updated number of windows:"+set.size());
 		
+         String windowHandle2 = set.iterator().next();		
 		driver.switchTo().window(windowHandle2);
 		
 		String  actualUrl =driver.getCurrentUrl();

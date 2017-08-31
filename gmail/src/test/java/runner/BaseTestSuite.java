@@ -100,7 +100,7 @@ public abstract class BaseTestSuite {
 	public static void startDrivers(){
 		LOGGER.info(BaseTestSuite.class.getName()+" running @BeforeTest - startDrivers()");	 
 		FIREFOX_DRIVER = DRIVER_MANAGER.getDriver("firefox");
-		CHROME_DRIVER = DRIVER_MANAGER.getDriver("chrome");
+		//CHROME_DRIVER = DRIVER_MANAGER.getDriver("chrome");
 		//IE_DRIVER = DRIVER_MANAGER.getDriver("ie");
 		//SAFARI_DRIVER = DRIVER_MANAGER.getDriver("safari");
 		//IOS_MOBILE_DRIVER = DRIVER_MANAGER.getDriver("iosMobileDriver");

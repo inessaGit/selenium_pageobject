@@ -70,7 +70,6 @@ public class DefaultTestListener implements ITestListener, ISuiteListener {
 	public void onTestFailure(ITestResult tr) {
 		Object currentClass = tr.getInstance();
 		driver   = ((BaseTestSuite) currentClass).getFirefoxDriver();
-
 		if(tr.getStatus() == ITestResult.FAILURE)
 		{
 			System.out.println(tr.getTestClass()+" "+tr.getMethod()+" test run successful: "+tr.isSuccess());

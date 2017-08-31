@@ -65,16 +65,14 @@ public class TakeScreenshot {
 			
 		 switch (dirNumber)	{
 		 case 1:
-			 FileUtils.moveFile(scrFile, new File(userGenScreenshotDir + destFile));
+			FileUtils.moveFile(scrFile, new File(userGenScreenshotDir + destFile));
 			LOGGER.info("Generated screenshot. Screenshot saved in "   + userGenScreenshotDir);
 			Reporter.log("Saved <a href=" +userGenScreenshotDir+ destFile + ">User Generated Screenshot</a>");
-
 			break;
 		
 		 case 2: FileUtils.moveFile(scrFile, new File(failTestScreenshotDir + destFile));
 			LOGGER.info("Generated screenshot. Screenshot saved in "   + failTestScreenshotDir);
 			Reporter.log("Saved <a href=" +failTestScreenshotDir + destFile + ">Test Fail Screenshot</a>");
-
 			break;
 			
 		 case 3: FileUtils.moveFile(scrFile, new File(passTestScreenshotDir + destFile));

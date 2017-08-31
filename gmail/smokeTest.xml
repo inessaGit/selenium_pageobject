@@ -14,9 +14,8 @@
        
        <test name="AboutPageTest">
               <classes>    
-                   <class name= "test.AboutPageTest"/>
+                   <class name= "test.AboutPageTest"/>                   
               </classes>
        </test>
        
-        
 </suite>
