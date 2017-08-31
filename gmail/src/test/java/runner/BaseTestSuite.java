@@ -31,7 +31,7 @@ import util.WebDriverManager;
  *
  */
 
-@Listeners({util.SuiteListener.class})
+@Listeners({util.DefaultTestListener.class})
 public abstract class BaseTestSuite {
 
 	private static WebDriverManager DRIVER_MANAGER = null;
