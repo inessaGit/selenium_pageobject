@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import pages.AboutPage;
@@ -12,6 +13,7 @@ import runner.BaseTestSuite;
 import util.CommonMethods;
 import util.Constants;
 
+@Listeners({util.DefaultTestListener.class})
 public class ForWorkPageTest extends BaseTestSuite{
 
 	private WebDriver driver;

@@ -13,47 +13,38 @@ public class TakeScreenshotsWebDriver {
 	public void testTakeScreenshot(){
 		WebDriver firefoxDriver =  BaseTestSuite.getFirefoxDriver();
 		firefoxDriver.get("https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_date-add");
-		TakeScreenshot.takeScreenshot(firefoxDriver);
+		TakeScreenshot.getInstance().takeScreenshot(firefoxDriver,1);
 		
 		firefoxDriver.get("http://stackoverflow.com/questions/31744778/opening-ie-web-driver-in-selenium");
-		TakeScreenshot.takeScreenshot(firefoxDriver);
-
-		BaseTestSuite.closeDrivers();
+		TakeScreenshot.getInstance().takeScreenshot(firefoxDriver,1);
+		BaseTestSuite.destroyWebDrivers();
 	}
 	
 	@Test
 	public void copyScreenshotsToTestOutput(){
 		WebDriver firefoxDriver =  BaseTestSuite.getFirefoxDriver();
 		firefoxDriver.get("https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_date-add");
-		TakeScreenshot.takeScreenshot(firefoxDriver);
-		
-		firefoxDriver.get("http://stackoverflow.com/questions/31744778/opening-ie-web-driver-in-selenium");
-		TakeScreenshot.takeScreenshot(firefoxDriver);
-		TakeScreenshot.copyScreenshotsToTestOutput();
-
-		BaseTestSuite.closeDrivers();
+		TakeScreenshot.getInstance().takeScreenshot(firefoxDriver,1);
+		TakeScreenshot.getInstance().copyScreenshotsToTestOutput();
+		BaseTestSuite.destroyWebDrivers();
 	}
 	
 	@Test
 	public void deleteScreenshotsInTestNGFolder(){
 		WebDriver firefoxDriver =  BaseTestSuite.getFirefoxDriver();
 		firefoxDriver.get("https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_date-add");
-		TakeScreenshot.takeScreenshot(firefoxDriver);
+		TakeScreenshot.getInstance().takeScreenshot(firefoxDriver,1);
 		
-		TakeScreenshot.deleteScreenshotsInTestOutput();
-
-		BaseTestSuite.closeDrivers();
+		TakeScreenshot.getInstance().deleteScreenshotsInTestOutput();
+		BaseTestSuite.destroyWebDrivers();
 	}
 	
 	@Test
 	public void deleteScreenshotsInReportFolder(){
 		WebDriver firefoxDriver =  BaseTestSuite.getFirefoxDriver();
 		firefoxDriver.get("https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_date-add");
-		TakeScreenshot.takeScreenshot(firefoxDriver);
-		
-		
-		TakeScreenshot.deleteScreenshotsInReportScreenshot();
-
-		BaseTestSuite.closeDrivers();
+		TakeScreenshot.getInstance().takeScreenshot(firefoxDriver,1);
+		TakeScreenshot.getInstance().deleteScreenshotsInReportScreenshot();
+		BaseTestSuite.destroyWebDrivers();
 	}
 }
