@@ -41,7 +41,6 @@ public class PrintClassName {
 
 		System.out.println("=======================================\n");
 		for (Class c: list){
-			//System.out.println("Package: "+c.getPackage()+"\nClass: "+c.getSimpleName()+"\nFull Identifier: "+c.getName());
 			System.out.println("<test name=\""+c.getName()+"\">\n"+" <classes>\n<class name= \""+c.getName()+"\"/></classes></test>");
 		}
 	}
@@ -75,7 +74,7 @@ class TestPrintClassName{
 	IOException {
 
 		PrintClassName print = new PrintClassName();
-		List<Class> list =print.getClassOfPackage("pageobject_test");
+		List<Class> list =print.getClassOfPackage("pages");
 
 		print.printClassNames(list);
 		

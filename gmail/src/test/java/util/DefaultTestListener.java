@@ -59,7 +59,6 @@ public class DefaultTestListener implements ITestListener, ISuiteListener {
 	public void onFinish(ISuite suite) {
 		Reporter.log("Finish executing Suite " + suite.getName(), true);
 		Reporter.log(suite.getName()+" "+suite.getResults());
-		BaseTestSuite.destroyWebDrivers();
 	}
 
 	@Override

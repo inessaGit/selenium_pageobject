@@ -9,9 +9,11 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.openqa.selenium.WebDriver;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
@@ -73,54 +75,50 @@ public abstract class BaseTestSuite {
 	}
 	// DRIVER getters 
 	public static  WebDriver getFirefoxDriver() {
-		FIREFOX_DRIVER = DRIVER_MANAGER.getDriver("firefox");
 		return FIREFOX_DRIVER;
 	}
 
 	public static  WebDriver getIOSMobileDriver() {
-		IOS_MOBILE_DRIVER=DRIVER_MANAGER.getDriver("iosMobileDriver");
 		return IOS_MOBILE_DRIVER;
 	}
 
 	
 	public static WebDriver getChromeDriver() {
-		CHROME_DRIVER = DRIVER_MANAGER.getDriver("chrome");
 		return CHROME_DRIVER;
 	}
 
 	public static WebDriver getIeDriver() {
-		IE_DRIVER = DRIVER_MANAGER.getDriver("ie");
 		return IE_DRIVER;
 	}
 
 	public static WebDriver getSafariDriver() {
-		SAFARI_DRIVER = DRIVER_MANAGER.getDriver("safari");
 		return SAFARI_DRIVER;
 	}
 
 	
-	//@BeforeTest() or @BeforeSuite 
+	@BeforeMethod() // @BeforeSuite 
 	public static void startDrivers(){
 		LOGGER.info(BaseTestSuite.class.getName()+" running @BeforeTest - startDrivers()");	 
 		FIREFOX_DRIVER = DRIVER_MANAGER.getDriver("firefox");
 		CHROME_DRIVER = DRIVER_MANAGER.getDriver("chrome");
-		IE_DRIVER = DRIVER_MANAGER.getDriver("ie");
-		SAFARI_DRIVER = DRIVER_MANAGER.getDriver("safari");
-		IOS_MOBILE_DRIVER = DRIVER_MANAGER.getDriver("iosMobileDriver");
+		//IE_DRIVER = DRIVER_MANAGER.getDriver("ie");
+		//SAFARI_DRIVER = DRIVER_MANAGER.getDriver("safari");
+		//IOS_MOBILE_DRIVER = DRIVER_MANAGER.getDriver("iosMobileDriver");
 		LOGGER.info(BaseTestSuite.class.getName()+" running @BeforeTest - all drivers started");	 
 	}
 
 	
 	//@BeforeTest - For suite test, run before any test method belonging to the classes inside the <test> tag is run. 
-	//@AfterTest - For suite test, run after all the test methods belonging to the classes inside the <test> tag have run.  
-	//@AfterClass(alwaysRun=true)
+	//@AfterTest - For suite test, run after all the test methods belonging to the classes inside the <test> tag have run. 
+	
+	@AfterMethod(alwaysRun=true)
 	public static void closeDrivers(){
 
 		LOGGER.info(BaseTestSuite.class.getName()+ " Attempting to  close  WebDriver browser windows.");
 		DRIVER_MANAGER.closeDriverWindows("firefox");
 		DRIVER_MANAGER.closeDriverWindows("chrome");
 		DRIVER_MANAGER.closeDriverWindows("ie");
-		DRIVER_MANAGER.closeDriverWindows("safari");
+	    DRIVER_MANAGER.closeDriverWindows("safari");
 		DRIVER_MANAGER.closeDriverWindows("iosMobileDriver");
 		LOGGER.info(BaseTestSuite.class.getName()+ " Successfully closed  WebDriver browser windows.");
 
@@ -135,10 +133,8 @@ public abstract class BaseTestSuite {
 		DRIVER_MANAGER.destroyWebDriverInstances("safari");
 		DRIVER_MANAGER.destroyWebDriverInstances("ie");
 		DRIVER_MANAGER.destroyWebDriverInstances("iosMobileDriver");
-
 		
 		LOGGER.info(BaseTestSuite.class.getName()+ " Successfully destroyed  webdriver instances.");
-
 		}
 
  

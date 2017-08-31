@@ -21,16 +21,11 @@ public class ForWorkPageTest extends BaseTestSuite{
 	private ForWorkPage forWorkPage ;
 
 
-	@BeforeClass
-	public  void initPages(){
+	@Test
+	public void testPageTitle(){
 		this.driver = super.getFirefoxDriver();
 		forWorkPage = new ForWorkPage(this.driver);
 		forWorkPage.load();
-	}
-
-	@Test
-	public void testPageTitle(){
-
 		String expected = "Gmail - Free Storage and Email from Google";
 		Assert.assertTrue(driver.getTitle().equalsIgnoreCase(expected));
 	}
