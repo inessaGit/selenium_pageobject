@@ -298,11 +298,12 @@
    <profiles>
   <profile>
     <id>development</id>
-         <!--points to a DEV server database  and ioserverdb instance -->     
+    
+         <!--points to  your server database  -->     
     <properties>
     <db.driverClass>com.mysql.jdbc.Driver</db.driverClass>
-    <db.connectionURL>jdbc:mysql://10.88.0.50:3306/ioserverdb?zeroDateTimeBehavior=convertToNull</db.connectionURL>
-    <db.username>root</db.username>
+    <db.connectionURL>jdbc:mysql://10.88.0.88:7888/dbname?zeroDateTimeBehavior=convertToNull</db.connectionURL>
+    <db.username></db.username>
     <db.password></db.password>
   </properties>
   </profile>
