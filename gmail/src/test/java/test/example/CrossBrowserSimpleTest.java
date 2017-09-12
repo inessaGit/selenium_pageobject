@@ -42,7 +42,7 @@ import com.google.common.collect.ImmutableMap;
  */
 public class CrossBrowserSimpleTest {
 
-	private final String firefoxPath=System.getProperty("user.dir")+ "/src/test/java/config/geckodriver017.exe";
+	private final String firefoxPath=System.getProperty("user.dir")+ "/src/test/java/config/geckodriver018.exe";
 	private final String iePath64=System.getProperty("user.dir")+ "/src/test/java/config/IEDriverServer.exe";
 	private final String iePath32=System.getProperty("user.dir")+ "/src/test/java/config/IEDriverServer_Win32_3.4.exe";
 
@@ -83,7 +83,8 @@ public class CrossBrowserSimpleTest {
 
 		WebDriver driver =new FirefoxDriver(firefoxOptions);
 		driver.get(url);
-		driver.close();//closing window quit only if it is last window open
+
+	//	driver.close();//closing window quit only if it is last window open
 	 	driver.quit();//close all firefox windows and quits driver 
 
 	}
