@@ -37,17 +37,19 @@
     <version>5.1.39</version>
 </dependency>
          
-        <dependency>
+    <!-- https://mvnrepository.com/artifact/org.dbunit/dbunit -->
+<dependency>
     <groupId>org.dbunit</groupId>
     <artifactId>dbunit</artifactId>
-    <version>2.5.1</version>
+    <version>2.5.4</version>
 </dependency>
+
         
         <!-- WebDriver Java binding https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
   <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-java</artifactId>
-    <version>3.5.2</version>
+    <version>3.6.0</version>
 </dependency>
 
     <!-- Firefox version v53 supported via geckodriver.exe-->
@@ -55,29 +57,31 @@
 <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-firefox-driver</artifactId>
-    <version>3.5.2</version>
+    <version>3.6.0</version>
 </dependency>
 
     <!-- IEDriver for Internet Explorer-->
-        <dependency>
+   <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-ie-driver -->
+<dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-ie-driver</artifactId>
-    <version>3.5.2</version>
+    <version>3.6.0</version>
 </dependency>
 
- <!-- ChromeDriver for Chrome browser https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
+
+<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
 <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-chrome-driver</artifactId>
-    <version>3.5.2</version>
+    <version>3.6.0</version>
 </dependency>
- 
+
 <!-- RemoteDriver for iosMobileDriver support https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-remote-driver -->
 <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-remote-driver -->
 <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-remote-driver</artifactId>
-    <version>3.5.2</version>
+    <version>3.6.0</version>
 </dependency>
 
 <!-- Selenium server needed for Selenium Grid, HTMLUnitDriver -->
@@ -85,15 +89,16 @@
 <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-server</artifactId>
-    <version>3.5.2</version>
+    <version>3.6.0</version>
 </dependency>
 
 
 <!--Mobile testing  java client for appium The IOSDriver extends from AppiumDriver and AppiumDriver extends from RemoteWebDriver -->
-         <dependency>
-  <groupId>io.appium</groupId>
-  <artifactId>java-client</artifactId>
-  <version>4.1.2</version>
+      <!-- https://mvnrepository.com/artifact/io.appium/java-client -->
+<dependency>
+    <groupId>io.appium</groupId>
+    <artifactId>java-client</artifactId>
+    <version>5.0.3</version>
 </dependency>
 
  <!--to keep support for fluent wait -->
@@ -157,34 +162,30 @@
 </dependency>
 
 <!-- spring-context depends on spring-core which will be downloaded automatically -->
- <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-context</artifactId>
-      <version>4.2.2.RELEASE</version>
-      <scope>compile</scope>
-    </dependency>
-    
-<!-- Hibernate  ORM-->
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
 <dependency>
-     <groupId>org.hibernate</groupId>
-     <artifactId>hibernate-core</artifactId>
-     <version>4.3.8.Final</version>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-context</artifactId>
+    <version>5.0.0.RELEASE</version>
 </dependency>
 
 
-<!-- gson google library: convert java objects into json -->
-         <dependency>
+<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+<dependency>
     <groupId>com.google.code.gson</groupId>
     <artifactId>gson</artifactId>
-    <version>2.3.1</version>
+    <version>2.8.2</version>
 </dependency>
 
-   <!-- https://mvnrepository.com/artifact/xml-apis/xml-apis -->
+
+<!-- https://mvnrepository.com/artifact/xml-apis/xml-apis -->
 <dependency>
     <groupId>xml-apis</groupId>
     <artifactId>xml-apis</artifactId>
     <version>2.0.2</version>
 </dependency>
+
+
 
   </dependencies>
   
@@ -235,7 +236,7 @@
              <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.20</version>
+                   <version>2.20.1</version>
                 <configuration>
                     
                 <parallel>true</parallel>
@@ -260,13 +261,16 @@
         </configuration>
       </plugin>            
       
-
+<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-eclipse-plugin -->
   <!--  Plugin to excude non .java files from compiling -->
   <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-eclipse-plugin</artifactId>
-        <version>2.9</version>
+              <version>2.10</version>
         <configuration>
+            <source>1.8</source>
+            <target>1.8</target>
+            
           <sourceExcludes>
             <sourceExclude>**/*.txt</sourceExclude>
             <sourceExclude>**/*.exe</sourceExclude>
@@ -280,11 +284,7 @@
         </configuration>
       </plugin>
 
-  <plugin>
-  	<groupId>org.apache.maven.plugins</groupId>
-  	<artifactId>maven-compiler-plugin</artifactId>
-  	<version>3.6.2</version>
-  </plugin>
+ 
         </plugins>        
          
   </build>   
