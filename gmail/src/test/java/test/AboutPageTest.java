@@ -34,10 +34,9 @@ public class AboutPageTest extends BaseTestSuite{
 
 		aboutPage.load();
 
-		String url = aboutPage.clickTopNavCreateAccount();
-		System.out.println(url);
-		String expectedURL = "https://accounts.google.com/SignUp?service=mail";
-		Assert.assertTrue(url.contains(expectedURL));
+		String actualTitle = aboutPage.clickTopNavCreateAccount();
+		String expectedTitle = "Create your Google Account";
+		Assert.assertTrue(actualTitle.contains(expectedTitle));
 	}
 
 	//clickTopNavSignIn

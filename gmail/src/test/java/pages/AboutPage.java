@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -70,30 +71,23 @@ public class AboutPage extends BasePage {
 		
 		baseWindowHandle = driver.getWindowHandle();
 		System.out.println("BASE Window handle:"+baseWindowHandle);
+	    String titleOnPageLoad =driver.getTitle();
 
 		wait = new WebDriverWait(this.driver,10);
 		wait.until(ExpectedConditions.elementToBeClickable(top_nav_create_account));
 		top_nav_create_account.click();
 		
-		wait.until(ExpectedConditions.numberOfwindowsToBe(2));
-		Set<String> set = driver.getWindowHandles();
-		System.out.println("Number of windows:"+set.size());
-
-		Iterator<String>it = set.iterator();
-		while(it.hasNext()){
-			System.out.println("Window handle:"+set.iterator().next());
+		wait.until(ExpectedConditions.numberOfWindowsToBe(2));
+	
+		// Switch to new window opened
+		for(String winHandle : driver.getWindowHandles()){
+		    driver.switchTo().window(winHandle);
+		    System.out.println(winHandle);
 		}
-		set.remove(baseWindowHandle);
-		System.out.println("Updated number of windows:"+set.size());
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		String pageTitle =js.executeScript("return document.title;").toString();
 		
-         String windowHandle2 = set.iterator().next();		
-		driver.switchTo().window(windowHandle2);
-		
-		String  actualUrl =driver.getCurrentUrl();
-		driver.close();
-		driver.switchTo().window(baseWindowHandle);
-		return actualUrl;
-		
+		return pageTitle;
 	}
 	
 	public String clickTopNavSignIn(){
