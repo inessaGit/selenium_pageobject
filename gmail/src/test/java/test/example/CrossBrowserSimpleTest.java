@@ -11,8 +11,10 @@ import util.TakeScreenshot;
 import util.WebDriverManager;
 
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
@@ -118,6 +120,10 @@ public class CrossBrowserSimpleTest {
 
 		WebDriver driver =new FirefoxDriver(firefoxOptions);
 		driver.get(url);
+		
+		WebElement logInTopNav = driver.findElement(By.id("logInBtn"));
+		logInTopNav.click();
+		
 		Assert.assertTrue(url.contains("ifonly"));
 
 		//driver.close();//closing window quit only if it is last window open
