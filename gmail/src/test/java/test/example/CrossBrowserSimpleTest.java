@@ -44,7 +44,10 @@ import com.google.common.collect.ImmutableMap;
  */
 public class CrossBrowserSimpleTest {
 
-	private final String firefoxPath=System.getProperty("user.dir")+ "/src/test/java/config/geckodriver018.exe";
+// For win:	private final String firefoxPath=System.getProperty("user.dir")+ "/src/test/java/config/geckodriver018.exe";
+	
+	private final String firefoxPath=System.getProperty("user.dir")+ "/src/test/java/config/geckodriver";
+
 	private final String iePath64=System.getProperty("user.dir")+ "/src/test/java/config/IEDriverServer.exe";
 	private final String iePath32=System.getProperty("user.dir")+ "/src/test/java/config/IEDriverServer_Win32_3.4.exe";
 
