@@ -4,7 +4,7 @@ http://seleniumhq.github.io/selenium/docs/api/java/index.html
  * WebDriver 3.5.2 requires JDK 8;
  * supports geckodriver 017
  * chromedriver 2.31
- * 
+ * on Mac make Chromedriver executable to be able to run locally |  chmod +x chromedriver 
  */
 ---------------------------WebDriver native events vs synthetic events---------------------
 In WebDriver advanced user interactions are provided by either 
